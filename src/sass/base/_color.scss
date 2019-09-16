@@ -1,0 +1,127 @@
+/////////////////////////////////////////////////////////
+// Color                                               //
+/////////////////////////////////////////////////////////
+
+// SETUP
+// Greys
+$grey1: #07252E !default;
+$grey2: #2D3F4A !default;
+$grey3: #A2AEB2 !default;
+$grey4: #F2F2F2 !default;
+$grey5: #F9F9F9 !default;
+$grey6: #CCEBF0 !default;
+$grey7: #DEF8FF !default;
+
+// Blues
+$blue1: #19444E !default;
+$blue2: #295A66 !default;
+$blue3: #0A5D72 !default;
+$blue4: #407886 !default;
+
+// Yellows
+$light-yellow: #FFE645 !default;
+$yellow: (#FFCB00,) !default;
+$dark-yellow: #edbf0b !default;
+
+// Highlight
+$highlight1: #66fcf1 !default;
+$highlight2: #00203FFF !default;
+$highlight3: #95DBE5FF !default;
+
+// Red
+$lightred: #D66969 !default;
+$red: #D72323 !default;
+
+//// Base
+$primary: $highlight1 !default;
+$secondary: $highlight2 !default;
+$tartiary: $highlight3!default;
+$black: #0e0e0e !default;
+$white: #FFFFFF !default;
+
+//// States
+$error: $red !default;
+$warning: #F5A623 !default;
+$success: #7ED321 !default;
+$disabled: $grey3 !default;
+
+//// Social
+$facebook: #3B5998 !default;
+$fbmessenger: #0084FF !default;
+$twitter: #1DA1F2 !default;
+$whatsapp: #25D366 !default;
+$googleplus: #DD4B39 !default;
+$linkedin: #0077B5 !default;
+$instagram: #E1306C !default;
+$youtube: #CD201F !default;
+$email: #5F7583 !default;
+
+//// Type Defaults
+$bodycolor: $black !default;
+$headingcolor: $secondary !default;
+$line: $blue3 !default;
+$border-color-light: #d8d8d8;
+$border-color-light-blue: #6D8A95;
+$font-color-light: #2C2C2C !default;
+
+//// Into an array
+$colors: (grey1: $grey1, grey2: $grey2, grey3: $grey3, grey4: $grey4, grey5: $grey5, grey6: $grey6, grey7: $grey7, blue1: $blue1, blue2: $blue2, blue3: $blue3, blue4: $blue4, lightyellow: $light-yellow, yellow: $yellow, darkyellow: $dark-yellow, highlight1: $highlight1, highlight2: $highlight2, highlight3: $highlight3, lightred: $lightred, red: $red, primary: $primary, secondary: $secondary, black: $black, white: $white, error: $error, warning: $warning, success: $success, disabled: $disabled, facebook: $facebook, fbmessenger: $fbmessenger, twitter: $twitter, whatsapp: $whatsapp, googleplus: $googleplus, linkedin: $linkedin, instagram: $instagram, youtube: $youtube, email: $email, bodycolor: $bodycolor, headingcolor: $headingcolor) !default;
+
+// Color Helpers
+//// Links
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &.link-secondary {
+    color: $secondary;
+  }
+
+  a:link a:visited {
+    color: inherit;
+  }
+}
+
+//// Undo link styles for placeholder links/named anchors (without href)
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+//// Text & BG Overides
+//// E.g Font Color: fc-primary or background .bg-black
+@each $name, $color in $colors {
+  .fc-#{$name} {
+    color: #{$color}!important;
+  }
+
+  .bg-#{$name} {
+    background-color: #{$color}!important;
+  }
+
+  .border-#{$name} {
+    border: 1px solid #{$color};
+  }
+}
+
+// Hover States
+@include media-breakpoint-up(md) {
+  a {
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+
+    &.link-secondary:hover {
+      color: lighten($secondary, 15%);
+    }
+  }
+}

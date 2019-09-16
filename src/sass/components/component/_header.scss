@@ -1,0 +1,10 @@
+$header-height: 60px;
+$header-padding: 0 30px;
+
+header {
+  position: relative;
+  height: $header-height;
+  background: $primary;
+  padding: $header-padding;
+
+}
