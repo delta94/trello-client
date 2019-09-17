@@ -35,10 +35,7 @@ function Register(){
       msg: data.msg
     });
 
-    setAuthData({
-      error: false, msg: ''
-    });
-
+    setAuthError({ error: false, msg: ''});
     console.log(data);
   }
 
