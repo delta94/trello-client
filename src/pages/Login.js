@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { config } from '../config';
 import { http } from '../http';
@@ -27,17 +28,29 @@ function Login() {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-    const { data } = await http.post(authUri, authData);
-    if (data.error)
+    if (authData.email === '' || authData.password === '')
       return setAuthError({
         error: true,
-        msg: data.msg
-      });
+        msg: 'Please fill both fields'
+      })
 
-    const decodeToken = JSON.parse(window.atob(data.token.split(".")[1]));
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('user', JSON.stringify(decodeToken));
-    console.log(data);
+    let response;
+    try {
+      response = await axios.post(authUri, authData);
+    } catch (e) {
+      console.log(e.response);
+    }
+
+    console.log(response);
+    // if (response.data.error)
+    //   return setAuthError({
+    //     error: true,
+    //     msg: response.data.msg
+    //   });
+
+    // const decodeToken = JSON.parse(window.atob(data.token.split(".")[1]));
+    // localStorage.setItem('token', data.token);
+    // localStorage.setItem('user', JSON.stringify(decodeToken));
 
   };
 
