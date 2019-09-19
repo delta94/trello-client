@@ -41,12 +41,6 @@ function Register({history}){
         msg: err.response.data.msg
       });
 
-    if (response && response.data.error)
-      return setAuthError({
-        error: true,
-        msg: response.data.msg
-      });
-
     return history.push('/login');
   }
 

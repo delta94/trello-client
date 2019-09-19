@@ -25,33 +25,25 @@ function Login() {
     setAuthData({ ...authData, [name]: value });
   };
 
-  const onSubmitForm = async (e) => {
+  const onSubmitForm = async e => {
     e.preventDefault();
 
     let err, response;
 
     [err, response] = await to(http.post(authUri, authData));
 
+    // If response === null
     if (err)
       return setAuthError({
         error: true,
         msg: err.response.data.msg
       });
 
-    if (response && response.data.error)
-      return setAuthError({
-        error: true,
-        msg: response.data.msg
-      });
-
-
-    if (response.data.error === false) {
-      const decodeToken = JSON.parse(
-        window.atob(response.data.token.split(".")[1])
-      );
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(decodeToken));
-    }
+    const decodeToken = JSON.parse(
+      window.atob(response.data.token.split(".")[1])
+    );
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", JSON.stringify(decodeToken));
   };
 
   return (
