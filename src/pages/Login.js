@@ -28,21 +28,17 @@ function Login() {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-    if (authData.email === '' || authData.password === '')
-      return setAuthError({
-        error: true,
-        msg: 'Please fill both fields'
-      })
+    let err, response;
 
-    let [err, response] = await to(http.post(authUri, authData));
+    [err, response] = await to(http.post(authUri, authData));
 
-    if (err !== null && err.response.data.error)
+    if (err)
       return setAuthError({
         error: true,
         msg: err.response.data.msg
       });
 
-    if (response !== null && response.data.error)
+    if (response && response.data.error)
       return setAuthError({
         error: true,
         msg: response.data.msg

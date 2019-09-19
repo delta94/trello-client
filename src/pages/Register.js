@@ -31,15 +31,17 @@ function Register({history}){
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const [err, response] = await to(http.post(regUri, authData));
+    let err, response;
 
-    if (err !== null && err.response.data.error)
+    [err, response] = await to(http.post(regUri, authData));
+
+    if (err)
       return setAuthError({
         error: true,
         msg: err.response.data.msg
       });
 
-    if (response !== null && response.data.error)
+    if (response && response.data.error)
       return setAuthError({
         error: true,
         msg: response.data.msg
