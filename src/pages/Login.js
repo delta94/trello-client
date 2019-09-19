@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import to from 'await-to-js';
 
 import { config } from '../config';
 import { http } from '../http';
@@ -34,14 +34,9 @@ function Login() {
         msg: 'Please fill both fields'
       })
 
-    let response;
-    try {
-      response = await axios.post(authUri, authData);
-    } catch (e) {
-      console.log(e.response);
-    }
+    let [err, user] = await to(http.post(authUri, authData))
 
-    console.log(response);
+    console.log({err: err, user});
     // if (response.data.error)
     //   return setAuthError({
     //     error: true,
