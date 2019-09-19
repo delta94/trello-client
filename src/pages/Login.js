@@ -27,18 +27,18 @@ function Login() {
 
   const onSubmitForm = async e => {
     e.preventDefault();
-
     let err, response;
 
     [err, response] = await to(http.post(authUri, authData));
 
-    // If response === null
     if (err)
       return setAuthError({
         error: true,
         msg: err.response.data.msg
       });
 
+    // Decode token to extrac user info
+    // and save it to localstorage.
     const decodeToken = JSON.parse(
       window.atob(response.data.token.split(".")[1])
     );
