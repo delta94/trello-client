@@ -34,19 +34,30 @@ function Login() {
         msg: 'Please fill both fields'
       })
 
-    let [err, user] = await to(http.post(authUri, authData))
+    let [err, response] = await to(http.post(authUri, authData));
 
-    console.log({err: err, user});
-    // if (response.data.error)
-    //   return setAuthError({
-    //     error: true,
-    //     msg: response.data.msg
-    //   });
+    console.log({ err, response });
 
-    // const decodeToken = JSON.parse(window.atob(data.token.split(".")[1]));
-    // localStorage.setItem('token', data.token);
-    // localStorage.setItem('user', JSON.stringify(decodeToken));
+    if (err !== null && err.response.data.error)
+      return setAuthError({
+        error: true,
+        msg: err.response.data.msg
+      });
 
+    if (response !== null && response.data.error)
+      return setAuthError({
+        error: true,
+        msg: response.data.msg
+      });
+
+
+    if (response.data.error === false) {
+      const decodeToken = JSON.parse(
+        window.atob(response.data.token.split(".")[1])
+      );
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(decodeToken));
+    }
   };
 
   return (
