@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import to from 'await-to-js';
 
 import Input from '../components/forms/Input';
 
@@ -8,7 +9,7 @@ import { http } from '../http';
 
 const regUri = `${config.baseUrl}/user/register`
 
-function Register(){
+function Register({history}){
   const [authData, setAuthData] = useState({
     username: '',
     firstname: '',
@@ -29,14 +30,22 @@ function Register(){
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await http.post(regUri, authData);
-    if (data.error) return setAuthError({
-      error: true,
-      msg: data.msg
-    });
 
-    setAuthError({ error: false, msg: ''});
-    console.log(data);
+    const [err, response] = await to(http.post(regUri, authData));
+
+    if (err !== null && err.response.data.error)
+      return setAuthError({
+        error: true,
+        msg: err.response.data.msg
+      });
+
+    if (response !== null && response.data.error)
+      return setAuthError({
+        error: true,
+        msg: response.data.msg
+      });
+
+    return history.push('/login');
   }
 
   return (

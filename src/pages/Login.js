@@ -36,8 +36,6 @@ function Login() {
 
     let [err, response] = await to(http.post(authUri, authData));
 
-    console.log({ err, response });
-
     if (err !== null && err.response.data.error)
       return setAuthError({
         error: true,
