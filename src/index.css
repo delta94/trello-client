@@ -8750,7 +8750,7 @@ pre {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
-  color: #e9e6e6;
+  color: #2b2e4c;
   background-color: #2b2e4c;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -8772,7 +8772,7 @@ pre {
   .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
   .tt-query:focus,
   .tt-hint:focus {
-    color: #e9e6e6;
+    color: #2b2e4c;
     background-color: #2b2e4c;
     border-color: #80bdff;
     outline: 0;
@@ -8797,7 +8797,7 @@ select.form-control:focus::-ms-value, select.asColorPicker-input:focus::-ms-valu
 .jsgrid .jsgrid-table .jsgrid-filter-row select:focus::-ms-value, .select2-container--default select.select2-selection--single:focus::-ms-value, .select2-container--default .select2-selection--single select.select2-search__field:focus::-ms-value, select.typeahead:focus::-ms-value,
 select.tt-query:focus::-ms-value,
 select.tt-hint:focus::-ms-value {
-  color: #e9e6e6;
+  color: #2b2e4c;
   background-color: #2b2e4c; }
 
 .form-control-file,
@@ -10805,7 +10805,7 @@ input[type="button"].btn-block {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-select:focus::-ms-value {
-      color: #e9e6e6;
+      color: #2b2e4c;
       background-color: #2b2e4c; }
   .custom-select[multiple], .custom-select[size]:not([size="1"]) {
     height: auto;
@@ -21236,7 +21236,7 @@ body.avgrund-active {
   height: auto; }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 14px;
-    color: #e9e6e6; }
+    color: #2b2e4c; }
 
 .select2-container--default .select2-dropdown {
   background: #222437;
@@ -21275,7 +21275,7 @@ body.avgrund-active {
   border: 1px solid #313452; }
   .note-editor.note-frame .note-editing-area .note-editable {
     background: transparent;
-    color: #e9e6e6; }
+    color: #2b2e4c; }
 
 .note-popover {
   border: 1px solid #313452; }
@@ -21376,7 +21376,7 @@ div.tagsinput {
 
 .mce-tinymce .mce-panel {
   background: #2b2e4c;
-  color: #e9e6e6; }
+  color: #2b2e4c; }
 
 /* Toast */
 .jq-toast-wrap .jq-icon-success {
@@ -30709,7 +30709,7 @@ pre {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
-  color: #e9e6e6;
+  color: #2b2e4c;
   background-color: #2b2e4c;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -30731,7 +30731,7 @@ pre {
   .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
   .tt-query:focus,
   .tt-hint:focus {
-    color: #e9e6e6;
+    color: #2b2e4c;
     background-color: #2b2e4c;
     border-color: #80bdff;
     outline: 0;
@@ -30756,7 +30756,7 @@ select.form-control:focus::-ms-value, select.asColorPicker-input:focus::-ms-valu
 .jsgrid .jsgrid-table .jsgrid-filter-row select:focus::-ms-value, .select2-container--default select.select2-selection--single:focus::-ms-value, .select2-container--default .select2-selection--single select.select2-search__field:focus::-ms-value, select.typeahead:focus::-ms-value,
 select.tt-query:focus::-ms-value,
 select.tt-hint:focus::-ms-value {
-  color: #e9e6e6;
+  color: #2b2e4c;
   background-color: #2b2e4c; }
 
 .form-control-file,
@@ -32764,7 +32764,7 @@ input[type="button"].btn-block {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-select:focus::-ms-value {
-      color: #e9e6e6;
+      color: #2b2e4c;
       background-color: #2b2e4c; }
   .custom-select[multiple], .custom-select[size]:not([size="1"]) {
     height: auto;
@@ -43219,7 +43219,7 @@ body.avgrund-active {
   height: auto; }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 14px;
-    color: #e9e6e6; }
+    color: #2b2e4c; }
 
 .select2-container--default .select2-dropdown {
   background: #222437;
@@ -43258,7 +43258,7 @@ body.avgrund-active {
   border: 1px solid #313452; }
   .note-editor.note-frame .note-editing-area .note-editable {
     background: transparent;
-    color: #e9e6e6; }
+    color: #2b2e4c; }
 
 .note-popover {
   border: 1px solid #313452; }
@@ -43359,7 +43359,7 @@ div.tagsinput {
 
 .mce-tinymce .mce-panel {
   background: #2b2e4c;
-  color: #e9e6e6; }
+  color: #2b2e4c; }
 
 /* Toast */
 .jq-toast-wrap .jq-icon-success {
