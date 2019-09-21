@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 function Boards({history}) {
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+    console.log(history);
     if (token === null) {
       history.push("/login");
     }

@@ -40,13 +40,13 @@ function Register({history}){
         msg: err.response.data.msg
       });
 
-    return history.push('/login');
+    return history.push('/');
   }
 
   return (
     <AuthWrapper>
-      <form class="pt-3" onSubmit={onSubmit}>
-        <div class="form-group">
+      <form className="pt-3" onSubmit={onSubmit}>
+        <div className="form-group">
           <Input
             type="text"
             onChange={onChangeInput}
@@ -56,7 +56,7 @@ function Register({history}){
             className="form-control form-control-lg"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <Input
             type="text"
             onChange={onChangeInput}
@@ -90,7 +90,7 @@ function Register({history}){
           />
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <Input
             type="password"
             onChange={onChangeInput}
@@ -105,13 +105,13 @@ function Register({history}){
           {authError.msg}
         </div> : ''}
 
-        <div class="mt-3">
+        <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
         </div>
 
-        <div class="text-center mt-4 font-weight-light">
+        <div className="text-center mt-4 font-weight-light">
           Already have an account?{" "}
-          <Link to="/login" class="text-primary">
+          <Link to="/login" className="text-primary">
             Login
           </Link>
         </div>
