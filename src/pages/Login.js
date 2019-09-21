@@ -10,7 +10,7 @@ import AuthWrapper from "../hoc/AuthWrapper";
 
 const authUri = `${config.baseUrl}/auth`;
 
-function Login() {
+function Login({history}) {
   const [authData, setAuthData] = useState({
     email: "",
     password: ""
@@ -45,6 +45,7 @@ function Login() {
     );
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("user", JSON.stringify(decodeToken));
+    history.push('/');
   };
 
   return (

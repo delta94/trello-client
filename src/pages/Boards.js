@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Boards = ({history}) => {
+function Boards({history}) {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log(token);
