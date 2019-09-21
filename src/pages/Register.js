@@ -101,6 +101,10 @@ function Register({history}){
           />
         </div>
 
+        {authError.error ? <div className="alert alert-danger" role="alert">
+          {authError.msg}
+        </div> : ''}
+
         <div class="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
         </div>
