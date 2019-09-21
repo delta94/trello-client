@@ -16,7 +16,7 @@
     @include align-items(center);
     @include flex-direction(row);
     @include flex-wrap(wrap);
-    @include justify-content(start);
+    @include justify-content(flex-start);
     li {
       margin-right: 8%;
       @include display-flex;
