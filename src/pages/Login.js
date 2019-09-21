@@ -88,9 +88,9 @@ function Login({history}) {
               Keep me signed in
             </label>
           </div>
-          <Link to="/forgot-password" className="auth-link text-black">
+          {/* <Link to="/forgot-password" className="auth-link text-black">
             Forgot password?
-          </Link>
+          </Link> */}
         </div>
         <div className="text-center mt-4 font-weight-light">
           Don't have an account?{" "}

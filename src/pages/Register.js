@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import to from 'await-to-js';
 
 import Input from '../components/forms/Input';
+import AuthWrapper from '../hoc/AuthWrapper';
 
 import { config } from '../config';
 import { http } from '../http';
@@ -43,60 +44,76 @@ function Register({history}){
   }
 
   return (
-    <div><div className="container">
-      <div className="row">
-        <form action="#" onSubmit={onSubmit} className="col-md-4 offset-md-4 auth-form">
-          <div className="auth-card">
-            <h3>Register</h3>
-            <Input
-              type="text"
-              label="First Name"
-              onChange={onChangeInput}
-              value={authData.firstname}
-              name="firstname"
-            />
-            <Input
-              type="text"
-              label="Last Name"
-              onChange={onChangeInput}
-              value={authData.lastname}
-              name="lastname"
-            />
-            <Input
-              type="text"
-              label="Username"
-              onChange={onChangeInput}
-              value={authData.username}
-              name="username"
-            />
+    <AuthWrapper>
+      <form class="pt-3" onSubmit={onSubmit}>
+        <div class="form-group">
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            value={authData.firstname}
+            name="firstname"
+            placeholder="First name"
+            className="form-control form-control-lg"
+          />
+        </div>
+        <div class="form-group">
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            value={authData.lastname}
+            name="lastname"
+            placeholder="Last name"
+            className="form-control form-control-lg"
+          />
+        </div>
 
-            <Input
-              type="email"
-              label="Email"
-              onChange={onChangeInput}
-              value={authData.email}
-              name="email"
-            />
-            <Input
-              type="password"
-              label="Password"
-              onChange={onChangeInput}
-              value={authData.password}
-              name="password"
-            />
+        <div className="form-group">
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            value={authData.username}
+            name="username"
+            placeholder="Username"
+            className="form-control form-control-lg"
+          />
+        </div>
 
-            {authError.error ? <div className="alert alert-danger" role="alert">
-              {authError.msg}
-            </div> : ''}
-            <button className="btn btn-primary">Register</button>
+        <div className="form-group">
+          <Input
+            type="email"
+            label="Email"
+            onChange={onChangeInput}
+            value={authData.email}
+            name="email"
+            placeholder="Email"
+            className="form-control form-control-lg"
+          />
+        </div>
 
-            <p className="pt-3">Already have an account? <Link to="/login">Login</Link></p>
+        <div class="form-group">
+          <Input
+            type="password"
+            onChange={onChangeInput}
+            value={authData.password}
+            name="password"
+            placeholder="Password"
+            className="form-control form-control-lg"
+          />
+        </div>
 
-          </div>
-        </form>
-      </div>
-    </div></div>
-  )
+        <div class="mt-3">
+          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
+        </div>
+
+        <div class="text-center mt-4 font-weight-light">
+          Already have an account?{" "}
+          <Link to="/login" class="text-primary">
+            Login
+          </Link>
+        </div>
+      </form>
+    </AuthWrapper>
+  );
 };
 
 export default Register;
