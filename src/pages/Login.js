@@ -31,7 +31,7 @@ function Login({history}) {
   const onSubmitForm = async e => {
     e.preventDefault();
 
-    let [err, {data}] = await to(http.post(authUri, authData));
+    let [err, response] = await to(http.post(authUri, authData));
 
     if (err)
       return setAuthError({
@@ -40,8 +40,8 @@ function Login({history}) {
       });
 
     // save it to localstorage.
-    setTokenToLocal.token(data.token);
-    setTokenToLocal.user(data.token);
+    setTokenToLocal.token(response.data.token);
+    setTokenToLocal.user(response.data.token);
     history.push('/');
   };
 
