@@ -43956,7 +43956,7 @@ div.tagsinput {
 
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
-  width: calc(100% - 210px);
+  width: 100%;
   min-height: calc(100vh - 63px);
   display: -webkit-flex;
   display: flex;
@@ -44556,7 +44556,7 @@ div.tagsinput {
           -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
   .sidebar-mini .main-panel {
-    width: calc(100% - 185px); }
+    width: 100%; }
   .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav.sub-menu {
     padding: 0;
     border-top: none; }

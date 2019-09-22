@@ -22,8 +22,12 @@ function Boards({history}) {
   }
 
   return (
-    <div className="">Board</div>
-  )
+    <div className="main-panel">
+      <div className="content-wrapper">
+        Boards
+      </div>
+    </div>
+  );
 }
 
 export default Boards;

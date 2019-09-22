@@ -54,7 +54,7 @@
     }
 
     .main-panel {
-      width: calc(100% - #{$sidebar-width-mini});
+      width: 100%;
     }
     &:not(.sidebar-icon-only) {
       //Apply these styles only when sidebar-mini is not collapsed to icon-only mode
@@ -105,7 +105,7 @@
             .nav-link {
               display: block;
               padding-left: .5rem;
-              padding-right: .5rem;            
+              padding-right: .5rem;
               text-align: center;
               position: static;
               .menu-title,
@@ -163,12 +163,12 @@
                   width: $icon-only-collapse-width;
                   z-index: 1;
                   line-height: 1.8;
-                  box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);              
+                  box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);
                   @at-root #{selector-append(".rtl", &)} {
                     left: auto;
                     right: $sidebar-width-icon;
                     text-align: left;
-                    box-shadow: -4px 0px 7px 0px rgba(182, 185, 189, 0.25);                                
+                    box-shadow: -4px 0px 7px 0px rgba(182, 185, 189, 0.25);
                   }
                   &:after {
                     display: none;
@@ -196,7 +196,7 @@
                     @include border-radius(0 0 0 5px);
                     box-shadow: -4px 4px 7px 0px rgba(182, 185, 189, 0.25);
                 }
-                .submenu { 
+                .submenu {
                   border-radius:0;
                 }
               }
