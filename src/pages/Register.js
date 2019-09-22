@@ -8,6 +8,8 @@ import AuthWrapper from '../hoc/AuthWrapper';
 import { config } from '../config';
 import { http } from '../http';
 
+import { setTokenToLocal } from '../utils/setTokenToLocal';
+
 const regUri = `${config.baseUrl}/user/register`
 
 function Register({history}){
@@ -32,13 +34,16 @@ function Register({history}){
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    let [err] = await to(http.post(regUri, authData));
+    let [err, {data}] = await to(http.post(regUri, authData));
 
     if (err)
       return setAuthError({
         error: true,
         msg: err.response.data.msg
       });
+
+    setTokenToLocal.token(data.token);
+    setTokenToLocal.user(data.token);
 
     return history.push('/');
   }
