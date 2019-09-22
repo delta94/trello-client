@@ -42,10 +42,11 @@ function Register({history}){
         msg: err.response.data.msg
       });
 
+    // Set token and user data to localstorage
     setTokenToLocal.token(data.token);
     setTokenToLocal.user(data.token);
 
-    return history.push('/');
+    history.push('/');
   }
 
   return (

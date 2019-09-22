@@ -8,6 +8,8 @@ import { http } from "../http";
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 
+import { setTokenToLocal } from "../utils/setTokenToLocal";
+
 const authUri = `${config.baseUrl}/auth`;
 
 function Login({history}) {
@@ -28,9 +30,8 @@ function Login({history}) {
 
   const onSubmitForm = async e => {
     e.preventDefault();
-    let err, response;
 
-    [err, response] = await to(http.post(authUri, authData));
+    let [err, {data}] = await to(http.post(authUri, authData));
 
     if (err)
       return setAuthError({
@@ -38,13 +39,9 @@ function Login({history}) {
         msg: err.response.data.msg
       });
 
-    // Decode token to extrac user info
-    // and save it to localstorage.
-    const decodeToken = JSON.parse(
-      window.atob(response.data.token.split(".")[1])
-    );
-    localStorage.setItem("token", response.data.token);
-    localStorage.setItem("user", JSON.stringify(decodeToken));
+    // save it to localstorage.
+    setTokenToLocal.token(data.token);
+    setTokenToLocal.user(data.token);
     history.push('/');
   };
 
