@@ -4,6 +4,8 @@ import to from 'await-to-js';
 import { config } from '../config';
 import { http } from '../http';
 
+import Layout from '../hoc/Layout';
+
 function Boards({ history }) {
   const [boardData, setBoardData] = useState([]);
 
@@ -20,11 +22,13 @@ function Boards({ history }) {
 
   const getBoards = async () => {
     let [, response] =  await to(http.get(`${config.baseUrl}/board`));
-    setBoardData([...boardData, response.data]);
+    return setBoardData(response.data);
   }
 
+  console.log(boardData);
+
   const RenderBoard = ({data}) => {
-    return data.map(board => <div className="col-lg-4" key={board.id}>
+    return data.map((board, index) => <div className="col-lg-3" key={index}>
       <div className="card">
         <div className="card-body">
           <h4 className="card-title">{board.name}</h4>
@@ -34,19 +38,18 @@ function Boards({ history }) {
   }
 
   return (
-    <div className="container-fluid page-body-wrapper">
-      <div className="main-panel">
-        <div className="content-wrapper">
-          <div className="row">
-            {boardData.length > 0 ? (
-              <RenderBoard data={boardData} />
-            ) : (
-              <h3>You haven't created board yet.</h3>
-            )}
-          </div>
+    <Layout>
+      <div className="row">
+        <div className="col-md-12">
+          <h3>Boards</h3>
         </div>
+        {boardData && boardData.length > 0 ? (
+          <RenderBoard data={boardData} />
+        ) : (
+          <h3>You haven't created a board yet.</h3>
+        )}
       </div>
-    </div>
+    </Layout>
   );
 }
 
