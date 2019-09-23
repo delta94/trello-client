@@ -30,13 +30,17 @@ function Boards({ history }) {
   };
 
 
-  const RenderBoard = ({ data }) => {
+  const RenderBoard = ({ data, onClickBoard }) => {
     return data.map((board, index) => (
       <div className="col-lg-3" key={index}>
-        <Card name={board.name} />
+        <Card name={board.name} onClick={() => onClickBoard(board)}/>
       </div>
     ));
   };
+
+  const getSingleBoard = (id) => {
+    console.log(id);
+  }
 
   return (
     <Layout>
@@ -45,7 +49,7 @@ function Boards({ history }) {
           <h3>Boards</h3>
         </div>
         {boardData && boardData.length > 0 ? (
-          <RenderBoard data={boardData} />
+          <RenderBoard data={boardData} onClickBoard={getSingleBoard} />
         ) : null}
         <div className="col-lg-3">
           <Card name="Create new board" />
