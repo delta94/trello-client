@@ -5,9 +5,14 @@ import { config } from '../config';
 import { http } from '../http';
 
 import Layout from '../hoc/Layout';
+import Card from '../components/card/Card';
 
 function Boards({ history }) {
   const [boardData, setBoardData] = useState([]);
+
+  useEffect(() => {
+    getBoards();
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -16,38 +21,35 @@ function Boards({ history }) {
     }
   }, []);
 
-  useEffect(() => {
-    getBoards();
-  }, []);
-
   const getBoards = async () => {
-    let [, response] =  await to(http.get(`${config.baseUrl}/board`));
-    return setBoardData(response.data);
-  }
+    let [err, response] =
+      await to(http.get(`${config.baseUrl}/board`));
 
-  console.log(boardData);
+    if (err) return err.response;
+    setBoardData(response.data);
+  };
 
-  const RenderBoard = ({data}) => {
-    return data.map((board, index) => <div className="col-lg-3" key={index}>
-      <div className="card">
-        <div className="card-body">
-          <h4 className="card-title">{board.name}</h4>
-        </div>
+
+  const RenderBoard = ({ data }) => {
+    return data.map((board, index) => (
+      <div className="col-lg-3" key={index}>
+        <Card name={board.name} />
       </div>
-    </div>)
-  }
+    ));
+  };
 
   return (
     <Layout>
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 mb-4">
           <h3>Boards</h3>
         </div>
         {boardData && boardData.length > 0 ? (
           <RenderBoard data={boardData} />
-        ) : (
-          <h3>You haven't created a board yet.</h3>
-        )}
+        ) : null}
+        <div className="col-lg-3">
+          <Card name="Create new board" />
+        </div>
       </div>
     </Layout>
   );
