@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../img/logo.svg';
 
 function Header({user}) {
   return (
     <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
-        <Link className="navbar-brand brand-logo" to="/"><img src="images/logo.svg" alt="logo"/></Link>
+        <Link className="navbar-brand brand-logo" to="/"><img src={logo} alt="logo"/></Link>
 
         <button className="navbar-toggler align-self-center" type="button" data-toggle="minimize">
         <span className="mdi mdi-menu"></span>

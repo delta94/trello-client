@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../img/logo-color.svg';
 
 const AuthWrapper = ({ children }) => (
   <div className="container-fluid page-body-wrapper full-page-wrapper">
@@ -7,7 +8,7 @@ const AuthWrapper = ({ children }) => (
         <div className="col-lg-4 mx-auto">
           <div className="auth-form-light text-left py-5 px-4 px-sm-5">
             <div className="brand-logo">
-              {/* Logo should be here with image tag */}
+              <img src={logo} alt=""/>
             </div>
 
             {children}
