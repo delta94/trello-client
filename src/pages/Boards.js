@@ -5,10 +5,8 @@ import { config } from '../config';
 import { http } from '../http';
 
 import Layout from '../hoc/Layout';
-import Card from '../components/card/Card';
-import Modal from '../components/modal/Modal';
-import Input from '../components/forms/Input';
 import RenderBoard from '../components/board/RenderBoard';
+import CreateBoard from '../components/board/CreateBoard';
 
 import { ModalContext } from '../context/modalContext';
 
@@ -82,25 +80,14 @@ function Boards({ history }) {
           <RenderBoard data={boardData} onClickBoard={getSingleBoard} />
         ) : null}
         <div className="col-lg-3">
-          <Card name="Create new board" onClick={openModal} />
-
-          <Modal show={show} onClose={closeModal} title="Create Board">
-            <form action="" onSubmit={createBoard}>
-              <Input
-                label="Board Name"
-                name="name"
-                onChange={onInputChange}
-                className="form-control white"
-                value={boardName.name}
-                type="text"
-              />
-
-              <button type="submit" className="btn btn-success">
-                Create Board
-              </button>
-            </form>
-          </Modal>
-
+          <CreateBoard
+            modalOpen={openModal}
+            show={show}
+            modalClsoe={closeModal}
+            onSubmit={createBoard}
+            onChange={onInputChange}
+            value={boardName.name}
+          />
         </div>
       </div>
     </Layout>
