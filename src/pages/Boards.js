@@ -8,6 +8,7 @@ import Layout from '../hoc/Layout';
 import Card from '../components/card/Card';
 import Modal from '../components/modal/Modal';
 import Input from '../components/forms/Input';
+import RenderBoard from '../components/board/RenderBoard';
 
 import { ModalContext } from '../context/modalContext';
 
@@ -40,9 +41,6 @@ function Boards({ history }) {
     setBoardData(response.data);
   };
 
-
-
-
   /**
    * gets the single board data
    * route change to single board
@@ -72,18 +70,6 @@ function Boards({ history }) {
     setPostBoard(!postBoard);
 
     closeModal();
-  }
-
-  // Render Board component
-  const RenderBoard = ({ data, onClickBoard }) => {
-    return data.map((board, index) => (
-      <div className="col-lg-3 mb-4" key={index}>
-        <Card
-          name={board.name}
-          onClick={() => onClickBoard(board._id)}
-        />
-      </div>
-    ));
   };
 
   return (
