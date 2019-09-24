@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ModalContextProvider from './context/modalContext';
 
 
 import RouterComponent from "./routes";
@@ -14,7 +15,9 @@ function App({location}) {
       {location.pathname !== '/login' && location.pathname !== '/register'
         ? <Header user={user} /> : null
       }
-      <RouterComponent />
+      <ModalContextProvider>
+        <RouterComponent />
+      </ModalContextProvider>
     </div>
   );
 }

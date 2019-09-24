@@ -1,9 +1,17 @@
 /* Modals */
 
 .modal{
+  display: block;
+  opacity: 0;
+  visibility: hidden;
   &.show {
-    display: block;
+    opacity: 1;
+    visibility: visible;
     background: rgba(#000, .4);
+    .modal-dialog {
+      transform: translate(0, 0);
+
+    }
   }
   .modal-dialog{
     margin-top: 100px;

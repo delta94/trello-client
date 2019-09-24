@@ -20,7 +20,7 @@ const Modal = ({ children, show, title, onClose }) => {
               className="close"
               data-dismiss="modal"
               aria-label="Close"
-              onClose={() => show = false}
+              onClick={onClose}
             >
               <span aria-hidden="true">&times;</span>
             </button>
