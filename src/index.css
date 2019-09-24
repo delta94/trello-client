@@ -18591,6 +18591,10 @@ dl {
     opacity: 0.2; }
 
 /* Modals */
+.modal.show {
+  display: block;
+  background: rgba(0, 0, 0, 0.4); }
+
 .modal .modal-dialog {
   margin-top: 100px; }
   .modal .modal-dialog .modal-content .modal-header {
@@ -40574,6 +40578,10 @@ dl {
     opacity: 0.2; }
 
 /* Modals */
+.modal.show {
+  display: block;
+  background: rgba(0, 0, 0, 0.4); }
+
 .modal .modal-dialog {
   margin-top: 100px; }
   .modal .modal-dialog .modal-content .modal-header {

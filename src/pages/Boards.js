@@ -6,6 +6,7 @@ import { http } from '../http';
 
 import Layout from '../hoc/Layout';
 import Card from '../components/card/Card';
+import Modal from '../components/modal/Modal';
 
 function Boards({ history }) {
   const [boardData, setBoardData] = useState([]);
@@ -54,6 +55,7 @@ function Boards({ history }) {
       <div className="row">
         <div className="col-md-12 mb-4">
           <h3>Boards</h3>
+          <Modal show={true} />
         </div>
         {boardData && boardData.length > 0 ? (
           <RenderBoard

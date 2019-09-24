@@ -1,6 +1,10 @@
 /* Modals */
 
 .modal{
+  &.show {
+    display: block;
+    background: rgba(#000, .4);
+  }
   .modal-dialog{
     margin-top: 100px;
     .modal-content{
