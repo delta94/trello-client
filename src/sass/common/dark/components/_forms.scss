@@ -21,6 +21,10 @@
   font-weight: 400;
   font-size: $input-font-size;
   height: auto;
+
+  &.white {
+    color: #e9e6e6 !important;
+  }
 }
 
 select {

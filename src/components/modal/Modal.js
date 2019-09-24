@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = ({ children, show, title, onClose }) => {
+const Modal = ({ children, show, title, onClose, footer }) => {
   return (
     <div
       className={show ? "modal fade show" : "modal fade"}
@@ -26,22 +26,24 @@ const Modal = ({ children, show, title, onClose }) => {
             </button>
           </div>
           <div className="modal-body">{children}</div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-success">
-              Send message
-            </button>
-            <button
-              type="button"
-              className="btn btn-light"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+          {footer ? (
+            <div className="modal-footer">
+              <button type="button" className="btn btn-success">
+                Send message
+              </button>
+              <button
+                type="button"
+                className="btn btn-light"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Modal;

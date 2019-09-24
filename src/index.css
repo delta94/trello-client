@@ -17656,6 +17656,11 @@ code {
   font-weight: 400;
   font-size: 0.875rem;
   height: auto; }
+  .form-control.white, .white.asColorPicker-input, .dataTables_wrapper select.white, .jsgrid .jsgrid-table .jsgrid-filter-row input.white[type=text],
+  .jsgrid .jsgrid-table .jsgrid-filter-row select.white, .jsgrid .jsgrid-table .jsgrid-filter-row input.white[type=number], .select2-container--default .white.select2-selection--single, .select2-container--default .select2-selection--single .white.select2-search__field, .white.typeahead,
+  .white.tt-query,
+  .white.tt-hint {
+    color: #e9e6e6 !important; }
 
 select.form-control, select.asColorPicker-input, .dataTables_wrapper select,
 .jsgrid .jsgrid-table .jsgrid-filter-row select, .select2-container--default select.select2-selection--single, .select2-container--default .select2-selection--single select.select2-search__field, select.typeahead,
@@ -39649,6 +39654,11 @@ code {
   font-weight: 400;
   font-size: 0.875rem;
   height: auto; }
+  .form-control.white, .white.asColorPicker-input, .dataTables_wrapper select.white, .jsgrid .jsgrid-table .jsgrid-filter-row input.white[type=text],
+  .jsgrid .jsgrid-table .jsgrid-filter-row select.white, .jsgrid .jsgrid-table .jsgrid-filter-row input.white[type=number], .select2-container--default .white.select2-selection--single, .select2-container--default .select2-selection--single .white.select2-search__field, .white.typeahead,
+  .white.tt-query,
+  .white.tt-hint {
+    color: #e9e6e6 !important; }
 
 select.form-control, select.asColorPicker-input, .dataTables_wrapper select,
 .jsgrid .jsgrid-table .jsgrid-filter-row select, .select2-container--default select.select2-selection--single, .select2-container--default .select2-selection--single select.select2-search__field, select.typeahead,

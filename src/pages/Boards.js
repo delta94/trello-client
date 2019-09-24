@@ -7,17 +7,21 @@ import { http } from '../http';
 import Layout from '../hoc/Layout';
 import Card from '../components/card/Card';
 import Modal from '../components/modal/Modal';
+import Input from '../components/forms/Input';
 
 import { ModalContext } from '../context/modalContext';
 
 function Boards({ history }) {
   const [boardData, setBoardData] = useState([]);
+  const [boardName, setBoardName] = useState({name: ''});
+  const [postBoard, setPostBoard] = useState(false);
 
   const {show, openModal, closeModal} = useContext(ModalContext);
 
   useEffect(() => {
+    console.log("change board");
     getBoards();
-  }, []);
+  }, [postBoard]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,24 +31,17 @@ function Boards({ history }) {
   }, []);
 
   const getBoards = async () => {
+    //let boards = [...boardData];
     let [err, response] =
       await to(http.get(`${config.baseUrl}/board`));
+    console.log(response.data);
 
     if (err) return err.response;
     setBoardData(response.data);
   };
 
 
-  const RenderBoard = ({ data, onClickBoard }) => {
-    return data.map((board, index) => (
-      <div className="col-lg-3" key={index}>
-        <Card
-          name={board.name}
-          onClick={() => onClickBoard(board._id)}
-        />
-      </div>
-    ));
-  };
+
 
   /**
    * gets the single board data
@@ -53,6 +50,41 @@ function Boards({ history }) {
   const getSingleBoard = (id) => {
     console.log(id);
   }
+
+  /**
+   * onInputChage method
+   * on creating Board
+   */
+  const onInputChange = e =>
+    setBoardName({[e.target.name]: e.target.value});
+
+  /**
+   * Post request to server
+   * when createBoard call
+   */
+  const createBoard = async (e) => {
+    e.preventDefault();
+
+    let [, response] = await to(http.post(
+      `${config.baseUrl}/board/create`, boardName));
+
+    setBoardData(boardData.concat(response.data));
+    setPostBoard(!postBoard);
+
+    closeModal();
+  }
+
+  // Render Board component
+  const RenderBoard = ({ data, onClickBoard }) => {
+    return data.map((board, index) => (
+      <div className="col-lg-3 mb-4" key={index}>
+        <Card
+          name={board.name}
+          onClick={() => onClickBoard(board._id)}
+        />
+      </div>
+    ));
+  };
 
   return (
     <Layout>
@@ -65,7 +97,24 @@ function Boards({ history }) {
         ) : null}
         <div className="col-lg-3">
           <Card name="Create new board" onClick={openModal} />
-          <Modal show={show} onClose={closeModal} />
+
+          <Modal show={show} onClose={closeModal} title="Create Board">
+            <form action="" onSubmit={createBoard}>
+              <Input
+                label="Board Name"
+                name="name"
+                onChange={onInputChange}
+                className="form-control white"
+                value={boardName.name}
+                type="text"
+              />
+
+              <button type="submit" className="btn btn-success">
+                Create Board
+              </button>
+            </form>
+          </Modal>
+
         </div>
       </div>
     </Layout>
