@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import to from 'await-to-js';
 
-import { clearLocalStorage } from '../utils/localStorage';
-
-import { config } from '../config';
 import { http } from '../http';
 
 import Layout from '../hoc/Layout';
@@ -19,8 +16,6 @@ function Boards({ history }) {
 
   const {show, openModal, closeModal} = useContext(ModalContext);
 
-
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token === null) {
@@ -31,22 +26,15 @@ function Boards({ history }) {
   }, [postBoard]);
 
   const getBoards = async () => {
-    //let boards = [...boardData];
     let [err, response] = await to(
       http.get('/board')
     );
 
-    //console.log(err.response);
+    // Check error and token validation
+    if (err !== null && err.response.data.invalid)
+      return history.push('/login')
 
-    if (err !== null && err.response.data) {
-      console.log(err.response)
-      //return clearLocalStorage();
-    }
-
-    if (response) {
-      console.log(response)
-      setBoardData(response.data);
-    }
+    setBoardData(response.data);
   };
 
   /**
@@ -71,10 +59,9 @@ function Boards({ history }) {
   const createBoard = async (e) => {
     e.preventDefault();
 
-    let [err, response] = await to(http.post(
-      `${config.baseUrl}/board/create`, boardName));
+    let [, response] = await to(http.post(
+      '/board/create', boardName));
 
-    console.log(response);
 
     setBoardData(boardData.concat(response.data));
     setPostBoard(!postBoard);

@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import to from "await-to-js";
 
-import { config } from "../config";
 import { http } from "../http";
 import { setTokenToLocal } from "../utils/localStorage";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 import Error from '../components/FormError';
-
-// Request url
-const authUri = `${config.baseUrl}/auth`;
 
 function Login({history}) {
   const [authData, setAuthData] = useState({
@@ -36,7 +32,7 @@ function Login({history}) {
       password: authData.password
     }
 
-    let [err, response] = await to(http.post(authUri, data));
+    let [err, response] = await to(http.post('/auth', data));
 
     if (err)
       return setAuthData({

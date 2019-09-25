@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import to from "await-to-js";
 
-import { config } from "../config";
 import { http } from "../http";
 import { setTokenToLocal } from "../utils/localStorage";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 import Error from "../components/FormError";
-
-const regUri = `${config.baseUrl}/user/register`;
 
 function Register({ history }) {
   const [authData, setAuthData] = useState({
@@ -34,7 +31,7 @@ function Register({ history }) {
   const onSubmit = async e => {
     e.preventDefault();
 
-    let [err, response] = await to(http.post(regUri, authData));
+    let [err, response] = await to(http.post('/user/register', authData));
 
     if (err)
       return setAuthError({
