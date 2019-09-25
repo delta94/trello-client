@@ -76,14 +76,17 @@ function Boards({ history }) {
         <div className="col-md-12 mb-4">
           <h3>Boards</h3>
         </div>
-        {boardData && boardData.length > 0 ? (
-          <RenderBoard data={boardData} onClickBoard={getSingleBoard} />
-        ) : null}
+        {boardData && boardData.length > 0 ?
+          boardData.map((board, index) => <RenderBoard
+            key={index}
+            board={board}
+            onClickBoard={getSingleBoard} />)
+         : null}
         <div className="col-lg-3">
           <CreateBoard
             modalOpen={openModal}
             show={show}
-            modalClsoe={closeModal}
+            modalClose={closeModal}
             onSubmit={createBoard}
             onChange={onInputChange}
             value={boardName.name}
