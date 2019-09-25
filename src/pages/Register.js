@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import to from 'await-to-js';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import to from "await-to-js";
 
-import Input from '../components/forms/Input';
-import AuthWrapper from '../hoc/AuthWrapper';
+import { config } from "../config";
+import { http } from "../http";
+import { setTokenToLocal } from "../utils/setTokenToLocal";
 
-import { config } from '../config';
-import { http } from '../http';
+import Input from "../components/forms/Input";
+import AuthWrapper from "../hoc/AuthWrapper";
+import Error from "../components/FormError";
 
-import { setTokenToLocal } from '../utils/setTokenToLocal';
+const regUri = `${config.baseUrl}/user/register`;
 
-const regUri = `${config.baseUrl}/user/register`
-
-function Register({history}){
+function Register({ history }) {
   const [authData, setAuthData] = useState({
     username: '',
     firstname: '',
@@ -26,15 +26,16 @@ function Register({history}){
     msg: ''
   });
 
-  const onChangeInput = (e) => {
+  // Grab value from input change
+  const onChangeInput = e => {
     const { name, value } = e.target;
     setAuthData({ ...authData, [name]: value });
-  }
+  };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
 
-    let [err, {data}] = await to(http.post(regUri, authData));
+    let [err, response] = await to(http.post(regUri, authData));
 
     if (err)
       return setAuthError({
@@ -43,11 +44,11 @@ function Register({history}){
       });
 
     // Set token and user data to localstorage
-    setTokenToLocal.token(data.token);
-    setTokenToLocal.user(data.token);
+    setTokenToLocal.token(response.data.token);
+    setTokenToLocal.user(response.data.token);
 
-    history.push('/');
-  }
+    return history.push('/');
+  };
 
   return (
     <AuthWrapper>
@@ -107,12 +108,12 @@ function Register({history}){
           />
         </div>
 
-        {authError.error ? <div className="alert alert-danger" role="alert">
-          {authError.msg}
-        </div> : ''}
+        <Error error={authError.error} msg={authError.msg} />
 
         <div className="mt-3">
-          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
+          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+            Register
+          </button>
         </div>
 
         <div className="text-center mt-4 font-weight-light">
@@ -124,6 +125,6 @@ function Register({history}){
       </form>
     </AuthWrapper>
   );
-};
+}
 
 export default Register;
