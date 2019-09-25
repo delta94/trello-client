@@ -19,28 +19,34 @@ function Boards({ history }) {
 
   const {show, openModal, closeModal} = useContext(ModalContext);
 
-  useEffect(() => {
-    getBoards();
-  }, [postBoard]);
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token === null) {
       history.push("/login");
+    } else {
+      getBoards();
     }
-  }, []);
+  }, [postBoard]);
 
   const getBoards = async () => {
     //let boards = [...boardData];
-    let [err, response] =
-      await to(http.get(`${config.baseUrl}/board`));
+    let [err, response] = await to(
+      http.get('/board')
+    );
 
-    console.log(err.response);
+    //console.log(err.response);
 
-    if (err.response.data.invalidToken)
-      return clearLocalStorage();
+    if (err !== null && err.response.data) {
+      console.log(err.response)
+      //return clearLocalStorage();
+    }
 
-    setBoardData(response.data);
+    if (response) {
+      console.log(response)
+      setBoardData(response.data);
+    }
   };
 
   /**
@@ -67,6 +73,8 @@ function Boards({ history }) {
 
     let [err, response] = await to(http.post(
       `${config.baseUrl}/board/create`, boardName));
+
+    console.log(response);
 
     setBoardData(boardData.concat(response.data));
     setPostBoard(!postBoard);
