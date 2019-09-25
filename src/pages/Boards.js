@@ -61,12 +61,12 @@ function Boards({ history }) {
   const createBoard = async (e) => {
     e.preventDefault();
 
-    let [, response] = await to(http.post(
+    let [err, response] = await to(http.post(
       `${config.baseUrl}/board/create`, boardName));
 
     setBoardData(boardData.concat(response.data));
     setPostBoard(!postBoard);
-
+    // Close modal when done
     closeModal();
   };
 
@@ -82,6 +82,7 @@ function Boards({ history }) {
             board={board}
             onClickBoard={getSingleBoard} />)
          : null}
+
         <div className="col-lg-3">
           <CreateBoard
             modalOpen={openModal}

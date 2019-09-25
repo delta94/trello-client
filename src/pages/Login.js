@@ -2,39 +2,46 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import to from "await-to-js";
 
+import { setTokenToLocal } from "../utils/setTokenToLocal";
+
 import { config } from "../config";
 import { http } from "../http";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
+import Error from '../components/FormError';
 
-import { setTokenToLocal } from "../utils/setTokenToLocal";
-
+// Request url
 const authUri = `${config.baseUrl}/auth`;
 
 function Login({history}) {
   const [authData, setAuthData] = useState({
     email: "",
-    password: ""
-  });
-
-  const [authError, setAuthError] = useState({
+    password: "",
     error: false,
-    msg: ""
+    msg: ''
   });
 
+  // From input change populate authData state
   const onInputChange = e => {
     const { name, value } = e.target;
     setAuthData({ ...authData, [name]: value });
   };
 
+  // Submit form with
   const onSubmitForm = async e => {
     e.preventDefault();
 
-    let [err, response] = await to(http.post(authUri, authData));
+    const data = {
+      email: authData.email,
+      password: authData.password
+    }
+
+    let [err, response] = await to(http.post(authUri, data));
 
     if (err)
-      return setAuthError({
+      return setAuthData({
+        ...authData,
         error: true,
         msg: err.response.data.msg
       });
@@ -42,7 +49,8 @@ function Login({history}) {
     // save it to localstorage.
     setTokenToLocal.token(response.data.token);
     setTokenToLocal.user(response.data.token);
-    history.push('/');
+
+    return history.push('/');
   };
 
   return (
@@ -69,9 +77,7 @@ function Login({history}) {
           />
         </div>
 
-        {authError.error ? <div className="alert alert-danger" role="alert">
-          {authError.msg}
-        </div> : ''}
+        <Error error={authData.error} msg={authData.msg}/>
 
         <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
