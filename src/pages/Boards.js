@@ -18,7 +18,6 @@ function Boards({ history }) {
   const {show, openModal, closeModal} = useContext(ModalContext);
 
   useEffect(() => {
-    console.log("change board");
     getBoards();
   }, [postBoard]);
 
@@ -33,7 +32,8 @@ function Boards({ history }) {
     //let boards = [...boardData];
     let [err, response] =
       await to(http.get(`${config.baseUrl}/board`));
-    console.log(response.data);
+
+    console.log(err.response);
 
     if (err) return err.response;
     setBoardData(response.data);

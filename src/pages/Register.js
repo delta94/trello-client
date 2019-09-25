@@ -26,7 +26,6 @@ function Register({ history }) {
     msg: ''
   });
 
-  // Grab value from input change
   const onChangeInput = e => {
     const { name, value } = e.target;
     setAuthData({ ...authData, [name]: value });
