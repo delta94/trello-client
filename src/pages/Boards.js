@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import to from 'await-to-js';
 
+import { clearLocalStorage } from '../utils/localStorage';
+
 import { config } from '../config';
 import { http } from '../http';
 
@@ -35,7 +37,9 @@ function Boards({ history }) {
 
     console.log(err.response);
 
-    if (err) return err.response;
+    if (err.response.data.invalidToken)
+      return clearLocalStorage();
+
     setBoardData(response.data);
   };
 

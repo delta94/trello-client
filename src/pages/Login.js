@@ -4,7 +4,7 @@ import to from "await-to-js";
 
 import { config } from "../config";
 import { http } from "../http";
-import { setTokenToLocal } from "../utils/setTokenToLocal";
+import { setTokenToLocal } from "../utils/localStorage";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";

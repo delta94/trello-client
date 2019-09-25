@@ -1,9 +1,10 @@
+
 /**
  * setTokenToLocal
  * use localstorage to store token
  * when login/register api calls
  */
-const setTokenToLocal = {
+export const setTokenToLocal = {
   token: value => localStorage.setItem("token", value),
   user: value => {
     const token = JSON.parse(window.atob(value.split(".")[1]));
@@ -11,4 +12,8 @@ const setTokenToLocal = {
   }
 };
 
-export { setTokenToLocal };
+// Get user data from localstorage
+export const getUserFromLocal = () => localStorage.getItem("user");
+
+// Clear local storage
+export const clearLocalStorage = () => localStorage.clear();

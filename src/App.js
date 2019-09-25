@@ -6,7 +6,7 @@ import ModalContextProvider from './context/modalContext';
 import RouterComponent from "./routes";
 import Header from './components/Header';
 
-import { getUserFromLocal } from './utils/getUserFromLocal';
+import { getUserFromLocal } from './utils/localStorage';
 
 function App({location}) {
   const user = getUserFromLocal();
