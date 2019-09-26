@@ -13,7 +13,7 @@ export const setTokenToLocal = {
 };
 
 // Get user data from localstorage
-export const getUserFromLocal = () => localStorage.getItem("user");
+export const getItemFromLocal = (item) => localStorage.getItem(item);
 
 // Clear local storage
 export const clearLocalStorage = () => localStorage.clear();
