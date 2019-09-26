@@ -62,8 +62,7 @@ function Boards({ history }) {
     let [, response] = await to(http.post(
       '/board/create', boardName));
 
-
-    setBoardData(boardData.concat(response.data));
+    setBoardData([...boardData, response.data]);
     setPostBoard(!postBoard);
     // Close modal when done
     closeModal();
