@@ -32,19 +32,17 @@ function Boards({ history, match }) {
 
     // Check error and token validation
     if (err !== null && err.response.data.invalid)
-      return history.push('/login')
+      return history.push("/login");
 
-    setBoardData(response.data);
+
+      setBoardData(response.data);
   };
 
   /**
    * gets the single board data
    * route change to single board
    */
-  const getSingleBoard = (id) => {
-    console.log(id);
-    return history.push(`/board/${id}`);
-  }
+  const getSingleBoard = (id) => history.push(`/board/${id}`);
 
   /**
    * onInputChage method

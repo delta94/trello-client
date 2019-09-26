@@ -22,10 +22,25 @@ function SingleBoard({ match }) {
     setSingleBoard(response.data.board);
   };
 
+  const changeTitle = async e => {
+    setSingleBoard({
+      ...singleBoard,
+      name: e.currentTarget.textContent
+    });
+
+    let [err, response] = await to(http.put(`/board/${id}`, singleBoard));
+    console.log(response);
+  }
+
+
   return (
     <Layout>
       <div className="single-board">
-        <h3 contentEditable suppressContentEditableWarning={true}>
+        <h3
+          contentEditable
+          suppressContentEditableWarning={true}
+          onBlur={changeTitle}
+        >
           {singleBoard.name}
         </h3>
       </div>
