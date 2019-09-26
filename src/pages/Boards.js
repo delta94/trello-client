@@ -9,7 +9,7 @@ import CreateBoard from '../components/board/CreateBoard';
 
 import { ModalContext } from '../context/modalContext';
 
-function Boards({ history }) {
+function Boards({ history, match }) {
   const [boardData, setBoardData] = useState([]);
   const [boardName, setBoardName] = useState({name: ''});
   const [postBoard, setPostBoard] = useState(false);
@@ -43,6 +43,7 @@ function Boards({ history }) {
    */
   const getSingleBoard = (id) => {
     console.log(id);
+    return history.push(`/board/${id}`);
   }
 
   /**
