@@ -6,7 +6,7 @@ import { http } from '../http';
 import Layout from '../hoc/Layout';
 
 function SingleBoard({ match }) {
-  const [singleBoard, setSingleBoard] = useState({});
+  const [board, setBoard] = useState({});
 
   const id = match.params.id;
 
@@ -19,19 +19,18 @@ function SingleBoard({ match }) {
     if (err) return err.response;
 
     console.log(response.data.board);
-    setSingleBoard(response.data.board);
+    setBoard(response.data.board);
   };
 
   const changeTitle = async e => {
-    setSingleBoard({
-      ...singleBoard,
+    setBoard({
+      ...board,
       name: e.currentTarget.textContent
     });
 
-    let [, response] = await to(http.put(`/board/${id}`, singleBoard));
+    let [, response] = await to(http.put(`/board/${id}`, board));
     console.log(response);
   }
-
 
   return (
     <Layout>
@@ -41,7 +40,7 @@ function SingleBoard({ match }) {
           suppressContentEditableWarning={true}
           onBlur={changeTitle}
         >
-          {singleBoard.name}
+          {board.name}
         </h3>
       </div>
     </Layout>

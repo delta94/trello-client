@@ -17279,6 +17279,7 @@ code {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
+  cursor: pointer;
   border: none; }
   .card .card-body {
     padding: 1.875rem 1.875rem; }
@@ -39277,6 +39278,7 @@ code {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
+  cursor: pointer;
   border: none; }
   .card .card-body {
     padding: 1.875rem 1.875rem; }

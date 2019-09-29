@@ -1,7 +1,8 @@
 import React from 'react';
-import Card from '../card/Card';
+import Card from './BoardCard';
 import Modal from '../modal/Modal';
 import Input from '../forms/Input';
+import Error from "../FormError";
 
 const CreateBoard = (props) => (
   <>
@@ -17,6 +18,8 @@ const CreateBoard = (props) => (
           value={props.value}
           type="text"
         />
+
+        <Error error={props.error} msg={props.errorMsg} />
 
         <button type="submit" className="btn btn-success">
           Create Board

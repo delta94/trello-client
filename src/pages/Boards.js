@@ -11,7 +11,11 @@ import { ModalContext } from '../context/modalContext';
 
 function Boards({ history, match }) {
   const [boardData, setBoardData] = useState([]);
-  const [boardName, setBoardName] = useState({name: ''});
+  const [board, setBoard] = useState({
+    name: '',
+    error: false,
+    msg: ''
+  });
   const [postBoard, setPostBoard] = useState(false);
 
   const {show, openModal, closeModal} = useContext(ModalContext);
@@ -34,22 +38,22 @@ function Boards({ history, match }) {
     if (err !== null && err.response.data.invalid)
       return history.push("/login");
 
-
-      setBoardData(response.data);
+     setBoardData(response.data);
   };
 
   /**
    * gets the single board data
    * route change to single board
    */
-  const getSingleBoard = (id) => history.push(`/board/${id}`);
+  const getSingleBoard = (id) =>
+    history.push(`/board/${id}`);
 
   /**
    * onInputChage method
    * on creating Board
    */
   const onInputChange = e =>
-    setBoardName({[e.target.name]: e.target.value});
+    setBoard({ [e.target.name]: e.target.value });
 
   /**
    * Post request to server
@@ -58,8 +62,15 @@ function Boards({ history, match }) {
   const createBoard = async (e) => {
     e.preventDefault();
 
-    let [, response] = await to(http.post(
-      '/board/create', boardName));
+    let [err, response] = await to(http.post(
+      '/board/create', board.name));
+
+    if (err)
+      return setBoard({
+        ...board,
+        error: true,
+        msg: err.response.data.msg
+      });
 
     setBoardData([...boardData, response.data]);
     setPostBoard(!postBoard);
@@ -87,7 +98,9 @@ function Boards({ history, match }) {
             modalClose={closeModal}
             onSubmit={createBoard}
             onChange={onInputChange}
-            value={boardName.name}
+            value={board.name}
+            error={board.error}
+            errorMsg={board.msg}
           />
         </div>
       </div>
