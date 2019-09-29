@@ -9,17 +9,19 @@ import CreateBoard from '../components/board/CreateBoard';
 
 import { ModalContext } from '../context/modalContext';
 
-function Boards({ history, match }) {
+function Boards({ history }) {
   const [boardData, setBoardData] = useState([]);
-  const [board, setBoard] = useState({
-    name: '',
-    error: false,
-    msg: ''
-  });
+  const [board, setBoard] = useState({ name: ''});
   const [postBoard, setPostBoard] = useState(false);
 
   const {show, openModal, closeModal} = useContext(ModalContext);
 
+  /**
+   * Check token available on localstorage
+   * or not, if not redirect to login page
+   * otherwise fetch boards data and
+   * set to state
+   */
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token === null) {
@@ -29,6 +31,7 @@ function Boards({ history, match }) {
     }
   }, [postBoard]);
 
+  // Get all boards
   const getBoards = async () => {
     let [err, response] = await to(
       http.get('/board')
@@ -38,7 +41,7 @@ function Boards({ history, match }) {
     if (err !== null && err.response.data.invalid)
       return history.push("/login");
 
-     setBoardData(response.data);
+    setBoardData(response.data);
   };
 
   /**
@@ -50,10 +53,10 @@ function Boards({ history, match }) {
 
   /**
    * onInputChage method
-   * on creating Board
+   * for creating Board
    */
   const onInputChange = e =>
-    setBoard({ [e.target.name]: e.target.value });
+    setBoard({ name: e.target.value });
 
   /**
    * Post request to server
@@ -65,12 +68,14 @@ function Boards({ history, match }) {
     let [err, response] = await to(http.post(
       '/board/create', board.name));
 
-    if (err)
+    //console.log(err.response, response)
+
+    if (err !== null)
       return setBoard({
-        ...board,
         error: true,
         msg: err.response.data.msg
       });
+
 
     setBoardData([...boardData, response.data]);
     setPostBoard(!postBoard);
@@ -99,8 +104,6 @@ function Boards({ history, match }) {
             onSubmit={createBoard}
             onChange={onInputChange}
             value={board.name}
-            error={board.error}
-            errorMsg={board.msg}
           />
         </div>
       </div>

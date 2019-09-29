@@ -12,6 +12,7 @@ const http = axios.create({
 http.interceptors.request.use(
   function(config) {
     const token = localStorage.getItem('token');
+    config.headers["Access-Control-Allow-Origin"] = '*';
     if (token) config.headers['x-auth-token'] = token;
     return config;
   },
