@@ -9,9 +9,13 @@ import CreateBoard from '../components/board/CreateBoard';
 
 import { ModalContext } from '../context/modalContext';
 
-function Boards({ history }) {
+function Boards({ history, match }) {
   const [boardData, setBoardData] = useState([]);
-  const [board, setBoard] = useState({ name: ''});
+  const [board, setBoard] = useState({
+    name: '',
+    error: false,
+    msg: ''
+  });
   const [postBoard, setPostBoard] = useState(false);
 
   const {show, openModal, closeModal} = useContext(ModalContext);
@@ -66,12 +70,11 @@ function Boards({ history }) {
     e.preventDefault();
 
     let [err, response] = await to(http.post(
-      '/board/create', board.name));
-
-    //console.log(err.response, response)
+      '/board/create', { name: board.name }));
 
     if (err !== null)
       return setBoard({
+        ...board,
         error: true,
         msg: err.response.data.msg
       });
@@ -79,6 +82,7 @@ function Boards({ history }) {
 
     setBoardData([...boardData, response.data]);
     setPostBoard(!postBoard);
+    setBoard({ name: '', error: false, msg: '' });
     // Close modal when done
     closeModal();
   };
@@ -104,6 +108,8 @@ function Boards({ history }) {
             onSubmit={createBoard}
             onChange={onInputChange}
             value={board.name}
+            error={board.error}
+            errorMsg={board.msg}
           />
         </div>
       </div>
