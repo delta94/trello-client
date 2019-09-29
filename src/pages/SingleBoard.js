@@ -28,7 +28,7 @@ function SingleBoard({ match }) {
       name: e.currentTarget.textContent
     });
 
-    let [err, response] = await to(http.put(`/board/${id}`, singleBoard));
+    let [, response] = await to(http.put(`/board/${id}`, singleBoard));
     console.log(response);
   }
 
