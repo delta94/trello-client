@@ -9,3 +9,14 @@
     border-radius: 5px;
   }
 }
+
+.single-board {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+}
+
+.board-lists {
+  overflow-y: scroll !important;
+  height: 100vh;
+}
