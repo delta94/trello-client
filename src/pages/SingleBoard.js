@@ -8,7 +8,7 @@ import Layout from '../hoc/Layout';
 function SingleBoard({ match }) {
   const [board, setBoard] = useState({});
 
-  const id = match.params.id;
+  const { id } = match.params;
 
   // Get single board data
   // Before page render
@@ -21,20 +21,14 @@ function SingleBoard({ match }) {
     const [err, response] = await to(http.get(`/board/${id}`));
     if (err) return err.response;
 
-    console.log(response.data.board);
     setBoard(response.data.board);
   };
 
   // Change title method
   const changeTitle = async e => {
-    setBoard({
-      ...board,
-      name: e.currentTarget.textContent
-    });
-    console.log(e.currentTarget.textContent);
-
-    let [, response] = await to(http.put(`/board/${id}`, board));
-    console.log(response);
+    await to(
+      http.put(`/board/${id}`, { name: e.currentTarget.textContent })
+    );
   }
 
   return (

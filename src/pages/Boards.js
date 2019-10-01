@@ -41,9 +41,14 @@ function Boards({ history, match }) {
       http.get('/board')
     );
 
+
+
     // Check error and token validation
-    if (err !== null && err.response.data.invalid)
+    if (err !== null && err.response.data.invalid) {
+      console.log(err.response.data);
       return history.push("/login");
+
+    }
 
     setBoardData(response.data);
   };
@@ -78,7 +83,6 @@ function Boards({ history, match }) {
         error: true,
         msg: err.response.data.msg
       });
-
 
     setBoardData([...boardData, response.data]);
     setPostBoard(!postBoard);
