@@ -45020,3 +45020,13 @@ div.tagsinput {
 .board-lists {
   overflow-y: scroll !important;
   height: 100vh; }
+  .board-lists .list-card .card-body {
+    padding: 15px; }
+    .board-lists .list-card .card-body .card-name {
+      margin-bottom: 0; }
+  .board-lists .list-card .card-footer {
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all .3s ease; }
+    .board-lists .list-card .card-footer:hover {
+      background: #313452; }
