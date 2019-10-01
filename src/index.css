@@ -45001,3 +45001,13 @@ div.tagsinput {
   @media (max-width: 991px) {
     #settings-trigger {
       display: none; } }
+
+.board-name {
+  outline: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  transition: border .3s ease; }
+  .board-name:focus {
+    border-color: #313452;
+    border-radius: 5px; }

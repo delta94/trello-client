@@ -1,0 +1,11 @@
+.board-name {
+  outline: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  transition: border .3s ease;
+  &:focus {
+    border-color: $border-color;
+    border-radius: 5px;
+  }
+}

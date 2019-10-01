@@ -31,7 +31,7 @@ function SingleBoard({ match }) {
 
     let [err, response] = await to(http.put(`/board/${id}`, { name: e.currentTarget.textContent }));
 
-    if (err) return setBoard({ ...board, name: board.name });
+    if (err) return err.response;
     setBoard(response.data)
   }
 
@@ -42,6 +42,7 @@ function SingleBoard({ match }) {
           contentEditable
           suppressContentEditableWarning={true}
           onBlur={changeTitle}
+          className="board-name"
         >
           {board.name}
         </h3>
