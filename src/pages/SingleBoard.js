@@ -11,7 +11,6 @@ function SingleBoard({ match }) {
   const { id } = match.params;
 
   // Get single board data
-  // Before page render
   useEffect(() => {
     getSingleBoard();
   }, []);
@@ -19,16 +18,21 @@ function SingleBoard({ match }) {
   // Single board request
   const getSingleBoard = async () => {
     const [err, response] = await to(http.get(`/board/${id}`));
+
     if (err) return err.response;
 
-    setBoard(response.data.board);
+    setBoard(response.data);
   };
 
-  // Change title method
+  // Change title
   const changeTitle = async e => {
-    await to(
-      http.put(`/board/${id}`, { name: e.currentTarget.textContent })
-    );
+    if (e.currentTarget.textContent === '')
+      return e.currentTarget.textContent = board.name;
+
+    let [err, response] = await to(http.put(`/board/${id}`, { name: e.currentTarget.textContent }));
+
+    if (err) return setBoard({ ...board, name: board.name });
+    setBoard(response.data)
   }
 
   return (
