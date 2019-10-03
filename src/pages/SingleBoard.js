@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import to from 'await-to-js';
 
 import { http } from '../http';
@@ -89,16 +89,13 @@ function SingleBoard({ match }) {
   }
 
   const addCardhandler = (id) => {
-    const j = new Set([]);
-    j.add(id);
-    setCard({ ...card, addCard: j });
+    const newList = new Set([]);
+    newList.add(id);
+    setCard({ ...card, addCard: newList });
   }
 
-  const closeCardhandler = () => {
-    const j = new Set([]);
-    j.add(id);
+  const closeCardhandler = () =>
     setCard({ ...card, addCard: new Set([]) });
-  };
 
   return (
     <Layout>

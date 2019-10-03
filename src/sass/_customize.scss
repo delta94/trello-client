@@ -36,8 +36,13 @@
       font-size: 14px;
       transition: all .3s ease;
       border-top: 0;
-      &:hover {
-        background: $border-color;
+      // &:hover {
+      //   background: $border-color;
+      // }
+      .createcard {
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .close {

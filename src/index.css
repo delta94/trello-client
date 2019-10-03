@@ -45032,8 +45032,8 @@ div.tagsinput {
     font-size: 14px;
     transition: all .3s ease;
     border-top: 0; }
-    .board-lists .list-card .card-footer:hover {
-      background: #313452; }
+    .board-lists .list-card .card-footer .createcard:hover {
+      text-decoration: underline; }
     .board-lists .list-card .card-footer .close {
       position: absolute;
       right: 20px;

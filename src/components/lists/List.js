@@ -9,7 +9,8 @@ const List = ({
   addCard,
   isAddCard,
   onClose,
-  listId
+  listId,
+  focusInput
 }) => (
   <div className="card list-card">
     <div className="card-body">
@@ -22,6 +23,7 @@ const List = ({
             name="name"
             placeholder="Card name"
             type="text"
+            inputRef={focusInput}
             bm={false}
             value={cardValue}
             onChange={onChange}
