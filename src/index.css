@@ -45021,12 +45021,26 @@ div.tagsinput {
   overflow-y: scroll !important;
   height: 100vh; }
   .board-lists .list-card .card-body {
-    padding: 15px; }
+    padding: 0; }
     .board-lists .list-card .card-body .card-name {
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding: 15px;
+      border-bottom: 1px solid #313452; }
   .board-lists .list-card .card-footer {
+    position: relative;
     padding: 10px 15px;
     font-size: 14px;
-    transition: all .3s ease; }
+    transition: all .3s ease;
+    border-top: 0; }
     .board-lists .list-card .card-footer:hover {
       background: #313452; }
+    .board-lists .list-card .card-footer .close {
+      position: absolute;
+      right: 20px;
+      top: 17px; }
+
+.form-control.small, .small.asColorPicker-input, .dataTables_wrapper select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=text],
+.jsgrid .jsgrid-table .jsgrid-filter-row select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=number], .select2-container--default .small.select2-selection--single, .select2-container--default .select2-selection--single .small.select2-search__field, .small.typeahead,
+.small.tt-query,
+.small.tt-hint {
+  padding: 5px 15px; }

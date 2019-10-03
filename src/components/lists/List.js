@@ -1,12 +1,42 @@
 import React from "react";
+import Input from '../forms/Input';
 
-const List = ({ name }) => (
+const List = ({
+  name,
+  onSubmitCard,
+  cardValue,
+  onChange,
+  addCard,
+  isAddCard,
+  onClose
+}) => (
   <div className="card list-card">
     <div className="card-body">
       <h4 className="card-name">{name}</h4>
     </div>
     <div className="card-footer">
-      <div className="createcard">Add Card</div>
+      {isAddCard ? (
+        <form action="" onSubmit={onSubmitCard}>
+          <Input
+            name="name"
+            placeholder="Card name"
+            type="text"
+            bm={false}
+            value={cardValue}
+            onChange={onChange}
+            className="form-control small"
+          />
+          <button
+            type="button"
+            className="close"
+            onClick={onClose}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+      ) : (
+        <div className="createcard" onClick={addCard}>Add Card</div>
+      )}
     </div>
   </div>
 );

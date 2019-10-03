@@ -22,18 +22,35 @@
 
   .list-card {
     .card-body {
-      padding: 15px;
+      padding: 0;
+
       .card-name {
         margin-bottom: 0;
+        padding: 15px;
+        border-bottom: 1px solid $border-color;
       }
     }
     .card-footer {
+      position: relative;
       padding: 10px 15px;
       font-size: 14px;
       transition: all .3s ease;
+      border-top: 0;
       &:hover {
         background: $border-color;
       }
+
+      .close {
+        position: absolute;
+        right: 20px;
+        top: 17px;
+      }
     }
+  }
+}
+
+.form-control {
+  &.small {
+    padding: 5px 15px;
   }
 }

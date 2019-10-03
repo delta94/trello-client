@@ -17,6 +17,11 @@ function SingleBoard({ match }) {
     msg: ''
   });
 
+  const [card, setCard] = useState({
+    name: '',
+    addCard: false,
+  });
+
   const { show, openModal, closeModal } = useContext(ModalContext);
 
   const { id } = match.params;
@@ -70,6 +75,19 @@ function SingleBoard({ match }) {
     closeModal();
   };
 
+  const createCard = async (e, listId) => {
+    e.preventDefault();
+    const cardData = {
+      name: card.name,
+      idBoard: board._id,
+      idList: listId
+    };
+
+    let [err, response] = await to(http.post('/card/create', cardData));
+
+    console.log(response, err);
+  }
+
   return (
     <Layout>
       <div className="single-board">
@@ -86,7 +104,15 @@ function SingleBoard({ match }) {
           {board.lists && board.lists.length > 0
             ? board.lists.map((item, index) => (
                 <div className="col-md-3" key={index}>
-                  <List name={item.name} />
+                  <List
+                    name={item.name}
+                    onSubmitCard={(e) => createCard(e, item._id)}
+                    cardValue={card.name}
+                    isAddCard={card.addCard}
+                    onChange={e => setCard({ ...card, name: e.target.value })}
+                    addCard={() => setCard({ ...card, addCard: true })}
+                    onClose={() => setCard({ ...card, addCard: false })}
+                  />
                 </div>
               ))
             : null}
@@ -96,11 +122,11 @@ function SingleBoard({ match }) {
               modalOpen={openModal}
               modalClose={closeModal}
               value={list.name}
-              onChange={(e) => setList({...list, name: e.target.value})}
+              onChange={e => setList({ ...list, name: e.target.value })}
               onSubmit={onCreateList}
               error={list.error}
               errorMsg={list.msg}
-              />
+            />
           </div>
         </div>
       </div>
