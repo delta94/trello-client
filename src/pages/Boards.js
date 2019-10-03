@@ -41,12 +41,13 @@ function Boards({ history, match }) {
       http.get('/board')
     );
 
-
-
     // Check error and token validation
-    if (err !== null && err.response.data.invalid) {
-      console.log(err.response.data);
-      return history.push("/login");
+    if (err !== null) {
+      if (err.response.data.invalid) {
+        return history.push("/login");
+      }
+      //console.log(err.response.data);
+      return;
 
     }
 
