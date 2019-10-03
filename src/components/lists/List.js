@@ -8,14 +8,15 @@ const List = ({
   onChange,
   addCard,
   isAddCard,
-  onClose
+  onClose,
+  listId
 }) => (
   <div className="card list-card">
     <div className="card-body">
       <h4 className="card-name">{name}</h4>
     </div>
     <div className="card-footer">
-      {isAddCard ? (
+      {isAddCard.has(listId) ? (
         <form action="" onSubmit={onSubmitCard}>
           <Input
             name="name"
@@ -24,18 +25,16 @@ const List = ({
             bm={false}
             value={cardValue}
             onChange={onChange}
-            className="form-control small"
+            className="form-control small white"
           />
-          <button
-            type="button"
-            className="close"
-            onClick={onClose}
-          >
+          <button type="button" className="close" onClick={onClose}>
             <span aria-hidden="true">&times;</span>
           </button>
         </form>
       ) : (
-        <div className="createcard" onClick={addCard}>Add Card</div>
+        <div className="createcard" onClick={addCard}>
+          Add Card
+        </div>
       )}
     </div>
   </div>

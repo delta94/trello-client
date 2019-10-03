@@ -19,7 +19,7 @@ function SingleBoard({ match }) {
 
   const [card, setCard] = useState({
     name: '',
-    addCard: false,
+    addCard: new Set([]),
   });
 
   const { show, openModal, closeModal } = useContext(ModalContext);
@@ -88,6 +88,18 @@ function SingleBoard({ match }) {
     console.log(response, err);
   }
 
+  const addCardhandler = (id) => {
+    const j = new Set([]);
+    j.add(id);
+    setCard({ ...card, addCard: j });
+  }
+
+  const closeCardhandler = () => {
+    const j = new Set([]);
+    j.add(id);
+    setCard({ ...card, addCard: new Set([]) });
+  };
+
   return (
     <Layout>
       <div className="single-board">
@@ -105,13 +117,14 @@ function SingleBoard({ match }) {
             ? board.lists.map((item, index) => (
                 <div className="col-md-3" key={index}>
                   <List
+                    listId={item._id}
                     name={item.name}
-                    onSubmitCard={(e) => createCard(e, item._id)}
+                    onSubmitCard={e => createCard(e, item._id)}
                     cardValue={card.name}
                     isAddCard={card.addCard}
                     onChange={e => setCard({ ...card, name: e.target.value })}
-                    addCard={() => setCard({ ...card, addCard: true })}
-                    onClose={() => setCard({ ...card, addCard: false })}
+                    addCard={() => addCardhandler(item._id)}
+                    onClose={closeCardhandler}
                   />
                 </div>
               ))
