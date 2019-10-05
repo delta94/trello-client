@@ -10,6 +10,17 @@
   }
 }
 
+.modal {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0,0,0, .5);
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .single-board {
   position: relative;
   overflow: auto;
@@ -57,5 +68,13 @@
 .form-control {
   &.small {
     padding: 5px 15px;
+  }
+}
+
+.card-item-wrapper {
+  padding: 10px 10px 0;
+  .card-name {
+    font-weight: normal;
+    border-bottom: 0;
   }
 }

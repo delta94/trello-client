@@ -13,6 +13,7 @@ const CreateBoard = (props) => (
         <Input
           label="Board Name"
           name="name"
+          mb={true}
           onChange={props.onChange}
           className="form-control white"
           value={props.value}

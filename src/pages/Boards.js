@@ -46,9 +46,6 @@ function Boards({ history, match }) {
       if (err.response.data.invalid) {
         return history.push("/login");
       }
-      //console.log(err.response.data);
-      return;
-
     }
 
     setBoardData(response.data);
