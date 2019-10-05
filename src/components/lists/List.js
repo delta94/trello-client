@@ -10,11 +10,13 @@ const List = ({
   isAddCard,
   onClose,
   listId,
-  focusInput
+  focusInput,
+  children
 }) => (
   <div className="card list-card">
     <div className="card-body">
       <h4 className="card-name">{name}</h4>
+      {children}
     </div>
     <div className="card-footer">
       {isAddCard.has(listId) ? (

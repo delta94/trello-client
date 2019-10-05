@@ -21,6 +21,7 @@ const CreateList = props => (
           className="form-control white"
           value={props.value}
           type="text"
+          mb={true}
           placeholder="List name"
         />
 
