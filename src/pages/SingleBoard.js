@@ -52,7 +52,7 @@ function SingleBoard({ match }) {
     let [err, response] = await to(http.put(`/board/${id}`, { name: e.currentTarget.textContent }));
 
     if (err) return err.response;
-    setBoard(response.data)
+    setBoard({ ...board, name: response.data.name })
   }
 
   const onCreateList = async (e) => {
