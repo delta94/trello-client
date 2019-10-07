@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../img/logo-color.svg';
+import authBg from '../img/auth-bg.jpeg';
 
 const AuthWrapper = ({ children }) => (
-  <div className="container-fluid page-body-wrapper full-page-wrapper">
+  <div className="container-fluid page-body-wrapper full-page-wrapper auth-page-wrapper" style={{backgruond: 'url(' + authBg + ') center center no-repeat'}} >
     <div className="content-wrapper d-flex align-items-center auth px-0">
       <div className="row w-100 mx-0">
         <div className="col-lg-4 mx-auto">

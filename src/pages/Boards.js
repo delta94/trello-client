@@ -89,6 +89,7 @@ function Boards({ history, match }) {
     closeModal();
   };
 
+
   return (
     <Layout>
       <div className="row">
@@ -114,6 +115,7 @@ function Boards({ history, match }) {
             errorMsg={board.msg}
           />
         </div>
+
       </div>
     </Layout>
   );

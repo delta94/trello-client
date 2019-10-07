@@ -78,3 +78,12 @@
     border-bottom: 0;
   }
 }
+
+.auth-page-wrapper {
+  background: url('./img/auth-bg.jpeg') center center no-repeat;
+  background-size: cover;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 65px) !important;
+}
