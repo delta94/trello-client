@@ -1,0 +1,36 @@
+.board-card {
+  position: relative;
+  background-size: cover !important;
+  overflow: hidden;
+  height: 120px;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-body {
+    position: relative;
+    z-index: 2;
+
+    h4 {
+      color: $white;
+      margin-bottom: 0;
+    }
+  }
+
+  &.create-board {
+    .card-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

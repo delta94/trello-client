@@ -1,0 +1,77 @@
+.board-name {
+  outline: none;
+  display: inline-block;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  transition: border .3s ease;
+  color: $white;
+  border-radius: 4px;
+  background: transparent;
+  transition: all .1s ease;
+
+  &:hover,
+  &:focus {
+    @extend .background-white;
+  }
+
+  &:focus {
+    border-color: $border-color;
+    border-radius: 5px;
+  }
+}
+
+
+.single-board {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+}
+
+.board-lists {
+  overflow-y: scroll !important;
+  height: 100vh;
+
+  .list-card {
+    .card-body {
+      padding: 0;
+
+      .card-name {
+        margin-bottom: 0;
+        padding: 15px;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    .card-footer {
+      position: relative;
+      padding: 10px 15px;
+      font-size: 14px;
+      transition: all .3s ease;
+      border-top: 0;
+
+      // &:hover {
+      //   background: $border-color;
+      // }
+      .createcard {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .close {
+        position: absolute;
+        right: 20px;
+        top: 17px;
+      }
+    }
+  }
+}
+
+.card-item-wrapper {
+  padding: 10px 10px 0;
+
+  .card-name {
+    font-weight: normal;
+    border-bottom: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.card-bgs {
+  position: relative;
+  display: flex;
+  padding-bottom: 30px;
+
+  .bg {
+    background-size: cover !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    border: 3px solid #ddd;
+    margin-right: 8px;
+
+    &.selected {
+      border-color: map-get($theme-colors, success);
+    }
+  }
+}

@@ -96,7 +96,7 @@ function SingleBoard({ match }) {
 
 
 
-    let [err, response] = await to(http.post('/card/create', cardData));
+    let [response] = await to(http.post('/card/create', cardData));
     setBoard({
       ...board, actions: [...board.actions, {
         action: 'createcard',
@@ -111,15 +111,13 @@ function SingleBoard({ match }) {
         }
       }]
     })
-
-    console.log(response, err);
-  }
+  };
 
   const closeCardhandler = () =>
     setCard({ ...card, addCard: new Set([]) });
 
   return (
-    <Layout>
+    <Layout bg={board.bgPath} className="single-board-wrapper">
       <div className="single-board">
         <h3
           contentEditable
@@ -131,7 +129,7 @@ function SingleBoard({ match }) {
         </h3>
 
 
-        <div className="board-lists row flex-nowrap pt-5">
+        <div className="board-lists row flex-nowrap pt-3">
           {board.lists && board.lists.length > 0
             ? board.lists.map((item, index) => (
                 <div className="col-md-3" key={index}>

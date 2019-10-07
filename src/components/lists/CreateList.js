@@ -5,13 +5,12 @@ import Error from "../FormError";
 
 const CreateList = props => (
   <>
-    <button
-      type="button"
+    <div
+      className="transparent-white-btn"
       onClick={props.modalOpen}
-      className="btn btn-outline-info btn-fw btn-lg btn-block"
     >
-      Add List
-    </button>
+      + Add a List
+    </div>
 
     <Modal show={props.show} onClose={props.modalClose} title="Add List">
       <form action="" onSubmit={props.onSubmit}>

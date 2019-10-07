@@ -1,0 +1,39 @@
+.form-control {
+  &.small {
+    padding: 5px 15px;
+  }
+}
+
+
+.auth-page-wrapper {
+  background: url("./img/auth-bg.jpeg") center center no-repeat;
+  background-size: cover;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 65px) !important;
+}
+
+.single-board-wrapper {
+  background-size: cover !important;
+
+  .main-panel {
+    background: transparent;
+  }
+}
+
+.horizontal-menu .top-navbar {border-bottom: 0;}
+
+.background-white {background: rgba($white, .3)};
+.transparent-white-btn {
+  background: rgba($white, .24);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: $white;
+  cursor: pointer;
+  transition: background .2s ease;
+
+  &:hover {
+    background: rgba($white, .34);
+  }
+}

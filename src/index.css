@@ -44609,24 +44609,45 @@ div.tagsinput {
   .purchase-detail-legend {
     margin: 10px auto; } }
 
+.board-card {
+  position: relative;
+  background-size: cover !important;
+  overflow: hidden;
+  height: 120px;
+  cursor: pointer; }
+  .board-card:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    width: 100%;
+    height: 100%; }
+  .board-card .card-body {
+    position: relative;
+    z-index: 2; }
+    .board-card .card-body h4 {
+      color: #ffffff;
+      margin-bottom: 0; }
+  .board-card.create-board .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
 .board-name {
   outline: none;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 6px 10px;
   border: 2px solid transparent;
-  transition: border .3s ease; }
+  transition: border .3s ease;
+  color: #ffffff;
+  border-radius: 4px;
+  background: transparent;
+  transition: all .1s ease; }
   .board-name:focus {
     border-color: #f6f2f2;
     border-radius: 5px; }
-
-.modal {
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  background: rgba(0, 0, 0, 0.5); }
-  .modal.show {
-    opacity: 1;
-    visibility: visible; }
 
 .single-board {
   position: relative;
@@ -44655,24 +44676,11 @@ div.tagsinput {
       right: 20px;
       top: 17px; }
 
-.form-control.small, .small.asColorPicker-input, .dataTables_wrapper select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=text],
-.jsgrid .jsgrid-table .jsgrid-filter-row select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=number], .select2-container--default .small.select2-selection--single, .select2-container--default .select2-selection--single .small.select2-search__field, .small.typeahead,
-.small.tt-query,
-.small.tt-hint {
-  padding: 5px 15px; }
-
 .card-item-wrapper {
   padding: 10px 10px 0; }
   .card-item-wrapper .card-name {
     font-weight: normal;
     border-bottom: 0; }
-
-.auth-page-wrapper {
-  background: url("./img/auth-bg.jpeg") center center no-repeat;
-  background-size: cover; }
-
-.content-wrapper {
-  min-height: calc(100vh - 65px) !important; }
 
 .card-bgs {
   position: relative;
@@ -44688,28 +44696,45 @@ div.tagsinput {
     .card-bgs .bg.selected {
       border-color: #23af47; }
 
-.board-card {
-  position: relative;
-  background-size: cover !important;
-  overflow: hidden;
-  height: 120px;
-  cursor: pointer; }
-  .board-card:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    width: 100%;
-    height: 100%; }
-  .board-card .card-body {
-    position: relative;
-    z-index: 2; }
-    .board-card .card-body h4 {
-      color: #ffffff;
-      margin-bottom: 0; }
-  .board-card.create-board .card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+.modal {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.5); }
+  .modal.show {
+    opacity: 1;
+    visibility: visible; }
+
+.form-control.small, .small.asColorPicker-input, .dataTables_wrapper select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=text],
+.jsgrid .jsgrid-table .jsgrid-filter-row select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=number], .select2-container--default .small.select2-selection--single, .select2-container--default .select2-selection--single .small.select2-search__field, .small.typeahead,
+.small.tt-query,
+.small.tt-hint {
+  padding: 5px 15px; }
+
+.auth-page-wrapper {
+  background: url("./img/auth-bg.jpeg") center center no-repeat;
+  background-size: cover; }
+
+.content-wrapper {
+  min-height: calc(100vh - 65px) !important; }
+
+.single-board-wrapper {
+  background-size: cover !important; }
+  .single-board-wrapper .main-panel {
+    background: transparent; }
+
+.horizontal-menu .top-navbar {
+  border-bottom: 0; }
+
+.background-white, .board-name:hover, .board-name:focus {
+  background: rgba(255, 255, 255, 0.3); }
+
+.transparent-white-btn {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background .2s ease; }
+  .transparent-white-btn:hover {
+    background: rgba(255, 255, 255, 0.34); }
