@@ -17,6 +17,7 @@ function Boards({ history, match }) {
     msg: ''
   });
   const [postBoard, setPostBoard] = useState(false);
+  const [selectedBg, setSelectedBg] = useState(new Set());
 
   const {show, openModal, closeModal} = useContext(ModalContext);
 
@@ -72,8 +73,10 @@ function Boards({ history, match }) {
   const createBoard = async (e) => {
     e.preventDefault();
 
+    const bgPath = selectedBg.values().next().value;
+
     let [err, response] = await to(http.post(
-      '/board/create', { name: board.name }));
+      '/board/create', { name: board.name, bgPath }));
 
     if (err !== null)
       return setBoard({
@@ -87,7 +90,14 @@ function Boards({ history, match }) {
     setBoard({ name: '', error: false, msg: '' });
     // Close modal when done
     closeModal();
+    setSelectedBg(new Set());
   };
+
+  const onClickBg = (img) => {
+    const bgPath = new Set();
+    bgPath.add(img);
+    setSelectedBg(bgPath);
+  }
 
 
   return (
@@ -96,12 +106,15 @@ function Boards({ history, match }) {
         <div className="col-md-12 mb-4">
           <h3>Boards</h3>
         </div>
-        {boardData && boardData.length > 0 ?
-          boardData.map((board, index) => <RenderBoard
-            key={index}
-            board={board}
-            onClickBoard={getSingleBoard} />)
-         : null}
+        {boardData && boardData.length > 0
+          ? boardData.map((board, index) => (
+              <RenderBoard
+                key={index}
+                board={board}
+                onClickBoard={getSingleBoard}
+              />
+            ))
+          : null}
 
         <div className="col-lg-3">
           <CreateBoard
@@ -113,9 +126,10 @@ function Boards({ history, match }) {
             value={board.name}
             error={board.error}
             errorMsg={board.msg}
+            selectedBg={selectedBg}
+            onClickBg={onClickBg}
           />
         </div>
-
       </div>
     </Layout>
   );

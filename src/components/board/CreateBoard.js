@@ -4,30 +4,47 @@ import Modal from '../modal/Modal';
 import Input from '../forms/Input';
 import Error from "../FormError";
 
-const CreateBoard = (props) => (
-  <>
-    <Card name="Create new board" onClick={props.modalOpen} />
+import { config } from '../../config';
 
-    <Modal show={props.show} onClose={props.modalClose} title="Create Board">
-      <form action="" onSubmit={props.onSubmit}>
-        <Input
-          label="Board Name"
-          name="name"
-          mb={true}
-          onChange={props.onChange}
-          className="form-control white"
-          value={props.value}
-          type="text"
-        />
+const CreateBoard = (props) => {
+  const imgPath = Object.values(config.boardBd);
 
-        <Error error={props.error} msg={props.errorMsg} />
+  return (
+    <>
+      <Card name="Create new board" onClick={props.modalOpen} />
 
-        <button type="submit" className="btn btn-success">
-          Create Board
+      <Modal show={props.show} onClose={props.modalClose} title="Create Board">
+        <form action="" onSubmit={props.onSubmit}>
+          <Input
+            label="Board Name"
+            name="name"
+            mb={true}
+            onChange={props.onChange}
+            className="form-control white"
+            value={props.value}
+            type="text"
+          />
+
+          <div className="card-bgs">
+            {
+              imgPath.map((img, i) => <div
+                key={i}
+                className={props.selectedBg.has(img) ? 'bg selected' : 'bg'}
+                onClick={() => props.onClickBg(img)}
+                style={{ background: 'url(' + img + ') center center no-repeat' }}></div>)
+            }
+          </div>
+
+          <Error error={props.error} msg={props.errorMsg} />
+
+          <button type="submit" className="btn btn-success">
+            Create Board
         </button>
-      </form>
-    </Modal>
-  </>
-);
+        </form>
+      </Modal>
+    </>
+  )
+
+};
 
 export default CreateBoard;

@@ -44673,3 +44673,17 @@ div.tagsinput {
 
 .content-wrapper {
   min-height: calc(100vh - 65px) !important; }
+
+.card-bgs {
+  position: relative;
+  display: flex;
+  padding-bottom: 30px; }
+  .card-bgs .bg {
+    background-size: cover !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    border: 3px solid #ddd;
+    margin-right: 8px; }
+    .card-bgs .bg.selected {
+      border-color: #23af47; }
