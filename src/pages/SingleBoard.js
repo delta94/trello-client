@@ -128,7 +128,6 @@ function SingleBoard({ match }) {
           {board.name}
         </h3>
 
-
         <div className="board-lists row flex-nowrap pt-3">
           {board.lists && board.lists.length > 0
             ? board.lists.map((item, index) => (
@@ -142,21 +141,21 @@ function SingleBoard({ match }) {
                     onChange={e => setCard({ ...card, name: e.target.value })}
                     addCard={() => addCardhandler(item._id)}
                     onClose={closeCardhandler}
-                >
-                  {
-                    board.actions && board.actions.map(card => {
-                      return card.action === 'createcard' && card.data.list._id === item._id
-                       ?
-                        <Card key={card._id} name={card.data.card.name} />
-                      : null;
-                    })
-                  }
+                  >
+                    {board.actions &&
+                      board.actions.map(card => {
+                        return card.action === "createcard" &&
+                          card.data.list._id === item._id ? (
+                          <Card key={card._id} name={card.data.card.name} />
+                        ) : null;
+                      })}
                   </List>
                 </div>
               ))
             : null}
           <div className="col-md-3">
             <CreateList
+              lists={board.lists}
               show={show}
               modalOpen={openModal}
               modalClose={closeModal}

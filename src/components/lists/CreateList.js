@@ -9,7 +9,7 @@ const CreateList = props => (
       className="transparent-white-btn"
       onClick={props.modalOpen}
     >
-      + Add a List
+    {props.lists && props.lists.length > 0 ? '+ Add another List' : '+ Add a list'}
     </div>
 
     <Modal show={props.show} onClose={props.modalClose} title="Add List">
