@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../img/logo.svg";
 
-function Header({ user, location }) {
+function Header({ user, location, transparent }) {
   const path = location.pathname;
   const isAuthPage = () => {
     if (path === "/register" || path === "/login") {
@@ -12,10 +12,18 @@ function Header({ user, location }) {
     return true;
   };
 
+  const parentClass = () => {
+    const pathname = location.pathname.split('/');
+    if (pathname[1] === "board") {
+      return "horizontal-menu transparent";
+    }
+    return "horizontal-menu";
+  };
+
   return (
     <>
       {isAuthPage() ? (
-        <div className="horizontal-menu">
+        <div className={parentClass()}>
           <nav className="navbar col-lg-12 col-12 p-0 fixed-top top-navbar">
             <div className="container">
               <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">

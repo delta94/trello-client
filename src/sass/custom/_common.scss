@@ -12,8 +12,9 @@
 
 .content-wrapper {
   min-height: 100vh !important;
-  padding-top: 65px;
+  padding-top: 85px;
 }
+
 
 .single-board-wrapper {
   background-size: cover !important;
@@ -23,7 +24,7 @@
   }
 }
 
-.horizontal-menu .top-navbar {border-bottom: 0; background: transparent}
+.horizontal-menu.transparent .top-navbar {border-bottom: 0; background: transparent;}
 
 .background-white {background: rgba($white, .3)};
 .transparent-white-btn {
