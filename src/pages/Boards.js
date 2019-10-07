@@ -93,6 +93,8 @@ function Boards({ history, match }) {
     setSelectedBg(new Set());
   };
 
+  // Set seleted bg to state and pass it
+  // when create board
   const onClickBg = (img) => {
     const bgPath = new Set();
     bgPath.add(img);

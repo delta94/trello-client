@@ -11,7 +11,7 @@ const CreateBoard = (props) => {
 
   return (
     <>
-      <Card name="Create new board" onClick={props.modalOpen} />
+      <Card name="Create new board" className="create-board" onClick={props.modalOpen} />
 
       <Modal show={props.show} onClose={props.modalClose} title="Create Board">
         <form action="" onSubmit={props.onSubmit}>
