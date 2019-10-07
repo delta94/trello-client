@@ -15,11 +15,10 @@
   }
 
   &:focus {
-    border-color: $border-color;
+    border-color: rgba($white, 0.5);
     border-radius: 5px;
   }
 }
-
 
 .single-board {
   position: relative;
@@ -33,42 +32,64 @@
 
   .list-card {
     .card-body {
+      background: #ebecf0;
       padding: 0;
 
       .card-name {
         margin-bottom: 0;
         padding: 15px;
-        border-bottom: 1px solid $border-color;
       }
     }
 
     .card-footer {
       position: relative;
-      padding: 10px 15px;
+      padding: 10px 10px;
       font-size: 14px;
       transition: all .3s ease;
       border-top: 0;
+      border-top: 0;
+      background: #ebecf0;
 
-      // &:hover {
-      //   background: $border-color;
-      // }
+      .form-footer {
+        position: relative;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          margin-right: 10px;
+        }
+      }
+
       .createcard {
+        cursor: pointer;
         &:hover {
           text-decoration: underline;
         }
       }
 
       .close {
-        position: absolute;
-        right: 20px;
-        top: 17px;
+        font-size: 16px;
+        cursor: pointer;
       }
     }
   }
 }
 
 .card-item-wrapper {
-  padding: 10px 10px 0;
+  padding: 5px 10px 5px;
+  border-radius: 6px;
+
+  .item-card {
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    border: 0;
+    border-radius: 6px;
+
+    .card-body {
+      background: $white;
+      border-radius: 6px;
+    }
+  }
 
   .card-name {
     font-weight: normal;

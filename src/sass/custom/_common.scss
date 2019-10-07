@@ -18,6 +18,11 @@
 
 .single-board-wrapper {
   background-size: cover !important;
+  .content-wrapper {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   .main-panel {
     background: transparent;
@@ -26,9 +31,18 @@
 
 .horizontal-menu.transparent .top-navbar {border-bottom: 0; background: transparent;}
 
+.top-navbar {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
 .background-white {background: rgba($white, .3)};
 .transparent-white-btn {
-  background: rgba($white, .24);
+  background: rgba($white, .4);
   border-radius: 4px;
   padding: 6px 10px;
   color: $white;
@@ -36,6 +50,6 @@
   transition: background .2s ease;
 
   &:hover {
-    background: rgba($white, .34);
+    background: rgba($white, .5);
   }
 }

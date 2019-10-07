@@ -10,7 +10,6 @@ const List = ({
   isAddCard,
   onClose,
   listId,
-  focusInput,
   children
 }) => (
   <div className="card list-card">
@@ -23,21 +22,30 @@ const List = ({
         <form action="" onSubmit={onSubmitCard}>
           <Input
             name="name"
-            placeholder="Card name"
             type="text"
-            inputRef={focusInput}
+            placeholder="Card name"
             bm={false}
             value={cardValue}
             onChange={onChange}
-            className="form-control small white"
+            className="form-control white large card-input"
           />
-          <button type="button" className="close" onClick={onClose}>
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+          <div className="form-footer">
+            <div className="d-flex align-items-center">
+              <button type="submit" className="btn btn-success btn-sm">
+                Add
+              </button>
+              <span
+                aria-hidden="true"
+                className="ti-close close"
+                onClick={onClose}
+              ></span>
+            </div>
+          </div>
         </form>
       ) : (
         <div className="createcard" onClick={addCard}>
-          Add Card
+          + Add Card
         </div>
       )}
     </div>

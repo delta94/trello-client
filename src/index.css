@@ -44646,7 +44646,7 @@ div.tagsinput {
   background: transparent;
   transition: all .1s ease; }
   .board-name:focus {
-    border-color: #f6f2f2;
+    border-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px; }
 
 .single-board {
@@ -44658,26 +44658,45 @@ div.tagsinput {
   overflow-y: scroll !important;
   height: 100vh; }
   .board-lists .list-card .card-body {
+    background: #ebecf0;
     padding: 0; }
     .board-lists .list-card .card-body .card-name {
       margin-bottom: 0;
-      padding: 15px;
-      border-bottom: 1px solid #f6f2f2; }
+      padding: 15px; }
   .board-lists .list-card .card-footer {
     position: relative;
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-size: 14px;
     transition: all .3s ease;
-    border-top: 0; }
-    .board-lists .list-card .card-footer .createcard:hover {
-      text-decoration: underline; }
+    border-top: 0;
+    border-top: 0;
+    background: #ebecf0; }
+    .board-lists .list-card .card-footer .form-footer {
+      position: relative;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .board-lists .list-card .card-footer .form-footer button {
+        margin-right: 10px; }
+    .board-lists .list-card .card-footer .createcard {
+      cursor: pointer; }
+      .board-lists .list-card .card-footer .createcard:hover {
+        text-decoration: underline; }
     .board-lists .list-card .card-footer .close {
-      position: absolute;
-      right: 20px;
-      top: 17px; }
+      font-size: 16px;
+      cursor: pointer; }
 
 .card-item-wrapper {
-  padding: 10px 10px 0; }
+  padding: 5px 10px 5px;
+  border-radius: 6px; }
+  .card-item-wrapper .item-card {
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    border: 0;
+    border-radius: 6px; }
+    .card-item-wrapper .item-card .card-body {
+      background: #ffffff;
+      border-radius: 6px; }
   .card-item-wrapper .card-name {
     font-weight: normal;
     border-bottom: 0; }
@@ -44705,6 +44724,15 @@ div.tagsinput {
     opacity: 1;
     visibility: visible; }
 
+.form-control.card-input, .card-input.asColorPicker-input, .dataTables_wrapper select.card-input, .jsgrid .jsgrid-table .jsgrid-filter-row input.card-input[type=text],
+.jsgrid .jsgrid-table .jsgrid-filter-row select.card-input, .jsgrid .jsgrid-table .jsgrid-filter-row input.card-input[type=number], .select2-container--default .card-input.select2-selection--single, .select2-container--default .select2-selection--single .card-input.select2-search__field, .card-input.typeahead,
+.card-input.tt-query,
+.card-input.tt-hint {
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  height: 40px; }
+
 .form-control.small, .small.asColorPicker-input, .dataTables_wrapper select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=text],
 .jsgrid .jsgrid-table .jsgrid-filter-row select.small, .jsgrid .jsgrid-table .jsgrid-filter-row input.small[type=number], .select2-container--default .small.select2-selection--single, .select2-container--default .select2-selection--single .small.select2-search__field, .small.typeahead,
 .small.tt-query,
@@ -44721,6 +44749,10 @@ div.tagsinput {
 
 .single-board-wrapper {
   background-size: cover !important; }
+  .single-board-wrapper .content-wrapper {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; }
   .single-board-wrapper .main-panel {
     background: transparent; }
 
@@ -44728,15 +44760,20 @@ div.tagsinput {
   border-bottom: 0;
   background: transparent; }
 
+.top-navbar .container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .background-white, .board-name:hover, .board-name:focus {
   background: rgba(255, 255, 255, 0.3); }
 
 .transparent-white-btn {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 4px;
   padding: 6px 10px;
   color: #ffffff;
   cursor: pointer;
   transition: background .2s ease; }
   .transparent-white-btn:hover {
-    background: rgba(255, 255, 255, 0.34); }
+    background: rgba(255, 255, 255, 0.5); }
