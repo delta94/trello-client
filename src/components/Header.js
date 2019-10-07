@@ -16,7 +16,7 @@ function Header({ user, location }) {
     <>
       {isAuthPage() ? (
         <div className="horizontal-menu">
-          <nav className="navbar col-lg-12 col-12 p-0 top-navbar">
+          <nav className="navbar col-lg-12 col-12 p-0 fixed-top top-navbar">
             <div className="container">
               <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
                 <Link className="navbar-brand brand-logo" to="/">

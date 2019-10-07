@@ -11,7 +11,8 @@
 }
 
 .content-wrapper {
-  min-height: calc(100vh - 65px) !important;
+  min-height: 100vh !important;
+  padding-top: 65px;
 }
 
 .single-board-wrapper {
@@ -22,7 +23,7 @@
   }
 }
 
-.horizontal-menu .top-navbar {border-bottom: 0;}
+.horizontal-menu .top-navbar {border-bottom: 0; background: transparent}
 
 .background-white {background: rgba($white, .3)};
 .transparent-white-btn {

@@ -44716,7 +44716,8 @@ div.tagsinput {
   background-size: cover; }
 
 .content-wrapper {
-  min-height: calc(100vh - 65px) !important; }
+  min-height: 100vh !important;
+  padding-top: 65px; }
 
 .single-board-wrapper {
   background-size: cover !important; }
@@ -44724,7 +44725,8 @@ div.tagsinput {
     background: transparent; }
 
 .horizontal-menu .top-navbar {
-  border-bottom: 0; }
+  border-bottom: 0;
+  background: transparent; }
 
 .background-white, .board-name:hover, .board-name:focus {
   background: rgba(255, 255, 255, 0.3); }
