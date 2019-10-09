@@ -8490,22 +8490,22 @@ pre {
   .jsgrid .jsgrid-table td {
     padding: 1.25rem 0.9375rem;
     vertical-align: top;
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .table thead th, .jsgrid .jsgrid-table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #f6f2f2; }
+    border-bottom: 2px solid #ddd; }
   .table tbody + tbody, .jsgrid .jsgrid-table tbody + tbody {
-    border-top: 2px solid #f6f2f2; }
+    border-top: 2px solid #ddd; }
 
 .table-sm th,
 .table-sm td {
   padding: 0.3rem; }
 
 .table-bordered {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
@@ -8678,7 +8678,7 @@ pre {
 .table .thead-light th, .jsgrid .jsgrid-table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 .table-dark {
   color: #fff;
@@ -9725,7 +9725,7 @@ input[type="button"].btn-block {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-radius: 0.25rem; }
 
 .dropdown-menu-left {
@@ -9849,7 +9849,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #f6f2f2; }
+  border-top: 1px solid #ddd; }
 
 .dropdown-item {
   display: block;
@@ -12217,7 +12217,7 @@ a.close.disabled {
   pointer-events: auto;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-radius: 0.3rem;
   outline: 0; }
 
@@ -12239,7 +12239,7 @@ a.close.disabled {
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem; }
   .modal-header .close {
@@ -12260,7 +12260,7 @@ a.close.disabled {
   align-items: center;
   justify-content: flex-end;
   padding: 15px;
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem; }
   .modal-footer > :not(:first-child) {
@@ -12785,19 +12785,19 @@ button.bg-dark:focus {
   background-color: transparent !important; }
 
 .border, .loader-demo-box {
-  border: 1px solid #f6f2f2 !important; }
+  border: 1px solid #ddd !important; }
 
 .border-top {
-  border-top: 1px solid #f6f2f2 !important; }
+  border-top: 1px solid #ddd !important; }
 
 .border-right {
-  border-right: 1px solid #f6f2f2 !important; }
+  border-right: 1px solid #ddd !important; }
 
 .border-bottom {
-  border-bottom: 1px solid #f6f2f2 !important; }
+  border-bottom: 1px solid #ddd !important; }
 
 .border-left {
-  border-left: 1px solid #f6f2f2 !important; }
+  border-left: 1px solid #ddd !important; }
 
 .border-0, .legendContainer .legendColorBox > div, .legendContainer table tr .legendColorBox > div {
   border: 0 !important; }
@@ -15193,10 +15193,10 @@ a.text-dark:hover, a.text-dark:focus {
     .table-dark td,
     .table-dark thead th,
     .table-dark tbody + tbody {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
   .table .thead-dark th, .jsgrid .jsgrid-table .thead-dark th {
     color: inherit;
-    border-color: #f6f2f2; } }
+    border-color: #ddd; } }
 
 /*-------------------------------------------------------------------*/
 /* === Template mixins === */
@@ -15536,7 +15536,7 @@ h6, .h6 {
 
 .blockquote {
   padding: 1.25rem;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 address p {
   margin-bottom: 0; }
@@ -15730,27 +15730,27 @@ code {
 
 @media (min-width: 576px) {
   .border-right-sm {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 768px) {
   .border-right-md {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 992px) {
   .border-right-lg {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 576px) {
   .border-left-sm {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 @media (min-width: 768px) {
   .border-left-md {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 @media (min-width: 992px) {
   .border-left-lg {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 .text-gray, .card .card-subtitle {
   color: #848484; }
@@ -15777,7 +15777,7 @@ code {
 .template-demo > h5,
 .template-demo > h6,
 .template-demo > h1 {
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   padding: 0.5rem 0 0; }
 
 .template-demo .ul-slider.noUi-horizontal {
@@ -15797,7 +15797,7 @@ code {
   margin-bottom: 0; }
 
 .template-demo .editable-form > .form-group {
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 0.8rem;
   margin-bottom: 0.8rem; }
 
@@ -16039,7 +16039,7 @@ code {
   height: 1.875rem;
   background: #ffffff;
   border-radius: 100%;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   opacity: 1; }
   .dashboard-widget-carousel .carousel-control-prev:hover,
   .dashboard-widget-carousel .carousel-control-next:hover {
@@ -16230,7 +16230,7 @@ code {
   box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35); }
   .accordion.accordion-bordered .card {
     margin: 0 2rem;
-    border-top: 1px solid #f6f2f2;
+    border-top: 1px solid #ddd;
     box-shadow: none;
     border-radius: 0;
     border-left: 0;
@@ -16605,10 +16605,10 @@ code {
     height: 50px;
     padding: 0; }
   .btn.btn-outline-secondary, .fc button.btn-outline-secondary, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel, .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel, .wizard > .actions a.btn-outline-secondary {
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
     .btn.btn-outline-secondary:hover, .fc button.btn-outline-secondary:hover, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel:hover, .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload:hover, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel:hover, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled:hover, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel:hover, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel:hover, .wizard > .actions a.btn-outline-secondary:hover {
       background: transparent;
-      border: 1px solid #ccb6b6;
+      border: 1px solid #aaaaaa;
       color: #707889; }
     .btn.btn-outline-secondary.dropdown-toggle:focus, .fc button.btn-outline-secondary.dropdown-toggle:focus, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.dropdown-toggle.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.dropdown-toggle.editable-cancel:focus, .ajax-upload-dragdrop .btn-outline-secondary.dropdown-toggle.ajax-file-upload:focus, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .dropdown-toggle.ajax-file-upload.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .dropdown-toggle.ajax-file-upload.editable-cancel:focus, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.dropdown-toggle.swal2-styled:focus, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .dropdown-toggle.swal2-styled.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .dropdown-toggle.swal2-styled.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.dropdown-toggle.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.dropdown-toggle.editable-cancel:focus, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.dropdown-toggle.editable-cancel:focus, .wizard > .actions a.btn-outline-secondary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(112, 120, 137, 0); }
@@ -17008,7 +17008,7 @@ code {
 
 /* Breadcrumbs */
 .breadcrumb {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .breadcrumb .breadcrumb-item {
     font-size: 0.813rem; }
   .breadcrumb.breadcrumb-custom {
@@ -17436,9 +17436,9 @@ code {
       -o-transform: scale(1);
       transform: scale(1); }
     .form-check .form-check-label input[type="checkbox"]:disabled + .input-helper:before {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
     .form-check .form-check-label input[type="checkbox"]:disabled:checked + .input-helper:after {
-      background: #f6f2f2;
+      background: #ddd;
       color: #ffffff; }
     .form-check .form-check-label input[type="radio"] + .input-helper:before {
       position: absolute;
@@ -17497,9 +17497,9 @@ code {
       -o-transform: scale(1);
       transform: scale(1); }
     .form-check .form-check-label input[type="radio"]:disabled + .input-helper:before {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
     .form-check .form-check-label input[type="radio"]:disabled:checked + .input-helper:before {
-      background: #f6f2f2; }
+      background: #ddd; }
     .form-check .form-check-label input[type="radio"]:disabled:checked + .input-helper:after {
       background: #ffffff; }
 
@@ -17615,7 +17615,7 @@ code {
   border: none; }
   .input-group-append .input-group-text,
   .input-group-prepend .input-group-text {
-    border-color: #f6f2f2;
+    border-color: #ddd;
     padding: 0.875rem 0.75rem;
     color: #979797; }
 
@@ -17623,7 +17623,7 @@ code {
 .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
 .tt-query,
 .tt-hint {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   font-weight: 400;
   font-size: 0.875rem;
   height: auto;
@@ -17635,13 +17635,13 @@ select.tt-query,
 select.tt-hint {
   padding: .4375rem .75rem;
   border: 0;
-  outline: 1px solid #f6f2f2;
+  outline: 1px solid #ddd;
   color: #979797; }
   select.form-control:focus, select.asColorPicker-input:focus, .dataTables_wrapper select:focus,
   .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .select2-container--default select.select2-selection--single:focus, .select2-container--default .select2-selection--single select.select2-search__field:focus, select.typeahead:focus,
   select.tt-query:focus,
   select.tt-hint:focus {
-    outline: 1px solid #f6f2f2; }
+    outline: 1px solid #ddd; }
   select.form-control.border-primary, select.border-primary.asColorPicker-input, .dataTables_wrapper select.border-primary,
   .jsgrid .jsgrid-table .jsgrid-filter-row select.border-primary, .select2-container--default select.border-primary.select2-selection--single, .select2-container--default .select2-selection--single select.border-primary.select2-search__field, select.border-primary.typeahead,
   select.border-primary.tt-query,
@@ -17774,12 +17774,12 @@ select.tt-hint {
 
 /* Icons */
 .icons-list {
-  border-left: 1px solid #f6f2f2;
-  border-top: 1px solid #f6f2f2; }
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; }
   .icons-list > div {
     background: #ffffff;
-    border-bottom: 1px solid #f6f2f2;
-    border-right: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
@@ -17827,7 +17827,7 @@ select.tt-hint {
     position: relative;
     margin: 0 auto;
     border-radius: 50%;
-    border: 0.01em solid #f6f2f2;
+    border: 0.01em solid #ddd;
     list-style: none;
     padding: 0; }
     #pgloading .bokeh li {
@@ -18453,7 +18453,7 @@ dl {
       z-index: 1; }
   .solid-bullet-list:after {
     content: "";
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -18487,7 +18487,7 @@ dl {
       border-radius: 100%; }
   .bullet-line-list:after {
     content: "";
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -18588,7 +18588,7 @@ dl {
 /* Pagination */
 .pagination .page-item .page-link, .jsgrid .jsgrid-pager .page-item .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-nav-button .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-page .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-nav-button a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page a {
-  border-color: #f6f2f2;
+  border-color: #ddd;
   color: #000000;
   font-size: .875rem;
   -webkit-transition-duration: 0.3s;
@@ -19105,7 +19105,7 @@ dl {
       .preview-list .preview-item .preview-item-content p .content-category {
         font-family: 'source-sans-pro-semibold', sans-serif;
         padding-right: 15px;
-        border-right: 1px solid #f6f2f2; }
+        border-right: 1px solid #ddd; }
     .rtl .preview-list .preview-item .preview-item-content {
       padding-left: 0;
       padding-right: 1rem;
@@ -19135,7 +19135,7 @@ dl {
     line-height: 27px; }
 
 .preview-list.bordered .preview-item {
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
   .preview-list.bordered .preview-item:last-child {
     border-bottom: 0; }
 
@@ -19162,7 +19162,7 @@ dl {
     font-size: 0.813rem;
     padding: 0.625rem;
     color: #707889;
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     font-weight: 500; }
     .table td a, .jsgrid .jsgrid-table td a {
       display: inherit; }
@@ -19186,7 +19186,7 @@ dl {
     .jsgrid .table-borderless.jsgrid-table th {
       border: none; }
   .table.table-bordered, .jsgrid .table-bordered.jsgrid-table {
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .table tr:last-child td, .jsgrid .jsgrid-table tr:last-child td {
     border-bottom: none; }
 
@@ -19219,7 +19219,7 @@ dl {
   background: #f6f8fa;
   color: #000000;
   border-radius: 0;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: .75rem 1.5rem; }
   @media (max-width: 767px) {
     .nav-tabs .nav-link {
@@ -19234,7 +19234,7 @@ dl {
 .nav-tabs.nav-tabs-vertical, .nav-tabs.nav-tabs-vertical-custom {
   border-bottom: 0; }
   .nav-tabs.nav-tabs-vertical .nav-link.active, .nav-tabs.nav-tabs-vertical-custom .nav-link.active {
-    border-bottom-color: #f6f2f2; }
+    border-bottom-color: #ddd; }
   .nav-tabs.nav-tabs-vertical .nav-item:first-child .nav-link, .nav-tabs.nav-tabs-vertical-custom .nav-item:first-child .nav-link {
     border-radius: 4px 4px 0 0; }
   .nav-tabs.nav-tabs-vertical .nav-item:last-child .nav-link, .nav-tabs.nav-tabs-vertical-custom .nav-item:last-child .nav-link {
@@ -19254,10 +19254,10 @@ dl {
       border-color: rgba(255, 255, 255, 0.2); }
 
 .nav-pills {
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 1rem; }
   .nav-pills .nav-link {
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     padding: .5rem 1.75rem; }
     @media (max-width: 767px) {
       .nav-pills .nav-link {
@@ -19327,12 +19327,12 @@ dl {
     background: #1c2c42; }
 
 .tab-content {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-top: 0;
   padding: 2rem 1rem;
   text-align: justify; }
   .tab-content.tab-content-vertical {
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .tab-content.tab-content-vertical-custom {
     border: 0;
     padding-top: 0; }
@@ -19506,7 +19506,7 @@ dl {
     border-radius: 5px;
     width: calc(100% - 100px);
     padding: 0.4875rem;
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
   .add-items .btn, .add-items .fc button, .fc .add-items button, .add-items .ajax-upload-dragdrop .ajax-file-upload, .ajax-upload-dragdrop .add-items .ajax-file-upload, .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .add-items .swal2-styled, .add-items .wizard > .actions a, .wizard > .actions .add-items a {
     margin-left: .5rem;
     font-weight: 600;
@@ -19527,7 +19527,7 @@ dl {
     .list-wrapper ul li {
       font-size: .9375rem;
       padding: .4rem 0;
-      border-bottom: 1px solid #f6f2f2; }
+      border-bottom: 1px solid #ddd; }
       .list-wrapper ul li:first-child {
         border-bottom: none; }
       .list-wrapper ul li .form-check {
@@ -19719,7 +19719,7 @@ dl {
 
 .profile-feed-item {
   padding: 1.5rem 0;
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
 
 /* Pricing table */
 .pricing-table .pricing-card .pricing-card-body {
@@ -19826,7 +19826,7 @@ dl {
   .email-wrapper .mail-sidebar .menu-bar .profile-list {
     padding: 10px 0; }
   .email-wrapper .mail-sidebar .menu-bar .profile-list-item {
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     padding: 6px 0;
     display: block; }
     .email-wrapper .mail-sidebar .menu-bar .profile-list-item:last-child {
@@ -19862,14 +19862,14 @@ dl {
 
 /* Mail List Container */
 .email-wrapper .mail-list-container {
-  border-left: 1px solid #f6f2f2;
+  border-left: 1px solid #ddd;
   height: 100%;
   padding-left: 0;
   padding-right: 0; }
   .email-wrapper .mail-list-container a {
     text-decoration: none; }
   .email-wrapper .mail-list-container .mail-list {
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: row;
     padding: 10px 15px;
@@ -19913,7 +19913,7 @@ dl {
 /* Message Content */
 .email-wrapper .message-body .sender-details {
   padding: 20px 15px 0;
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   display: -webkit-flex;
   display: flex; }
   .email-wrapper .message-body .sender-details .details {
@@ -19933,12 +19933,12 @@ dl {
 
 .email-wrapper .message-body .attachments-sections ul {
   list-style: none;
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   padding: 30px 15px 20px; }
   .email-wrapper .message-body .attachments-sections ul li {
     padding: 10px;
     margin-right: 20px;
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     border-radius: 5px; }
     .email-wrapper .message-body .attachments-sections ul li .thumb {
       display: inline-block;
@@ -20289,7 +20289,7 @@ body.avgrund-active {
 
 .context-menu-list {
   box-shadow: none;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .context-menu-list .context-menu-item span {
     color: #000;
     font-size: .75rem;
@@ -20487,7 +20487,7 @@ body.avgrund-active {
   border-radius: 2px; }
 
 .datepicker.input-group, .datepicker.asColorPicker-wrap {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: 0; }
   .datepicker.input-group .form-control, .datepicker.asColorPicker-wrap .form-control, .datepicker.input-group .asColorPicker-input, .datepicker.asColorPicker-wrap .asColorPicker-input, .datepicker.input-group .dataTables_wrapper select, .dataTables_wrapper .datepicker.input-group select, .datepicker.asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .datepicker.asColorPicker-wrap select, .datepicker.input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.input-group input[type=text], .datepicker.asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.asColorPicker-wrap input[type=text],
   .datepicker.input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.input-group select,
@@ -20502,7 +20502,7 @@ body.avgrund-active {
   border-bottom-color: #fff; }
 
 .datepicker-dropdown:before {
-  border-bottom-color: #f6f2f2; }
+  border-bottom-color: #ddd; }
 
 .datepicker-dropdown.datepicker-orient-top:before, .datepicker-dropdown.datepicker-orient-top:after {
   top: auto; }
@@ -20511,11 +20511,11 @@ body.avgrund-active {
   border-top-color: #fff; }
 
 .datepicker-dropdown.datepicker-orient-top:before {
-  border-top-color: #f6f2f2; }
+  border-top-color: #ddd; }
 
 /* Dropify */
 .dropify-wrapper {
-  border: 2px dashed #f6f2f2;
+  border: 2px dashed #ddd;
   border-radius: 7px; }
   .dropify-wrapper:hover {
     background-size: 30px 30px;
@@ -20555,7 +20555,7 @@ body.avgrund-active {
 
 /* Dropzone */
 .dropzone {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   min-height: 200px;
   background: #fff; }
   .dropzone .dz-message {
@@ -20611,7 +20611,7 @@ body.avgrund-active {
   text-shadow: none;
   font-weight: 400;
   background-color: #ffffff;
-  border-color: #f6f2f2;
+  border-color: #ddd;
   text-transform: capitalize;
   color: #a8b2b9; }
   .fc button .fc-icon-right-single-arrow:after,
@@ -20730,7 +20730,7 @@ body.avgrund-active {
 
 /* Jquery File Upload */
 .ajax-upload-dragdrop {
-  border-color: #f6f2f2;
+  border-color: #ddd;
   border-style: dotted;
   max-width: 100%; }
   .ajax-upload-dragdrop span b {
@@ -20749,7 +20749,7 @@ body.avgrund-active {
 
 /* Js-grid */
 .jsgrid .jsgrid-grid-header {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-top: 0; }
 
 .jsgrid .jsgrid-table th {
@@ -20815,7 +20815,7 @@ body.avgrund-active {
   padding-left: 0; }
   .listify-list ul.list li {
     display: block;
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     padding: 15px 10px; }
     .listify-list ul.list li h5 {
       color: #25378b; }
@@ -20854,7 +20854,7 @@ body.avgrund-active {
         position: relative;
         background: #ffffff;
         border-radius: 100%;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         width: 18px;
         height: 18px;
         top: -7px;
@@ -20885,7 +20885,7 @@ body.avgrund-active {
           padding: 13px 12px;
           bottom: 190%; }
   .noUi-target .noUi-pips .noUi-marker-horizontal, .noUi-target .noUi-pips .noUi-marker-vertical {
-    background: #f6f2f2; }
+    background: #ddd; }
   .noUi-target .noUi-pips .noUi-marker-horizontal {
     height: 9px;
     width: 1px; }
@@ -21117,7 +21117,7 @@ body.avgrund-active {
 
 .ql-toolbar.ql-snow,
 .quill-container.ql-snow {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 /* Rating */
 .br-theme-fontawesome-stars .br-widget a,
@@ -21178,11 +21178,11 @@ body.avgrund-active {
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-dropdown,
 .select2-container--default .select2-selection--multiple {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
   .select2-container--default .select2-selection--single .select2-search__field,
   .select2-container--default .select2-dropdown .select2-search__field,
   .select2-container--default .select2-selection--multiple .select2-search__field {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .select2-container--default .select2-selection--single {
   height: auto; }
@@ -21193,7 +21193,7 @@ body.avgrund-active {
   font-size: .8125rem; }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   color: #ffffff;
@@ -21218,10 +21218,10 @@ body.avgrund-active {
 
 /* Summernote Editor */
 .note-editor.note-frame {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .note-popover {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 /* SweetAlert */
 .swal2-container {
@@ -21258,7 +21258,7 @@ body.avgrund-active {
         margin-top: 32px; }
       .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel {
         margin-top: 32px;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         color: #ffffff;
         font-weight: initial; }
   .swal2-modal .swal2-content {
@@ -21299,7 +21299,7 @@ body.avgrund-active {
 /* Tags */
 div.tagsinput {
   padding: 15px 15px 10px;
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
   div.tagsinput span.tag {
     background: #25378b;
     border: 0;
@@ -21314,7 +21314,7 @@ div.tagsinput {
 /* TinyMCE Editor */
 .mce-tinymce.mce-panel,
 .mce-tinymce .mce-panel {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 /* Toast */
 .jq-toast-wrap .jq-icon-success {
@@ -21340,7 +21340,7 @@ div.tagsinput {
 .typeahead {
   background-color: #ffffff; }
   .typeahead:focus {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .tt-query {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -21355,7 +21355,7 @@ div.tagsinput {
   margin: 12px 0;
   padding: 8px 0;
   background-color: #ffffff;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -21391,13 +21391,13 @@ div.tagsinput {
 
 .wysi-editor textarea {
   height: 280px;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   font-family: inherit;
   font-size: 1rem; }
 
 .wysi-editor textarea:focus {
   color: black;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .wysi-editor .wysihtml-action-active,
 .wysi-editor .wysihtml-command-active {
@@ -21419,7 +21419,7 @@ div.tagsinput {
 
 .wysi-editor .wysihtml-editor,
 .wysi-editor .wysihtml-editor table td {
-  outline: 1px dotted #f6f2f2; }
+  outline: 1px dotted #ddd; }
 
 .wysi-editor code {
   background: #ddd;
@@ -21443,7 +21443,7 @@ div.tagsinput {
   line-height: 1.5em;
   text-decoration: none;
   background: #ffffff;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: 0 0.2em;
   margin: 1px 0;
   color: #25378b; }
@@ -21467,7 +21467,7 @@ div.tagsinput {
 .wysi-editor div[data-wysihtml-dialog="createTable"] td {
   width: 10px;
   height: 5px;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .wysi-editor .wysihtml-editor table td.wysiwyg-tmp-selected-cell {
   outline: 2px solid #23af47; }
@@ -21486,7 +21486,7 @@ div.tagsinput {
   margin: 40px; }
 
 .wysi-editor .editable .wysihtml-uneditable-container {
-  outline: 1px dotted #f6f2f2;
+  outline: 1px dotted #ddd;
   position: relative; }
 
 .wysi-editor .editable .wysihtml-uneditable-container-right {
@@ -21645,7 +21645,7 @@ div.tagsinput {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
     .wizard > .content > .title {
       position: absolute;
       left: -999em; }
@@ -21666,7 +21666,7 @@ div.tagsinput {
         height: 100%; }
       .wizard > .content > .body input {
         display: block;
-        border: 1px solid #f6f2f2; }
+        border: 1px solid #ddd; }
       .wizard > .content > .body input[type="checkbox"] {
         display: inline-block; }
       .wizard > .content > .body input.error {
@@ -21760,7 +21760,7 @@ div.tagsinput {
         border-top-right-radius: 5px; }
         .tabcontrol > .steps > ul > li:hover {
           background: #edecec;
-          border: 1px solid #f6f2f2;
+          border: 1px solid #ddd;
           padding: 0; }
         .tabcontrol > .steps > ul > li > a {
           color: #aab2bd;
@@ -21773,7 +21773,7 @@ div.tagsinput {
             text-decoration: none; }
       .tabcontrol > .steps > ul > li.current {
         background: #ffffff;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         border-bottom: 0 none;
         padding: 0 0 1px 0;
         margin-top: 0; }
@@ -21785,7 +21785,7 @@ div.tagsinput {
     width: 100%;
     height: 35em;
     overflow: hidden;
-    border-top: 1px solid #f6f2f2;
+    border-top: 1px solid #ddd;
     padding-top: 20px; }
     .tabcontrol > .content > .title {
       position: absolute;
@@ -21839,7 +21839,7 @@ div.tagsinput {
   .auth .auth-form-light .asColorPicker-wrap .tt-query:active,
   .auth .auth-form-light .input-group .tt-hint:active,
   .auth .auth-form-light .asColorPicker-wrap .tt-hint:active {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .auth .auth-form-transparent {
   background: transparent; }
@@ -30387,22 +30387,22 @@ pre {
   .jsgrid .jsgrid-table td {
     padding: 1.25rem 0.9375rem;
     vertical-align: top;
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .table thead th, .jsgrid .jsgrid-table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #f6f2f2; }
+    border-bottom: 2px solid #ddd; }
   .table tbody + tbody, .jsgrid .jsgrid-table tbody + tbody {
-    border-top: 2px solid #f6f2f2; }
+    border-top: 2px solid #ddd; }
 
 .table-sm th,
 .table-sm td {
   padding: 0.3rem; }
 
 .table-bordered {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
@@ -30575,7 +30575,7 @@ pre {
 .table .thead-light th, .jsgrid .jsgrid-table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 .table-dark {
   color: #fff;
@@ -31622,7 +31622,7 @@ input[type="button"].btn-block {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-radius: 0.25rem; }
 
 .dropdown-menu-left {
@@ -31746,7 +31746,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #f6f2f2; }
+  border-top: 1px solid #ddd; }
 
 .dropdown-item {
   display: block;
@@ -34114,7 +34114,7 @@ a.close.disabled {
   pointer-events: auto;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-radius: 0.3rem;
   outline: 0; }
 
@@ -34136,7 +34136,7 @@ a.close.disabled {
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem; }
   .modal-header .close {
@@ -34157,7 +34157,7 @@ a.close.disabled {
   align-items: center;
   justify-content: flex-end;
   padding: 15px;
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem; }
   .modal-footer > :not(:first-child) {
@@ -34682,19 +34682,19 @@ button.bg-dark:focus {
   background-color: transparent !important; }
 
 .border, .loader-demo-box {
-  border: 1px solid #f6f2f2 !important; }
+  border: 1px solid #ddd !important; }
 
 .border-top {
-  border-top: 1px solid #f6f2f2 !important; }
+  border-top: 1px solid #ddd !important; }
 
 .border-right {
-  border-right: 1px solid #f6f2f2 !important; }
+  border-right: 1px solid #ddd !important; }
 
 .border-bottom {
-  border-bottom: 1px solid #f6f2f2 !important; }
+  border-bottom: 1px solid #ddd !important; }
 
 .border-left {
-  border-left: 1px solid #f6f2f2 !important; }
+  border-left: 1px solid #ddd !important; }
 
 .border-0, .legendContainer .legendColorBox > div, .legendContainer table tr .legendColorBox > div {
   border: 0 !important; }
@@ -37114,10 +37114,10 @@ a.text-dark:hover, a.text-dark:focus {
     .table-dark td,
     .table-dark thead th,
     .table-dark tbody + tbody {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
   .table .thead-dark th, .jsgrid .jsgrid-table .thead-dark th {
     color: inherit;
-    border-color: #f6f2f2; } }
+    border-color: #ddd; } }
 
 /*-------------------------------------------------------------------*/
 /* === Template mixins === */
@@ -37457,7 +37457,7 @@ h6, .h6 {
 
 .blockquote {
   padding: 1.25rem;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 address p {
   margin-bottom: 0; }
@@ -37651,27 +37651,27 @@ code {
 
 @media (min-width: 576px) {
   .border-right-sm {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 768px) {
   .border-right-md {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 992px) {
   .border-right-lg {
-    border-right: 1px solid #f6f2f2; } }
+    border-right: 1px solid #ddd; } }
 
 @media (min-width: 576px) {
   .border-left-sm {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 @media (min-width: 768px) {
   .border-left-md {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 @media (min-width: 992px) {
   .border-left-lg {
-    border-left: 1px solid #f6f2f2; } }
+    border-left: 1px solid #ddd; } }
 
 .text-gray, .card .card-subtitle {
   color: #848484; }
@@ -37698,7 +37698,7 @@ code {
 .template-demo > h5,
 .template-demo > h6,
 .template-demo > h1 {
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   padding: 0.5rem 0 0; }
 
 .template-demo .ul-slider.noUi-horizontal {
@@ -37718,7 +37718,7 @@ code {
   margin-bottom: 0; }
 
 .template-demo .editable-form > .form-group {
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 0.8rem;
   margin-bottom: 0.8rem; }
 
@@ -37960,7 +37960,7 @@ code {
   height: 1.875rem;
   background: #ffffff;
   border-radius: 100%;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   opacity: 1; }
   .dashboard-widget-carousel .carousel-control-prev:hover,
   .dashboard-widget-carousel .carousel-control-next:hover {
@@ -38151,7 +38151,7 @@ code {
   box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35); }
   .accordion.accordion-bordered .card {
     margin: 0 2rem;
-    border-top: 1px solid #f6f2f2;
+    border-top: 1px solid #ddd;
     box-shadow: none;
     border-radius: 0;
     border-left: 0;
@@ -38526,10 +38526,10 @@ code {
     height: 50px;
     padding: 0; }
   .btn.btn-outline-secondary, .fc button.btn-outline-secondary, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel, .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel, .wizard > .actions a.btn-outline-secondary {
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
     .btn.btn-outline-secondary:hover, .fc button.btn-outline-secondary:hover, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel:hover, .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload:hover, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel:hover, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled:hover, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel:hover, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel:hover, .wizard > .actions a.btn-outline-secondary:hover {
       background: transparent;
-      border: 1px solid #ccb6b6;
+      border: 1px solid #aaaaaa;
       color: #707889; }
     .btn.btn-outline-secondary.dropdown-toggle:focus, .fc button.btn-outline-secondary.dropdown-toggle:focus, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.dropdown-toggle.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.dropdown-toggle.editable-cancel:focus, .ajax-upload-dragdrop .btn-outline-secondary.dropdown-toggle.ajax-file-upload:focus, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .dropdown-toggle.ajax-file-upload.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .dropdown-toggle.ajax-file-upload.editable-cancel:focus, .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.dropdown-toggle.swal2-styled:focus, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .dropdown-toggle.swal2-styled.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .dropdown-toggle.swal2-styled.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.dropdown-toggle.editable-cancel:focus, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.dropdown-toggle.editable-cancel:focus, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.dropdown-toggle.editable-cancel:focus, .wizard > .actions a.btn-outline-secondary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(112, 120, 137, 0); }
@@ -38929,7 +38929,7 @@ code {
 
 /* Breadcrumbs */
 .breadcrumb {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .breadcrumb .breadcrumb-item {
     font-size: 0.813rem; }
   .breadcrumb.breadcrumb-custom {
@@ -39357,9 +39357,9 @@ code {
       -o-transform: scale(1);
       transform: scale(1); }
     .form-check .form-check-label input[type="checkbox"]:disabled + .input-helper:before {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
     .form-check .form-check-label input[type="checkbox"]:disabled:checked + .input-helper:after {
-      background: #f6f2f2;
+      background: #ddd;
       color: #ffffff; }
     .form-check .form-check-label input[type="radio"] + .input-helper:before {
       position: absolute;
@@ -39418,9 +39418,9 @@ code {
       -o-transform: scale(1);
       transform: scale(1); }
     .form-check .form-check-label input[type="radio"]:disabled + .input-helper:before {
-      border-color: #f6f2f2; }
+      border-color: #ddd; }
     .form-check .form-check-label input[type="radio"]:disabled:checked + .input-helper:before {
-      background: #f6f2f2; }
+      background: #ddd; }
     .form-check .form-check-label input[type="radio"]:disabled:checked + .input-helper:after {
       background: #ffffff; }
 
@@ -39536,7 +39536,7 @@ code {
   border: none; }
   .input-group-append .input-group-text,
   .input-group-prepend .input-group-text {
-    border-color: #f6f2f2;
+    border-color: #ddd;
     padding: 0.875rem 0.75rem;
     color: #979797; }
 
@@ -39544,7 +39544,7 @@ code {
 .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
 .tt-query,
 .tt-hint {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   font-weight: 400;
   font-size: 0.875rem;
   height: auto;
@@ -39556,13 +39556,13 @@ select.tt-query,
 select.tt-hint {
   padding: .4375rem .75rem;
   border: 0;
-  outline: 1px solid #f6f2f2;
+  outline: 1px solid #ddd;
   color: #979797; }
   select.form-control:focus, select.asColorPicker-input:focus, .dataTables_wrapper select:focus,
   .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .select2-container--default select.select2-selection--single:focus, .select2-container--default .select2-selection--single select.select2-search__field:focus, select.typeahead:focus,
   select.tt-query:focus,
   select.tt-hint:focus {
-    outline: 1px solid #f6f2f2; }
+    outline: 1px solid #ddd; }
   select.form-control.border-primary, select.border-primary.asColorPicker-input, .dataTables_wrapper select.border-primary,
   .jsgrid .jsgrid-table .jsgrid-filter-row select.border-primary, .select2-container--default select.border-primary.select2-selection--single, .select2-container--default .select2-selection--single select.border-primary.select2-search__field, select.border-primary.typeahead,
   select.border-primary.tt-query,
@@ -39695,12 +39695,12 @@ select.tt-hint {
 
 /* Icons */
 .icons-list {
-  border-left: 1px solid #f6f2f2;
-  border-top: 1px solid #f6f2f2; }
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; }
   .icons-list > div {
     background: #ffffff;
-    border-bottom: 1px solid #f6f2f2;
-    border-right: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
@@ -39748,7 +39748,7 @@ select.tt-hint {
     position: relative;
     margin: 0 auto;
     border-radius: 50%;
-    border: 0.01em solid #f6f2f2;
+    border: 0.01em solid #ddd;
     list-style: none;
     padding: 0; }
     #pgloading .bokeh li {
@@ -40374,7 +40374,7 @@ dl {
       z-index: 1; }
   .solid-bullet-list:after {
     content: "";
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -40408,7 +40408,7 @@ dl {
       border-radius: 100%; }
   .bullet-line-list:after {
     content: "";
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -40509,7 +40509,7 @@ dl {
 /* Pagination */
 .pagination .page-item .page-link, .jsgrid .jsgrid-pager .page-item .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-nav-button .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-page .page-link, .jsgrid .jsgrid-pager .jsgrid-pager-nav-button a,
 .jsgrid .jsgrid-pager .jsgrid-pager-page a {
-  border-color: #f6f2f2;
+  border-color: #ddd;
   color: #000000;
   font-size: .875rem;
   -webkit-transition-duration: 0.3s;
@@ -41026,7 +41026,7 @@ dl {
       .preview-list .preview-item .preview-item-content p .content-category {
         font-family: 'source-sans-pro-semibold', sans-serif;
         padding-right: 15px;
-        border-right: 1px solid #f6f2f2; }
+        border-right: 1px solid #ddd; }
     .rtl .preview-list .preview-item .preview-item-content {
       padding-left: 0;
       padding-right: 1rem;
@@ -41056,7 +41056,7 @@ dl {
     line-height: 27px; }
 
 .preview-list.bordered .preview-item {
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
   .preview-list.bordered .preview-item:last-child {
     border-bottom: 0; }
 
@@ -41083,7 +41083,7 @@ dl {
     font-size: 0.813rem;
     padding: 0.625rem;
     color: #707889;
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     font-weight: 500; }
     .table td a, .jsgrid .jsgrid-table td a {
       display: inherit; }
@@ -41107,7 +41107,7 @@ dl {
     .jsgrid .table-borderless.jsgrid-table th {
       border: none; }
   .table.table-bordered, .jsgrid .table-bordered.jsgrid-table {
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .table tr:last-child td, .jsgrid .jsgrid-table tr:last-child td {
     border-bottom: none; }
 
@@ -41140,7 +41140,7 @@ dl {
   background: #f6f8fa;
   color: #000000;
   border-radius: 0;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: .75rem 1.5rem; }
   @media (max-width: 767px) {
     .nav-tabs .nav-link {
@@ -41155,7 +41155,7 @@ dl {
 .nav-tabs.nav-tabs-vertical, .nav-tabs.nav-tabs-vertical-custom {
   border-bottom: 0; }
   .nav-tabs.nav-tabs-vertical .nav-link.active, .nav-tabs.nav-tabs-vertical-custom .nav-link.active {
-    border-bottom-color: #f6f2f2; }
+    border-bottom-color: #ddd; }
   .nav-tabs.nav-tabs-vertical .nav-item:first-child .nav-link, .nav-tabs.nav-tabs-vertical-custom .nav-item:first-child .nav-link {
     border-radius: 4px 4px 0 0; }
   .nav-tabs.nav-tabs-vertical .nav-item:last-child .nav-link, .nav-tabs.nav-tabs-vertical-custom .nav-item:last-child .nav-link {
@@ -41175,10 +41175,10 @@ dl {
       border-color: rgba(255, 255, 255, 0.2); }
 
 .nav-pills {
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 1rem; }
   .nav-pills .nav-link {
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     padding: .5rem 1.75rem; }
     @media (max-width: 767px) {
       .nav-pills .nav-link {
@@ -41248,12 +41248,12 @@ dl {
     background: #1c2c42; }
 
 .tab-content {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-top: 0;
   padding: 2rem 1rem;
   text-align: justify; }
   .tab-content.tab-content-vertical {
-    border-top: 1px solid #f6f2f2; }
+    border-top: 1px solid #ddd; }
   .tab-content.tab-content-vertical-custom {
     border: 0;
     padding-top: 0; }
@@ -41427,7 +41427,7 @@ dl {
     border-radius: 5px;
     width: calc(100% - 100px);
     padding: 0.4875rem;
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
   .add-items .btn, .add-items .fc button, .fc .add-items button, .add-items .ajax-upload-dragdrop .ajax-file-upload, .ajax-upload-dragdrop .add-items .ajax-file-upload, .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .add-items .swal2-styled, .add-items .wizard > .actions a, .wizard > .actions .add-items a {
     margin-left: .5rem;
     font-weight: 600;
@@ -41448,7 +41448,7 @@ dl {
     .list-wrapper ul li {
       font-size: .9375rem;
       padding: .4rem 0;
-      border-bottom: 1px solid #f6f2f2; }
+      border-bottom: 1px solid #ddd; }
       .list-wrapper ul li:first-child {
         border-bottom: none; }
       .list-wrapper ul li .form-check {
@@ -41640,7 +41640,7 @@ dl {
 
 .profile-feed-item {
   padding: 1.5rem 0;
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
 
 /* Pricing table */
 .pricing-table .pricing-card .pricing-card-body {
@@ -41747,7 +41747,7 @@ dl {
   .email-wrapper .mail-sidebar .menu-bar .profile-list {
     padding: 10px 0; }
   .email-wrapper .mail-sidebar .menu-bar .profile-list-item {
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     padding: 6px 0;
     display: block; }
     .email-wrapper .mail-sidebar .menu-bar .profile-list-item:last-child {
@@ -41783,14 +41783,14 @@ dl {
 
 /* Mail List Container */
 .email-wrapper .mail-list-container {
-  border-left: 1px solid #f6f2f2;
+  border-left: 1px solid #ddd;
   height: 100%;
   padding-left: 0;
   padding-right: 0; }
   .email-wrapper .mail-list-container a {
     text-decoration: none; }
   .email-wrapper .mail-list-container .mail-list {
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: row;
     padding: 10px 15px;
@@ -41834,7 +41834,7 @@ dl {
 /* Message Content */
 .email-wrapper .message-body .sender-details {
   padding: 20px 15px 0;
-  border-bottom: 1px solid #f6f2f2;
+  border-bottom: 1px solid #ddd;
   display: -webkit-flex;
   display: flex; }
   .email-wrapper .message-body .sender-details .details {
@@ -41854,12 +41854,12 @@ dl {
 
 .email-wrapper .message-body .attachments-sections ul {
   list-style: none;
-  border-top: 1px solid #f6f2f2;
+  border-top: 1px solid #ddd;
   padding: 30px 15px 20px; }
   .email-wrapper .message-body .attachments-sections ul li {
     padding: 10px;
     margin-right: 20px;
-    border: 1px solid #f6f2f2;
+    border: 1px solid #ddd;
     border-radius: 5px; }
     .email-wrapper .message-body .attachments-sections ul li .thumb {
       display: inline-block;
@@ -42210,7 +42210,7 @@ body.avgrund-active {
 
 .context-menu-list {
   box-shadow: none;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
   .context-menu-list .context-menu-item span {
     color: #000;
     font-size: .75rem;
@@ -42408,7 +42408,7 @@ body.avgrund-active {
   border-radius: 2px; }
 
 .datepicker.input-group, .datepicker.asColorPicker-wrap {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: 0; }
   .datepicker.input-group .form-control, .datepicker.asColorPicker-wrap .form-control, .datepicker.input-group .asColorPicker-input, .datepicker.asColorPicker-wrap .asColorPicker-input, .datepicker.input-group .dataTables_wrapper select, .dataTables_wrapper .datepicker.input-group select, .datepicker.asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .datepicker.asColorPicker-wrap select, .datepicker.input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.input-group input[type=text], .datepicker.asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.asColorPicker-wrap input[type=text],
   .datepicker.input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .datepicker.input-group select,
@@ -42423,7 +42423,7 @@ body.avgrund-active {
   border-bottom-color: #fff; }
 
 .datepicker-dropdown:before {
-  border-bottom-color: #f6f2f2; }
+  border-bottom-color: #ddd; }
 
 .datepicker-dropdown.datepicker-orient-top:before, .datepicker-dropdown.datepicker-orient-top:after {
   top: auto; }
@@ -42432,11 +42432,11 @@ body.avgrund-active {
   border-top-color: #fff; }
 
 .datepicker-dropdown.datepicker-orient-top:before {
-  border-top-color: #f6f2f2; }
+  border-top-color: #ddd; }
 
 /* Dropify */
 .dropify-wrapper {
-  border: 2px dashed #f6f2f2;
+  border: 2px dashed #ddd;
   border-radius: 7px; }
   .dropify-wrapper:hover {
     background-size: 30px 30px;
@@ -42476,7 +42476,7 @@ body.avgrund-active {
 
 /* Dropzone */
 .dropzone {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   min-height: 200px;
   background: #fff; }
   .dropzone .dz-message {
@@ -42532,7 +42532,7 @@ body.avgrund-active {
   text-shadow: none;
   font-weight: 400;
   background-color: #ffffff;
-  border-color: #f6f2f2;
+  border-color: #ddd;
   text-transform: capitalize;
   color: #a8b2b9; }
   .fc button .fc-icon-right-single-arrow:after,
@@ -42651,7 +42651,7 @@ body.avgrund-active {
 
 /* Jquery File Upload */
 .ajax-upload-dragdrop {
-  border-color: #f6f2f2;
+  border-color: #ddd;
   border-style: dotted;
   max-width: 100%; }
   .ajax-upload-dragdrop span b {
@@ -42670,7 +42670,7 @@ body.avgrund-active {
 
 /* Js-grid */
 .jsgrid .jsgrid-grid-header {
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   border-top: 0; }
 
 .jsgrid .jsgrid-table th {
@@ -42736,7 +42736,7 @@ body.avgrund-active {
   padding-left: 0; }
   .listify-list ul.list li {
     display: block;
-    border-bottom: 1px solid #f6f2f2;
+    border-bottom: 1px solid #ddd;
     padding: 15px 10px; }
     .listify-list ul.list li h5 {
       color: #25378b; }
@@ -42775,7 +42775,7 @@ body.avgrund-active {
         position: relative;
         background: #ffffff;
         border-radius: 100%;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         width: 18px;
         height: 18px;
         top: -7px;
@@ -42806,7 +42806,7 @@ body.avgrund-active {
           padding: 13px 12px;
           bottom: 190%; }
   .noUi-target .noUi-pips .noUi-marker-horizontal, .noUi-target .noUi-pips .noUi-marker-vertical {
-    background: #f6f2f2; }
+    background: #ddd; }
   .noUi-target .noUi-pips .noUi-marker-horizontal {
     height: 9px;
     width: 1px; }
@@ -43038,7 +43038,7 @@ body.avgrund-active {
 
 .ql-toolbar.ql-snow,
 .quill-container.ql-snow {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 /* Rating */
 .br-theme-fontawesome-stars .br-widget a,
@@ -43099,11 +43099,11 @@ body.avgrund-active {
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-dropdown,
 .select2-container--default .select2-selection--multiple {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
   .select2-container--default .select2-selection--single .select2-search__field,
   .select2-container--default .select2-dropdown .select2-search__field,
   .select2-container--default .select2-selection--multiple .select2-search__field {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .select2-container--default .select2-selection--single {
   height: auto; }
@@ -43114,7 +43114,7 @@ body.avgrund-active {
   font-size: .8125rem; }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   color: #ffffff;
@@ -43139,10 +43139,10 @@ body.avgrund-active {
 
 /* Summernote Editor */
 .note-editor.note-frame {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .note-popover {
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 /* SweetAlert */
 .swal2-container {
@@ -43179,7 +43179,7 @@ body.avgrund-active {
         margin-top: 32px; }
       .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel {
         margin-top: 32px;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         color: #ffffff;
         font-weight: initial; }
   .swal2-modal .swal2-content {
@@ -43220,7 +43220,7 @@ body.avgrund-active {
 /* Tags */
 div.tagsinput {
   padding: 15px 15px 10px;
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
   div.tagsinput span.tag {
     background: #25378b;
     border: 0;
@@ -43235,7 +43235,7 @@ div.tagsinput {
 /* TinyMCE Editor */
 .mce-tinymce.mce-panel,
 .mce-tinymce .mce-panel {
-  border-color: #f6f2f2; }
+  border-color: #ddd; }
 
 /* Toast */
 .jq-toast-wrap .jq-icon-success {
@@ -43261,7 +43261,7 @@ div.tagsinput {
 .typeahead {
   background-color: #ffffff; }
   .typeahead:focus {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .tt-query {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -43276,7 +43276,7 @@ div.tagsinput {
   margin: 12px 0;
   padding: 8px 0;
   background-color: #ffffff;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -43312,13 +43312,13 @@ div.tagsinput {
 
 .wysi-editor textarea {
   height: 280px;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   font-family: inherit;
   font-size: 1rem; }
 
 .wysi-editor textarea:focus {
   color: black;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .wysi-editor .wysihtml-action-active,
 .wysi-editor .wysihtml-command-active {
@@ -43340,7 +43340,7 @@ div.tagsinput {
 
 .wysi-editor .wysihtml-editor,
 .wysi-editor .wysihtml-editor table td {
-  outline: 1px dotted #f6f2f2; }
+  outline: 1px dotted #ddd; }
 
 .wysi-editor code {
   background: #ddd;
@@ -43364,7 +43364,7 @@ div.tagsinput {
   line-height: 1.5em;
   text-decoration: none;
   background: #ffffff;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   padding: 0 0.2em;
   margin: 1px 0;
   color: #25378b; }
@@ -43388,7 +43388,7 @@ div.tagsinput {
 .wysi-editor div[data-wysihtml-dialog="createTable"] td {
   width: 10px;
   height: 5px;
-  border: 1px solid #f6f2f2; }
+  border: 1px solid #ddd; }
 
 .wysi-editor .wysihtml-editor table td.wysiwyg-tmp-selected-cell {
   outline: 2px solid #23af47; }
@@ -43407,7 +43407,7 @@ div.tagsinput {
   margin: 40px; }
 
 .wysi-editor .editable .wysihtml-uneditable-container {
-  outline: 1px dotted #f6f2f2;
+  outline: 1px dotted #ddd;
   position: relative; }
 
 .wysi-editor .editable .wysihtml-uneditable-container-right {
@@ -43566,7 +43566,7 @@ div.tagsinput {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #f6f2f2; }
+    border: 1px solid #ddd; }
     .wizard > .content > .title {
       position: absolute;
       left: -999em; }
@@ -43587,7 +43587,7 @@ div.tagsinput {
         height: 100%; }
       .wizard > .content > .body input {
         display: block;
-        border: 1px solid #f6f2f2; }
+        border: 1px solid #ddd; }
       .wizard > .content > .body input[type="checkbox"] {
         display: inline-block; }
       .wizard > .content > .body input.error {
@@ -43681,7 +43681,7 @@ div.tagsinput {
         border-top-right-radius: 5px; }
         .tabcontrol > .steps > ul > li:hover {
           background: #edecec;
-          border: 1px solid #f6f2f2;
+          border: 1px solid #ddd;
           padding: 0; }
         .tabcontrol > .steps > ul > li > a {
           color: #aab2bd;
@@ -43694,7 +43694,7 @@ div.tagsinput {
             text-decoration: none; }
       .tabcontrol > .steps > ul > li.current {
         background: #ffffff;
-        border: 1px solid #f6f2f2;
+        border: 1px solid #ddd;
         border-bottom: 0 none;
         padding: 0 0 1px 0;
         margin-top: 0; }
@@ -43706,7 +43706,7 @@ div.tagsinput {
     width: 100%;
     height: 35em;
     overflow: hidden;
-    border-top: 1px solid #f6f2f2;
+    border-top: 1px solid #ddd;
     padding-top: 20px; }
     .tabcontrol > .content > .title {
       position: absolute;
@@ -43760,7 +43760,7 @@ div.tagsinput {
   .auth .auth-form-light .asColorPicker-wrap .tt-query:active,
   .auth .auth-form-light .input-group .tt-hint:active,
   .auth .auth-form-light .asColorPicker-wrap .tt-hint:active {
-    border-color: #f6f2f2; }
+    border-color: #ddd; }
 
 .auth .auth-form-transparent {
   background: transparent; }
@@ -43880,7 +43880,7 @@ div.tagsinput {
 .horizontal-menu .top-navbar {
   font-weight: 400;
   background: #25378b;
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
   .horizontal-menu .top-navbar .navbar-brand-wrapper {
     width: auto;
     height: 63px; }
@@ -44072,10 +44072,10 @@ div.tagsinput {
           margin-right: auto; } }
     .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary, .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload, .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled, .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary, .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary {
       color: #ffffff;
-      border: 1px solid rgba(246, 242, 242, 0.5); }
+      border: 1px solid rgba(221, 221, 221, 0.5); }
       .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary:hover, .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel:hover, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload:hover, .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel:hover, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled:hover, .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel:hover, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel:hover, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary:hover, .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary:hover {
         background: transparent;
-        border: 1px solid rgba(246, 242, 242, 0.7); }
+        border: 1px solid rgba(221, 221, 221, 0.7); }
     .horizontal-menu .top-navbar .navbar-menu-wrapper .dropdown-menu {
       border: none;
       -webkit-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
@@ -44410,7 +44410,7 @@ div.tagsinput {
                   display: none; } }
 
 .horizontal-menu.fixed-on-scroll .bottom-navbar {
-  border-bottom: 1px solid #f6f2f2; }
+  border-bottom: 1px solid #ddd; }
 
 @media (max-width: 991px) {
   .horizontal-menu {
@@ -44523,7 +44523,7 @@ div.tagsinput {
   height: 1.875rem;
   background: #ffffff;
   border-radius: 100%;
-  border: 1px solid #f6f2f2;
+  border: 1px solid #ddd;
   opacity: 1; }
   .dashboard-widget-carousel .carousel-control-prev:hover,
   .dashboard-widget-carousel .carousel-control-next:hover {
@@ -44659,7 +44659,8 @@ div.tagsinput {
   height: 100vh; }
   .board-lists .list-card .card-body {
     background: #ebecf0;
-    padding: 0; }
+    padding: 0;
+    border-radius: 4px; }
     .board-lists .list-card .card-body .card-name {
       margin-bottom: 0;
       padding: 15px; }

@@ -94,7 +94,7 @@ function SingleBoard({ match }) {
       idList: listId
     };
 
-    let [response] = await to(http.post('/card/create', cardData));
+    let [, response] = await to(http.post('/card/create', cardData));
     setBoard({
       ...board, actions: [...board.actions, {
         action: 'createcard',
