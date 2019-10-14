@@ -13,7 +13,7 @@ const List = ({
   listId,
   children,
   onAddCard,
-  onArchiveCard,
+  onArchiveAllCard,
   onArchiveList
 }) => (
   <div className="card list-card">
@@ -22,7 +22,7 @@ const List = ({
         <h4 className="card-name">{name}</h4>
         <DropdownMenu
           onAddCard={onAddCard}
-          onArchiveCard={onArchiveCard}
+          onArchiveCard={onArchiveAllCard}
           onArchiveList={onArchiveList}
         />
       </div>

@@ -141,6 +141,21 @@ function SingleBoard({ match }) {
     })
   };
 
+  const archiveCardHandler = () => {
+
+
+  }
+
+  const archiveListHandler = async (id) => {
+    const [err, response] = await to(http.post('/list/archive', { id }));
+    if (err) return console.log(err.response);
+    console.log(response);
+    //setBoard({...board, lists: board.lists.find((uid) => uid === id)
+    // console.log(list);
+
+  }
+
+
 
 
   return (
@@ -157,7 +172,7 @@ function SingleBoard({ match }) {
 
         <div className="board-lists row flex-nowrap pt-3">
           {board.lists && board.lists.length > 0
-            ? board.lists.map((item, index) => (
+            ? board.lists.map((item, index) => !item.closed ? (
                 <div className="col-md-3" key={index}>
                   <List
                     listId={item._id}
@@ -168,6 +183,9 @@ function SingleBoard({ match }) {
                     onChange={e => setCard({ ...card, name: e.target.value })}
                     addCard={() => addCardhandler(item._id)}
                     onClose={closeCardhandler}
+                    onAddCard={addCardhandler}
+                    onArchiveAllCard={archiveCardHandler}
+                    onArchiveList={() => archiveListHandler(item._id)}
                   >
                     {board.actions &&
                       board.actions.map(card => {
@@ -178,7 +196,7 @@ function SingleBoard({ match }) {
                       })}
                   </List>
                 </div>
-              ))
+              ) : null)
             : null}
           <div className="col-md-3">
             <CreateList
