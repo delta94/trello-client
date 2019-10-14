@@ -1,5 +1,6 @@
 import React from "react";
 import Input from '../forms/Input';
+import DropdownMenu from '../ui/DropdownMenu';
 
 const List = ({
   name,
@@ -14,7 +15,11 @@ const List = ({
 }) => (
   <div className="card list-card">
     <div className="card-body">
-      <h4 className="card-name">{name}</h4>
+      <div className="card-header p-0 d-flex align-items-center justify-content-between">
+        <h4 className="card-name">{name}</h4>
+        <DropdownMenu/>
+      </div>
+
       {children}
     </div>
     <div className="card-footer">
