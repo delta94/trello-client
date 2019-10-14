@@ -28,14 +28,12 @@ function SingleBoard({ match }) {
   const { id } = match.params;
 
 
-
-
   // Get single board data
   useEffect(() => {
     getSingleBoard();
   }, []);
 
-  // Single board request
+  // Get single from api
   const getSingleBoard = async () => {
     const [err, response] = await to(http.get(`/board/${id}`));
 
@@ -44,7 +42,13 @@ function SingleBoard({ match }) {
     setBoard(response.data);
   };
 
-  // Change title
+  /**
+   * Change Board title
+   * with contenteditable feature
+   * and when the title is onBlur
+   * send request to server to change
+   * the board name
+   */
   const changeTitle = async e => {
     if (e.currentTarget.textContent === '')
       return e.currentTarget.textContent = board.name;
@@ -55,6 +59,12 @@ function SingleBoard({ match }) {
     setBoard({ ...board, name: response.data.name })
   }
 
+  /**
+   * Create List handeler
+   * shows a modal with list name input filed
+   * member and board id passed via
+   * localstorage user id and single board data id
+   */
   const onCreateList = async (e) => {
     e.preventDefault();
     // get user from localstorage
@@ -70,7 +80,8 @@ function SingleBoard({ match }) {
 
     if (err) return setList({
       ...list,
-      error: true, msg: err.response.data
+      error: true,
+      msg: err.response.data
     });
 
     // Update board with latest list
@@ -79,13 +90,32 @@ function SingleBoard({ match }) {
     closeModal();
   };
 
-
+  /**
+   * Add card handler function set the list id to state
+   * so that this specific list can shows a input filed at
+   * the bottom of the list to add Card on that list
+   */
   const addCardhandler = (id) => {
     const newList = new Set([]);
     newList.add(id);
     setCard({ ...card, addCard: newList });
   }
 
+  /**
+   * When click close beside add card close button
+   * remove list id from set and hide card add input filed
+   * and show add card button instead
+   */
+  const closeCardhandler = () =>
+    setCard({ ...card, addCard: new Set([]) });
+
+  /**
+   * createCard function trigger when
+   * user add card name and click enter or add button
+   * send api call with card name, board id, and list id
+   *
+   * after create card successful update the board actions array
+   */
   const createCard = async (e, listId) => {
     e.preventDefault();
     const cardData = {
@@ -111,8 +141,7 @@ function SingleBoard({ match }) {
     })
   };
 
-  const closeCardhandler = () =>
-    setCard({ ...card, addCard: new Set([]) });
+
 
   return (
     <Layout bg={board.bgPath} className="single-board-wrapper">

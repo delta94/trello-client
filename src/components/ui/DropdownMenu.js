@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DropdownMenu = () => {
+const DropdownMenu = ({onAddCard, onArchiveCard, onArchiveList}) => {
   const [show, setShow] = useState(false);
   const showDropdwon = () => setShow(!show);
 
@@ -11,9 +11,15 @@ const DropdownMenu = () => {
         <i className="material-icons">more_vert</i>
       </button>
       <div className={show ? "dropdown-menu show" : "dropdown-menu"}>
-        <button className="dropdown-item">Action</button>
-        <button className="dropdown-item">Another action</button>
-        <button className="dropdown-item">Something else here</button>
+        <button className="dropdown-item" onClick={onAddCard}>
+          Add Card
+        </button>
+        <button className="dropdown-item" onClick={onArchiveCard}>
+          Archive all card in this list
+        </button>
+        <button className="dropdown-item" onClick={onArchiveList}>
+          Archive this list
+        </button>
       </div>
     </div>
   );
