@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { getBoards, createBoard } from "../api/boardController";
 import { config } from "../config";
 import { checkToken } from '../utils/checkToken';
+import { tokenValidity } from '../utils/tokenValidity';
 import { ModalContext } from "../context/modalContext";
 
 import Layout from "../hoc/Layout";
@@ -26,8 +27,8 @@ function Boards({ history }) {
   const { show, openModal, closeModal } = useContext(ModalContext);
 
   /**
-   * *Check token available on localstorage
-   * !if no token redirect to login page
+   * * Check token available on localstorage
+   * ! if no token redirect to login page
    * otherwise fetch boards data and set to state
    */
   useEffect(() => {
@@ -38,13 +39,10 @@ function Boards({ history }) {
   const getAllBoards = async () => {
     let [err, response] = await getBoards();
 
-    if (err !== null) {
-      if (err.response.data.invalid) {
-        return history.push("/login");
-      }
-    }
+    // If token expires redirect to login page
+    tokenValidity(err, history);
 
-    setBoard({ ...board, items: response.data });
+    setBoard({ ...board, items: response && response.data });
   };
 
   const onInputChange = e =>
