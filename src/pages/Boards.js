@@ -48,7 +48,7 @@ function Boards({ history }) {
   const onInputChange = e =>
     setBoard({
       ...board,
-      newBoard: { ...board.new, name: e.target.value }
+      new: { ...board.new, name: e.target.value }
     });
 
   const onSelectBackground = img => {

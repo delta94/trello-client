@@ -29,8 +29,6 @@ function SingleBoard({ match }) {
 
   const { id } = match.params;
 
-
-  // Get single board data
   useEffect(() => {
     getSingleBoardDetails();
   }, []);
@@ -43,14 +41,9 @@ function SingleBoard({ match }) {
     setBoard(response.data);
   };
 
-  /**
-   * Change Board title
-   * with contenteditable feature
-   * and when the title is onBlur
-   * send request to server to change
-   * the board name
-   */
-  const changeTitle = async e => {
+
+  // Change board title
+  const changeBoardTitle = async e => {
     if (e.currentTarget.textContent === '')
       return e.currentTarget.textContent = board.name;
 
@@ -67,7 +60,7 @@ function SingleBoard({ match }) {
    * member and board id passed via
    * localstorage user id and single board data id
    */
-  const onCreateList = async (e) => {
+  const handleCreateList = async (e) => {
     e.preventDefault();
     // get user from localstorage
     const user = getUser();
@@ -98,9 +91,8 @@ function SingleBoard({ match }) {
    * so that this specific list can shows a input filed at
    * the bottom of the list to add Card on that list
    */
-  const addCardhandler = (id) => {
-    const newList = new Set([]);
-    newList.add(id);
+  const handleAddCard = (id) => {
+    const newList = new Set([id]);
     setCard({ ...card, addCard: newList });
   }
 
@@ -109,17 +101,11 @@ function SingleBoard({ match }) {
    * remove list id from set and hide card add input filed
    * and show add card button instead
    */
-  const closeCardhandler = () =>
+  const handleCloseCard = () =>
     setCard({ ...card, addCard: new Set([]) });
 
-  /**
-   * createCard function trigger when
-   * user add card name and click enter or add button
-   * send api call with card name, board id, and list id
-   *
-   * after create card successful update the board actions array
-   */
-  const createCardHandler = async (e, listId) => {
+  // Create new card
+  const handleCreateCard = async (e, listId) => {
     e.preventDefault();
     const cardData = {
       name: card.name,
@@ -145,12 +131,13 @@ function SingleBoard({ match }) {
     })
   };
 
-  const archiveCardHandler = () => {
+  const hanldeArchiveCard = () => {
 
 
   };
 
-  const archiveListHandler = async (id) => {
+  // Archive Lists
+  const hanldeArchiveList = async (id) => {
     const [err] = await archiveList(id);
     if (err) return err.response;
 
@@ -163,7 +150,7 @@ function SingleBoard({ match }) {
         <h3
           contentEditable
           suppressContentEditableWarning={true}
-          onBlur={changeTitle}
+          onBlur={changeBoardTitle}
           className="board-name"
         >
           {board.name}
@@ -177,15 +164,15 @@ function SingleBoard({ match }) {
                     <List
                       listId={item._id}
                       name={item.name}
-                      onSubmitCard={e => createCardHandler(e, item._id)}
+                      onSubmitCard={e => handleCreateCard(e, item._id)}
                       cardValue={card.name}
                       isAddCard={card.addCard}
                       onChange={e => setCard({ ...card, name: e.target.value })}
-                      addCard={() => addCardhandler(item._id)}
-                      onClose={closeCardhandler}
-                      onAddCard={addCardhandler}
-                      onArchiveAllCard={archiveCardHandler}
-                      onArchiveList={() => archiveListHandler(item._id)}
+                      addCard={() => handleAddCard(item._id)}
+                      onClose={handleCloseCard}
+                      onAddCard={handleAddCard}
+                      onArchiveAllCard={hanldeArchiveCard}
+                      onArchiveList={() => hanldeArchiveList(item._id)}
                     >
                       {board.actions &&
                         board.actions.map(card => {
@@ -207,7 +194,7 @@ function SingleBoard({ match }) {
               modalClose={closeModal}
               value={list.name}
               onChange={e => setList({ ...list, name: e.target.value })}
-              onSubmit={onCreateList}
+              onSubmit={handleCreateList}
               error={list.error}
               errorMsg={list.msg}
             />
