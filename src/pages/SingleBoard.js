@@ -5,7 +5,7 @@ import { createList, archiveList } from "../api/listController";
 import { createCard } from '../api/cardController';
 
 import { ModalContext } from '../context/modalContext';
-import { getItemFromLocal } from '../utils/localStorage';
+import { getUser } from '../utils/localStorage';
 
 import Layout from '../hoc/Layout';
 import List from '../components/lists/List';
@@ -70,7 +70,7 @@ function SingleBoard({ match }) {
   const onCreateList = async (e) => {
     e.preventDefault();
     // get user from localstorage
-    const user = getItemFromLocal('user');
+    const user = getUser();
     // data for post req
     const listData = {
       name: list.name,

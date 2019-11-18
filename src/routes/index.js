@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { getItemFromLocal } from "../utils/localStorage";
+import { getUser } from "../utils/localStorage";
 
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -10,7 +10,7 @@ import SingleBoard from '../pages/SingleBoard';
 import Header from "../components/Header";
 
 function RouterComponent() {
-  const user = getItemFromLocal('user');
+  const user = getUser();
   return (
     <Router>
       <Header user={user}/>

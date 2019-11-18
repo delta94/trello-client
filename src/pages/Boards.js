@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import { getBoards, createBoard } from "../api/boardController";
-import { config } from '../config';
+import { config } from "../config";
+import { checkToken } from '../utils/checkToken';
 import { ModalContext } from "../context/modalContext";
 
 import Layout from "../hoc/Layout";
@@ -9,9 +10,9 @@ import RenderBoard from "../components/board/RenderBoard";
 import CreateBoard from "../components/board/CreateBoard";
 
 const NEW_BOARD = {
-  name: '',
+  name: "",
   error: false,
-  msg: ''
+  msg: ""
 };
 
 function Boards({ history }) {
@@ -30,12 +31,7 @@ function Boards({ history }) {
    * otherwise fetch boards data and set to state
    */
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token === null) {
-      history.push("/login");
-    } else {
-      getAllBoards();
-    }
+    checkToken(history, getAllBoards());
   }, []);
 
   // Get all boards
@@ -51,10 +47,11 @@ function Boards({ history }) {
     setBoard({ ...board, items: response.data });
   };
 
-  const onInputChange = e => setBoard({
-    ...board,
-    newBoard: {...board.new, name: e.target.value }
-  });
+  const onInputChange = e =>
+    setBoard({
+      ...board,
+      newBoard: { ...board.new, name: e.target.value }
+    });
 
   const onSelectBackground = img => {
     let newBackground = new Set([img]);
