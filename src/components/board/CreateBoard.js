@@ -7,7 +7,7 @@ import Error from "../FormError";
 import { config } from '../../config';
 
 const CreateBoard = (props) => {
-  const imgPath = Object.values(config.boardBd);
+  const imgPath = Object.values(config.background);
 
   return (
     <>

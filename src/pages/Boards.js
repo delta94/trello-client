@@ -1,30 +1,33 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from "react";
 
-import { getBoards, createBoard } from '../api/boardController';
+import { getBoards, createBoard } from "../api/boardController";
+import { config } from '../config';
+import { ModalContext } from "../context/modalContext";
 
-import Layout from '../hoc/Layout';
-import RenderBoard from '../components/board/RenderBoard';
-import CreateBoard from '../components/board/CreateBoard';
+import Layout from "../hoc/Layout";
+import RenderBoard from "../components/board/RenderBoard";
+import CreateBoard from "../components/board/CreateBoard";
 
-import { ModalContext } from '../context/modalContext';
+const NEW_BOARD = {
+  name: '',
+  error: false,
+  msg: ''
+};
 
-function Boards({ history, match }) {
-  const [boardData, setBoardData] = useState([]);
+function Boards({ history }) {
+  // All board data
   const [board, setBoard] = useState({
-    name: '',
-    error: false,
-    msg: ''
+    new: NEW_BOARD,
+    items: [],
+    bg: new Set([config.background.one])
   });
-  const [postBoard, setPostBoard] = useState(false);
-  const [selectedBg, setSelectedBg] = useState(new Set());
 
-  const {show, openModal, closeModal} = useContext(ModalContext);
+  const { show, openModal, closeModal } = useContext(ModalContext);
 
   /**
    * *Check token available on localstorage
    * !if no token redirect to login page
-   * otherwise fetch boards data and
-   * set to state
+   * otherwise fetch boards data and set to state
    */
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -33,73 +36,62 @@ function Boards({ history, match }) {
     } else {
       getAllBoards();
     }
-  }, [postBoard]);
+  }, []);
 
-  /**
-   * getAllBoards
-   * @desc get all boards data /board api
-   */
+  // Get all boards
   const getAllBoards = async () => {
     let [err, response] = await getBoards();
 
-    // Check error and token validation
     if (err !== null) {
       if (err.response.data.invalid) {
         return history.push("/login");
       }
     }
 
-    setBoardData(response.data);
+    setBoard({ ...board, items: response.data });
   };
 
-  /**
-   * * Redirect route to single board page
-   */
-  const getSingleBoard = (id) =>
-    history.push(`/board/${id}`);
+  const onInputChange = e => setBoard({
+    ...board,
+    newBoard: {...board.new, name: e.target.value }
+  });
 
-  /**
-   * onInputChage method
-   * for creating Board
-   */
-  const onInputChange = e =>
-    setBoard({ name: e.target.value });
+  const onSelectBackground = img => {
+    let newBackground = new Set([img]);
+    setBoard({ ...board, bg: newBackground });
+  };
 
-  /**
-   * Post request to server
-   * when createBoard call
-   */
-  const createBoardHanlder = async (e) => {
+  // Create new board
+  const hanldeCreateBoard = async e => {
     e.preventDefault();
 
-    const bgPath = selectedBg.values().next().value;
-    const newBoard = { name: board.name, bgPath };
+    const bgPath = board.bg.values().next().value;
+    const newBoard = { name: board.new.name, bgPath };
 
     let [err, response] = await createBoard(newBoard);
 
     if (err !== null)
       return setBoard({
         ...board,
-        error: true,
-        msg: err.response.data.msg
+        new: {
+          ...board.new,
+          error: true,
+          msg: err.response.data.msg
+        }
       });
 
-    setBoardData([...boardData, response.data]);
-    setPostBoard(!postBoard);
-    setBoard({ name: '', error: false, msg: '' });
-    // Close modal when done
+    setBoard({
+      ...board,
+      new: NEW_BOARD,
+      items: [...board.items, response.data],
+      bg: new Set([config.background.one])
+    });
+
     closeModal();
-    setSelectedBg(new Set());
   };
 
-  // Set seleted bg to state and pass it
-  // when create board
-  const onClickBg = (img) => {
-    const bgPath = new Set();
-    bgPath.add(img);
-    setSelectedBg(bgPath);
-  }
-
+  // Redirect route to single board page /board/:id
+  const redirectToSingleBoardPage = id => history.push(`/board/${id}`);
 
   return (
     <Layout>
@@ -107,12 +99,12 @@ function Boards({ history, match }) {
         <div className="col-md-12 mb-4">
           <h3>Boards</h3>
         </div>
-        {boardData && boardData.length > 0
-          ? boardData.map((board, index) => (
+        {board && board.items.length > 0
+          ? board.items.map((board, index) => (
               <RenderBoard
                 key={index}
                 board={board}
-                onClickBoard={getSingleBoard}
+                onClickBoard={redirectToSingleBoardPage}
               />
             ))
           : null}
@@ -122,13 +114,13 @@ function Boards({ history, match }) {
             modalOpen={openModal}
             show={show}
             modalClose={closeModal}
-            onSubmit={createBoardHanlder}
+            onSubmit={hanldeCreateBoard}
             onChange={onInputChange}
-            value={board.name}
-            error={board.error}
-            errorMsg={board.msg}
-            selectedBg={selectedBg}
-            onClickBg={onClickBg}
+            value={board.new.name}
+            error={board.new.error}
+            errorMsg={board.new.msg}
+            selectedBg={board.bg}
+            onClickBg={onSelectBackground}
           />
         </div>
       </div>

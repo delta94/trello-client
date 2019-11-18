@@ -1,6 +1,6 @@
 const config = {
   baseUrl: "http://localhost:3900/api",
-  boardBd: {
+  background: {
     one: "http://localhost:3900/api/static/img/1.jpg",
     two: "http://localhost:3900/api/static/img/2.jpg",
     three: "http://localhost:3900/api/static/img/3.jpg",
