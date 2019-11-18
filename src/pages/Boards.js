@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
-import to from 'await-to-js';
 
-import { http } from '../http';
+import { getBoards, createBoard } from '../api/boardController';
 
 import Layout from '../hoc/Layout';
 import RenderBoard from '../components/board/RenderBoard';
@@ -22,8 +21,8 @@ function Boards({ history, match }) {
   const {show, openModal, closeModal} = useContext(ModalContext);
 
   /**
-   * Check token available on localstorage
-   * or not, if not redirect to login page
+   * *Check token available on localstorage
+   * !if no token redirect to login page
    * otherwise fetch boards data and
    * set to state
    */
@@ -32,15 +31,16 @@ function Boards({ history, match }) {
     if (token === null) {
       history.push("/login");
     } else {
-      getBoards();
+      getAllBoards();
     }
   }, [postBoard]);
 
-  // Get all boards
-  const getBoards = async () => {
-    let [err, response] = await to(
-      http.get('/board')
-    );
+  /**
+   * getAllBoards
+   * @desc get all boards data /board api
+   */
+  const getAllBoards = async () => {
+    let [err, response] = await getBoards();
 
     // Check error and token validation
     if (err !== null) {
@@ -53,8 +53,7 @@ function Boards({ history, match }) {
   };
 
   /**
-   * gets the single board data
-   * route change to single board
+   * * Redirect route to single board page
    */
   const getSingleBoard = (id) =>
     history.push(`/board/${id}`);
@@ -70,13 +69,13 @@ function Boards({ history, match }) {
    * Post request to server
    * when createBoard call
    */
-  const createBoard = async (e) => {
+  const createBoardHanlder = async (e) => {
     e.preventDefault();
 
     const bgPath = selectedBg.values().next().value;
+    const newBoard = { name: board.name, bgPath };
 
-    let [err, response] = await to(http.post(
-      '/board/create', { name: board.name, bgPath }));
+    let [err, response] = await createBoard(newBoard);
 
     if (err !== null)
       return setBoard({
@@ -123,7 +122,7 @@ function Boards({ history, match }) {
             modalOpen={openModal}
             show={show}
             modalClose={closeModal}
-            onSubmit={createBoard}
+            onSubmit={createBoardHanlder}
             onChange={onInputChange}
             value={board.name}
             error={board.error}

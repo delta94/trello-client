@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import to from "await-to-js";
 
-import { http } from "../http";
 import { setTokenToLocal } from "../utils/localStorage";
+import { register } from '../api/authController';
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
@@ -31,7 +30,7 @@ function Register({ history }) {
   const onSubmit = async e => {
     e.preventDefault();
 
-    let [err, response] = await to(http.post('/user/register', authData));
+    let [err, response] = await register(authData);
 
     if (err)
       return setAuthError({

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import to from "await-to-js";
 
-import { http } from "../http";
+import { login } from '../api/authController';
 import { setTokenToLocal } from "../utils/localStorage";
 
 import Input from "../components/forms/Input";
@@ -32,7 +31,7 @@ function Login({history}) {
       password: authData.password
     }
 
-    let [err, response] = await to(http.post('/auth', data));
+    let [err, response] = await login(data);
 
     if (err)
       return setAuthData({

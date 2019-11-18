@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import to from 'await-to-js';
 
-import { http } from '../http';
+import { getSingleBoard, updateBoardTitle } from "../api/boardController";
+import { createList, archiveList } from "../api/listController";
+import { createCard } from '../api/cardController';
+
 import { ModalContext } from '../context/modalContext';
 import { getItemFromLocal } from '../utils/localStorage';
 
@@ -30,13 +32,12 @@ function SingleBoard({ match }) {
 
   // Get single board data
   useEffect(() => {
-    getSingleBoard();
+    getSingleBoardDetails();
   }, []);
 
   // Get single from api
-  const getSingleBoard = async () => {
-    const [err, response] = await to(http.get(`/board/${id}`));
-
+  const getSingleBoardDetails = async () => {
+    const [err, response] = await getSingleBoard(id);
     if (err) return err.response;
 
     setBoard(response.data);
@@ -53,7 +54,8 @@ function SingleBoard({ match }) {
     if (e.currentTarget.textContent === '')
       return e.currentTarget.textContent = board.name;
 
-    let [err, response] = await to(http.put(`/board/${id}`, { name: e.currentTarget.textContent }));
+    const newTitle = { name: e.currentTarget.textContent };
+    let [err, response] = await updateBoardTitle(id, newTitle);
 
     if (err) return err.response;
     setBoard({ ...board, name: response.data.name })
@@ -76,7 +78,7 @@ function SingleBoard({ match }) {
       idBoard: board._id
     }
 
-    let [err, response] = await to(http.post('/list/create', listData));
+    let [err, response] = await createList(listData);
 
     if (err) return setList({
       ...list,
@@ -86,6 +88,7 @@ function SingleBoard({ match }) {
 
     // Update board with latest list
     setBoard({ ...board, lists: [...board.lists, response.data] });
+    setList({ ...list, name: '' });
 
     closeModal();
   };
@@ -116,7 +119,7 @@ function SingleBoard({ match }) {
    *
    * after create card successful update the board actions array
    */
-  const createCard = async (e, listId) => {
+  const createCardHandler = async (e, listId) => {
     e.preventDefault();
     const cardData = {
       name: card.name,
@@ -124,7 +127,8 @@ function SingleBoard({ match }) {
       idList: listId
     };
 
-    let [, response] = await to(http.post('/card/create', cardData));
+    let [, response] = await createCard(cardData);
+
     setBoard({
       ...board, actions: [...board.actions, {
         action: 'createcard',
@@ -144,19 +148,14 @@ function SingleBoard({ match }) {
   const archiveCardHandler = () => {
 
 
-  }
+  };
 
   const archiveListHandler = async (id) => {
-    const [err, response] = await to(http.post('/list/archive', { id }));
-    if (err) return console.log(err.response);
-    console.log(response);
-    //setBoard({...board, lists: board.lists.find((uid) => uid === id)
-    // console.log(list);
+    const [err] = await archiveList(id);
+    if (err) return err.response;
 
+    setBoard({ ...board, lists: board.lists.filter((list) => list._id !== id) });
   }
-
-
-
 
   return (
     <Layout bg={board.bgPath} className="single-board-wrapper">
@@ -172,31 +171,33 @@ function SingleBoard({ match }) {
 
         <div className="board-lists row flex-nowrap pt-3">
           {board.lists && board.lists.length > 0
-            ? board.lists.map((item, index) => !item.closed ? (
-                <div className="col-md-3" key={index}>
-                  <List
-                    listId={item._id}
-                    name={item.name}
-                    onSubmitCard={e => createCard(e, item._id)}
-                    cardValue={card.name}
-                    isAddCard={card.addCard}
-                    onChange={e => setCard({ ...card, name: e.target.value })}
-                    addCard={() => addCardhandler(item._id)}
-                    onClose={closeCardhandler}
-                    onAddCard={addCardhandler}
-                    onArchiveAllCard={archiveCardHandler}
-                    onArchiveList={() => archiveListHandler(item._id)}
-                  >
-                    {board.actions &&
-                      board.actions.map(card => {
-                        return card.action === "createcard" &&
-                          card.data.list._id === item._id ? (
-                          <Card key={card._id} name={card.data.card.name} />
-                        ) : null;
-                      })}
-                  </List>
-                </div>
-              ) : null)
+            ? board.lists.map((item, index) =>
+                !item.closed ? (
+                  <div className="col-md-3" key={index}>
+                    <List
+                      listId={item._id}
+                      name={item.name}
+                      onSubmitCard={e => createCardHandler(e, item._id)}
+                      cardValue={card.name}
+                      isAddCard={card.addCard}
+                      onChange={e => setCard({ ...card, name: e.target.value })}
+                      addCard={() => addCardhandler(item._id)}
+                      onClose={closeCardhandler}
+                      onAddCard={addCardhandler}
+                      onArchiveAllCard={archiveCardHandler}
+                      onArchiveList={() => archiveListHandler(item._id)}
+                    >
+                      {board.actions &&
+                        board.actions.map(card => {
+                          return card.action === "createcard" &&
+                            card.data.list._id === item._id ? (
+                            <Card key={card._id} name={card.data.card.name} />
+                          ) : null;
+                        })}
+                    </List>
+                  </div>
+                ) : null
+              )
             : null}
           <div className="col-md-3">
             <CreateList
