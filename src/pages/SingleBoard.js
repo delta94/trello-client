@@ -23,7 +23,7 @@ function SingleBoard({ match }) {
 
   const [cardName, setCardName] = useState('');
 
-  const { show, openModal, closeModal } = useContext(ModalContext);
+  const { closeModal } = useContext(ModalContext);
 
   const { id } = match.params;
 
@@ -177,9 +177,6 @@ function SingleBoard({ match }) {
           <div className="col-md-3">
             <CreateList
               lists={board.lists}
-              show={show}
-              modalOpen={openModal}
-              modalClose={closeModal}
               value={list.name}
               onChange={e => setList({ ...list, name: e.target.value })}
               onSubmit={handleCreateList}
