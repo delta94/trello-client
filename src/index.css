@@ -17592,7 +17592,8 @@ code {
   -moz-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
   padding-top: 0;
-  border-radius: 4px; }
+  border-radius: 4px;
+  overflow: hidden; }
   .dropdown .dropdown-menu .dropdown-item {
     font-size: .875rem;
     padding: .65rem 1.5rem; }
@@ -39513,7 +39514,8 @@ code {
   -moz-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
   padding-top: 0;
-  border-radius: 4px; }
+  border-radius: 4px;
+  overflow: hidden; }
   .dropdown .dropdown-menu .dropdown-item {
     font-size: .875rem;
     padding: .65rem 1.5rem; }
