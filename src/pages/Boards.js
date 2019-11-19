@@ -42,7 +42,10 @@ function Boards({ history }) {
     // If token expires redirect to login page
     tokenValidity(err, history);
 
-    setBoard({ ...board, items: response && response.data });
+    setBoard({
+      ...board,
+      items: response && response.data
+    });
   };
 
   const onInputChange = e =>
@@ -86,7 +89,8 @@ function Boards({ history }) {
   };
 
   // Redirect route to single board page /board/:id
-  const redirectToSingleBoardPage = id => history.push(`/board/${id}`);
+  const redirectToSingleBoardPage = id =>
+    history.push(`/board/${id}`);
 
   return (
     <Layout>

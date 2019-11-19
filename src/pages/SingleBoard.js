@@ -11,6 +11,7 @@ import Layout from '../hoc/Layout';
 import List from '../components/lists/List';
 import CreateList from '../components/lists/CreateList';
 import Card from '../components/card/Card';
+import CreateCard from '../components/card/CreateCard';
 
 function SingleBoard({ match }) {
   const [board, setBoard] = useState({});
@@ -20,10 +21,7 @@ function SingleBoard({ match }) {
     msg: ''
   });
 
-  const [card, setCard] = useState({
-    name: '',
-    addCard: new Set([]),
-  });
+  const [cardName, setCardName] = useState('');
 
   const { show, openModal, closeModal } = useContext(ModalContext);
 
@@ -87,33 +85,21 @@ function SingleBoard({ match }) {
   };
 
   /**
-   * Add card handler function set the list id to state
-   * so that this specific list can shows a input filed at
-   * the bottom of the list to add Card on that list
-   */
-  const handleAddCard = (id) => {
-    const newList = new Set([id]);
-    setCard({ ...card, addCard: newList });
-  }
-
-  /**
    * When click close beside add card close button
    * remove list id from set and hide card add input filed
    * and show add card button instead
    */
-  const handleCloseCard = () =>
-    setCard({ ...card, addCard: new Set([]) });
-
   // Create new card
   const handleCreateCard = async (e, listId) => {
     e.preventDefault();
     const cardData = {
-      name: card.name,
+      name: cardName,
       idBoard: board._id,
       idList: listId
     };
 
     let [, response] = await createCard(cardData);
+    setCardName('');
 
     setBoard({
       ...board, actions: [...board.actions, {
@@ -121,7 +107,7 @@ function SingleBoard({ match }) {
         _id: response.data._id,
         data: {
           card: {
-            name: card.name,
+            name: cardName,
           },
           list: {
             _id: listId
@@ -160,35 +146,34 @@ function SingleBoard({ match }) {
         </h3>
 
         <div className="board-lists row flex-nowrap pt-3">
-          {board.lists && board.lists.length > 0
-            ? board.lists.map((item, index) =>
-                !item.closed ? (
-                  <div className="col-md-3" key={index}>
-                    <List
-                      listId={item._id}
-                      name={item.name}
-                      onSubmitCard={e => handleCreateCard(e, item._id)}
-                      cardValue={card.name}
-                      isAddCard={card.addCard}
-                      onChange={e => setCard({ ...card, name: e.target.value })}
-                      addCard={() => handleAddCard(item._id)}
-                      onClose={handleCloseCard}
-                      onAddCard={handleAddCard}
-                      onArchiveAllCard={hanldeArchiveCard}
-                      onArchiveList={() => hanldeArchiveList(item._id)}
-                    >
-                      {board.actions &&
-                        board.actions.map(card => {
-                          return card.action === "createcard" &&
-                            card.data.list._id === item._id ? (
-                            <Card key={card._id} name={card.data.card.name} />
-                          ) : null;
-                        })}
-                    </List>
-                  </div>
-                ) : null
-              )
-            : null}
+          {board.lists && board.lists.map((item, index) =>
+            !item.closed ? (
+              <div className="col-md-3" key={index}>
+                <List
+                  name={item.name}
+                  onArchiveAllCard={hanldeArchiveCard}
+                  onArchiveList={() => hanldeArchiveList(item._id)}
+                  footer={
+                    <CreateCard
+                      value={cardName}
+                      onChange={e =>
+                        setCardName(e.target.value)
+                      }
+                      onSubmit={e => handleCreateCard(e, item._id)}
+                    />
+                  }
+                >
+                  {board.actions &&
+                    board.actions.map(card => {
+                      return card.action === "createcard" &&
+                        card.data.list._id === item._id ? (
+                          <Card key={card._id} name={card.data.card.name} />
+                        ) : null;
+                    })}
+                </List>
+              </div>
+            ) : null
+          )}
           <div className="col-md-3">
             <CreateList
               lists={board.lists}

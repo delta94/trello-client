@@ -1,20 +1,12 @@
 import React from "react";
-import Input from '../forms/Input';
 import DropdownMenu from '../ui/DropdownMenu';
 
 const List = ({
   name,
-  onSubmitCard,
-  cardValue,
-  onChange,
-  addCard,
-  isAddCard,
-  onClose,
-  listId,
   children,
-  onAddCard,
   onArchiveAllCard,
-  onArchiveList
+  onArchiveList,
+  footer
 }) => (
   <div className="card list-card">
     <div className="card-body">
@@ -23,11 +15,7 @@ const List = ({
         <DropdownMenu
           menus={[
             {
-              text: "Add Card",
-              method: onAddCard
-            },
-            {
-              text: "Archive all card in this list",
+              text: "Archive all card",
               method: onArchiveAllCard
             },
             {
@@ -41,36 +29,7 @@ const List = ({
       {children}
     </div>
     <div className="card-footer">
-      {isAddCard.has(listId) ? (
-        <form action="" onSubmit={onSubmitCard}>
-          <Input
-            name="name"
-            type="text"
-            placeholder="Card name"
-            bm={false}
-            value={cardValue}
-            onChange={onChange}
-            className="form-control white large card-input"
-          />
-
-          <div className="form-footer">
-            <div className="d-flex align-items-center">
-              <button type="submit" className="btn btn-success btn-sm">
-                Add
-              </button>
-              <span
-                aria-hidden="true"
-                className="ti-close close"
-                onClick={onClose}
-              ></span>
-            </div>
-          </div>
-        </form>
-      ) : (
-        <div className="createcard" onClick={addCard}>
-          + Add Card
-        </div>
-      )}
+      {footer}
     </div>
   </div>
 );
