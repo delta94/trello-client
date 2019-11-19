@@ -98,8 +98,9 @@ function SingleBoard({ match }) {
       idList: listId
     };
 
-    let [, response] = await createCard(cardData);
-    setCardName('');
+    let [err, response] = await createCard(cardData);
+
+    if (err) return;
 
     setBoard({
       ...board, actions: [...board.actions, {
@@ -114,7 +115,9 @@ function SingleBoard({ match }) {
           }
         }
       }]
-    })
+    });
+
+    setCardName('');
   };
 
   const hanldeArchiveCard = () => {

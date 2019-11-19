@@ -8,4 +8,4 @@ export const createList = async data =>
 
 // Archive list
 export const archiveList = async id =>
-  await to(http.post("/list/archive", { id }));
+  await to(http.post("/list/delete", { id }));
