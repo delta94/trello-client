@@ -4,6 +4,7 @@ const Input = props => (
   <div className={props.mb ? "form-group" : 'form-group mb-0'}>
     {props.label && <label htmlFor={props.name}>{props.label}</label> }
     <input
+      ref={props.reference}
       value={props.value}
       type={props.type}
       onChange={props.onChange}

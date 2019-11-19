@@ -1,9 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 
 import Input from "../forms/Input";
 
 const CreateCard = ({onSubmit, value, onChange}) => {
   const [show, setShow] = useState(false);
+
+  const element = useRef(null);
+
+  useEffect(() => {
+    if (show) {
+      element.current.focus();
+    }
+  }, [show])
 
   return (
     <>
@@ -11,6 +19,7 @@ const CreateCard = ({onSubmit, value, onChange}) => {
         <form action="" onSubmit={onSubmit}>
           <Input
             name="name"
+            reference={element}
             type="text"
             placeholder="Card name"
             bm={false}
