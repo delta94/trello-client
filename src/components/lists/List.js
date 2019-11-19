@@ -21,9 +21,20 @@ const List = ({
       <div className="card-header p-0 d-flex align-items-center justify-content-between">
         <h4 className="card-name">{name}</h4>
         <DropdownMenu
-          onAddCard={onAddCard}
-          onArchiveCard={onArchiveAllCard}
-          onArchiveList={onArchiveList}
+          menus={[
+            {
+              text: "Add Card",
+              method: onAddCard
+            },
+            {
+              text: "Archive all card in this list",
+              method: onArchiveAllCard
+            },
+            {
+              text: "Archive this list",
+              method: onArchiveList
+            }
+          ]}
         />
       </div>
 

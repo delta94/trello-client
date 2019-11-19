@@ -30,11 +30,11 @@ function SingleBoard({ match }) {
   const { id } = match.params;
 
   useEffect(() => {
-    getSingleBoardDetails();
+    getSingleBoardData();
   }, []);
 
   // Get single from api
-  const getSingleBoardDetails = async () => {
+  const getSingleBoardData = async () => {
     const [err, response] = await getSingleBoard(id);
     if (err) return err.response;
 
@@ -141,8 +141,11 @@ function SingleBoard({ match }) {
     const [err] = await archiveList(id);
     if (err) return err.response;
 
-    setBoard({ ...board, lists: board.lists.filter((list) => list._id !== id) });
-  }
+    setBoard({
+      ...board,
+      lists: board.lists.filter((list) => list._id !== id)
+    });
+  };
 
   return (
     <Layout bg={board.bgPath} className="single-board-wrapper">
