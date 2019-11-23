@@ -1,4 +1,7 @@
 import React, {useContext} from "react";
+
+import { useFocusInput } from '../../hooks/useFocusInput';
+
 import Modal from "../modal/Modal";
 import Input from "../forms/Input";
 import Error from "../FormError";
@@ -6,6 +9,9 @@ import { ModalContext } from "../../context/modalContext";
 
 const CreateList = props => {
   const { show, openModal, closeModal } = useContext(ModalContext);
+
+  const el = useFocusInput(show);
+
   return (
     <>
       <div className="transparent-white-btn" onClick={openModal}>
@@ -18,6 +24,7 @@ const CreateList = props => {
         <form action="" onSubmit={props.onSubmit}>
           <Input
             name="name"
+            reference={el}
             onChange={props.onChange}
             className="form-control white"
             value={props.value}

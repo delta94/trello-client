@@ -1,17 +1,12 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState} from "react";
 
 import Input from "../forms/Input";
+import { useFocusInput } from "../../hooks/useFocusInput";
 
 const CreateCard = ({onSubmit, value, onChange}) => {
   const [show, setShow] = useState(false);
 
-  const element = useRef(null);
-
-  useEffect(() => {
-    if (show) {
-      element.current.focus();
-    }
-  }, [show])
+  const el = useFocusInput(show);
 
   return (
     <>
@@ -19,7 +14,7 @@ const CreateCard = ({onSubmit, value, onChange}) => {
         <form action="" onSubmit={onSubmit}>
           <Input
             name="name"
-            reference={element}
+            reference={el}
             type="text"
             placeholder="Card name"
             bm={false}
