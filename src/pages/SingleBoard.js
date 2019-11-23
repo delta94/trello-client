@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import { getSingleBoard, updateBoardTitle } from "../api/boardController";
-import { createList, archiveList } from "../api/listController";
-import { createCard } from '../api/cardController';
+import { getSingleBoard, updateBoardTitle, deleteBoard } from "../api/boardController";
+import { createList, deleteList } from "../api/listController";
+import { createCard, deleteCards } from '../api/cardController';
 
 import { ModalContext } from '../context/modalContext';
 import { getUser } from '../utils/localStorage';
@@ -13,7 +13,7 @@ import CreateList from '../components/lists/CreateList';
 import Card from '../components/card/Card';
 import CreateCard from '../components/card/CreateCard';
 
-function SingleBoard({ match }) {
+function SingleBoard({ match, history }) {
   const [board, setBoard] = useState({});
   const [list, setList] = useState({
     name: '',
@@ -120,14 +120,27 @@ function SingleBoard({ match }) {
     setCardName('');
   };
 
-  const hanldeArchiveCard = () => {
+  const handleDeleteBoard = async () => {
+    const id = match.params;
+    const [err] = await deleteBoard(id);
+    if (err) return err.response;
 
+    history.push('/');
+  };
 
+  const handleDeleteCards = async (id) => {
+    const [err, response] = await deleteCards({
+      id,
+      boardId: match.params
+    });
+
+    if (err) return err.response;
+    setBoard(response.data);
   };
 
   // Archive Lists
-  const hanldeArchiveList = async (id) => {
-    const [err] = await archiveList(id);
+  const handleDeleteList = async (id) => {
+    const [err] = await deleteList(id);
     if (err) return err.response;
 
     setBoard({
@@ -139,44 +152,50 @@ function SingleBoard({ match }) {
   return (
     <Layout bg={board.bgPath} className="single-board-wrapper">
       <div className="single-board">
-        <h3
-          contentEditable
-          suppressContentEditableWarning={true}
-          onBlur={changeBoardTitle}
-          className="board-name"
-        >
-          {board.name}
-        </h3>
+        <div className="board-header d-flex align-items-center pb-2">
+          <h3
+            contentEditable
+            suppressContentEditableWarning={true}
+            onBlur={changeBoardTitle}
+            className="board-name"
+          >
+            {board.name}
+          </h3>
+          <button type="button" className="btn btn-transparent danger btn-rounded btn-icon ml-4" onClick={handleDeleteBoard}>
+            <i className="material-icons">
+              delete
+            </i>
+          </button>
+        </div>
 
         <div className="board-lists row flex-nowrap pt-3">
-          {board.lists && board.lists.map((item, index) =>
-            !item.closed ? (
-              <div className="col-md-3" key={index}>
-                <List
-                  name={item.name}
-                  onArchiveAllCard={hanldeArchiveCard}
-                  onArchiveList={() => hanldeArchiveList(item._id)}
-                  footer={
-                    <CreateCard
-                      value={cardName}
-                      onChange={e =>
-                        setCardName(e.target.value)
-                      }
-                      onSubmit={e => handleCreateCard(e, item._id)}
-                    />
-                  }
-                >
-                  {board.actions &&
-                    board.actions.map(card => {
-                      return card.action === "createcard" &&
-                        card.data.list._id === item._id ? (
+          {board.lists &&
+            board.lists.map((item, index) =>
+              !item.closed ? (
+                <div className="col-md-3" key={index}>
+                  <List
+                    name={item.name}
+                    onArchiveAllCard={() => handleDeleteCards(item._id)}
+                    onArchiveList={() => handleDeleteList(item._id)}
+                    footer={
+                      <CreateCard
+                        value={cardName}
+                        onChange={e => setCardName(e.target.value)}
+                        onSubmit={e => handleCreateCard(e, item._id)}
+                      />
+                    }
+                  >
+                    {board.actions &&
+                      board.actions.map(card => {
+                        return card.action === "createcard" &&
+                          card.data.list._id === item._id ? (
                           <Card key={card._id} name={card.data.card.name} />
                         ) : null;
-                    })}
-                </List>
-              </div>
-            ) : null
-          )}
+                      })}
+                  </List>
+                </div>
+              ) : null
+            )}
           <div className="col-md-3">
             <CreateList
               lists={board.lists}

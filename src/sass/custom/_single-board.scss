@@ -8,6 +8,7 @@
   border-radius: 4px;
   background: transparent;
   transition: all .1s ease;
+  margin: 0;
 
   &:hover,
   &:focus {
@@ -28,7 +29,6 @@
 
 .board-lists {
   overflow-y: scroll !important;
-  height: 100vh;
 
   .list-card {
     .card-body {
@@ -78,7 +78,7 @@
 }
 
 .card-item-wrapper {
-  padding: 5px 10px 5px;
+  padding: 3px 10px 2px;
   border-radius: 6px;
 
   .item-card {

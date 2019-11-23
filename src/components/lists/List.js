@@ -15,11 +15,11 @@ const List = ({
         <DropdownMenu
           menus={[
             {
-              text: "Archive all card",
+              text: "Remove all card",
               method: onArchiveAllCard
             },
             {
-              text: "Archive this list",
+              text: "Remove this list",
               method: onArchiveList
             }
           ]}

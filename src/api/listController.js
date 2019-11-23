@@ -7,5 +7,5 @@ export const createList = async data =>
   await to(http.post("/list/create", data));
 
 // Archive list
-export const archiveList = async id =>
+export const deleteList = async id =>
   await to(http.post("/list/delete", { id }));

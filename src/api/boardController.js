@@ -15,3 +15,9 @@ export const getSingleBoard = async id => await to(http.get(`/board/${id}`));
 // Update board title
 export const updateBoardTitle = async (id, data) =>
   await to(http.put(`/board/${id}`, data ));
+
+// Update board title
+export const deleteBoard = async (data) =>
+  await to(http.delete(`/board/delete`, {data} ));
+
+
