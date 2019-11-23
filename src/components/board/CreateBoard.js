@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useFocusInput } from "../../hooks/useFocusInput";
+
 import Card from './BoardCard';
 import Modal from '../modal/Modal';
 import Input from '../forms/Input';
@@ -9,6 +12,8 @@ import { config } from '../../config';
 const CreateBoard = (props) => {
   const imgPath = Object.values(config.background);
 
+  const el = useFocusInput(props.show);
+
   return (
     <>
       <Card name="Create new board" className="create-board" onClick={props.modalOpen} />
@@ -18,6 +23,7 @@ const CreateBoard = (props) => {
           <Input
             label="Board Name"
             name="name"
+            reference={el}
             mb={true}
             onChange={props.onChange}
             className="form-control white"

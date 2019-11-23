@@ -24,11 +24,12 @@
 .single-board {
   position: relative;
   overflow: auto;
-  height: 100%;
+  height: calc(100vh - 130px);
 }
 
 .board-lists {
   overflow-y: scroll !important;
+  min-height: 300px;
 
   .list-card {
     .card-body {

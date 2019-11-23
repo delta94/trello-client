@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 
 import { getBoards, createBoard } from "../api/boardController";
 import { config } from "../config";
