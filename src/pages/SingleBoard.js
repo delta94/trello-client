@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { getSingleBoard, updateBoardTitle, deleteBoard } from "../api/boardController";
 import { createList, deleteList } from "../api/listController";
 import { createCard, deleteCards } from '../api/cardController';
-import { uploadAvatar } from '../api/uploadController';
+//import { uploadAvatar } from '../api/uploadController';
 
 import { ModalContext } from '../context/modalContext';
 import { getUser } from '../utils/localStorage';
@@ -21,6 +21,7 @@ function SingleBoard({ match, history }) {
     error: false,
     msg: ''
   });
+
 
   const [cardName, setCardName] = useState('');
   const { closeModal } = useContext(ModalContext);

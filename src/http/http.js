@@ -6,7 +6,7 @@ import { config } from '../config';
 const http = axios.create({
   baseURL: config.baseUrl,
   timeout: 1000,
-  headers: { "Content-Type": "application/json" }
+  headers: { "Content-Type": "*" }
 });
 
 http.interceptors.request.use(
