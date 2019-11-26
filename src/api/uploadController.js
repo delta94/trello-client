@@ -4,4 +4,4 @@ import { http } from '../http/http';
 
 
 export const uploadAvatar = async (data) =>
-  await to(http.post('/upload/profile', data ));
+  await to(http.post('/upload', data));
