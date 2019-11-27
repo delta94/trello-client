@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import Layout from '../hoc/Layout';
 
 import { uploadAvatar } from '../api/uploadController';
+
+import Layout from '../hoc/Layout';
 
 function Profile() {
   const [uploadFile, setUploadFile] = useState({});
@@ -12,11 +13,14 @@ function Profile() {
 
   const handleUpload = async (e) => {
     e.preventDefault();
+    const user = localStorage.getItem('user');
+
     const file = new FormData();
     await file.append("avatar", uploadFile);
+    file.append('user', user);
 
     const [err, response] = await uploadAvatar(file);
-    console.log(err, response);
+    console.log(err.response, response);
   }
 
   return (
