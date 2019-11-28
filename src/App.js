@@ -1,14 +1,17 @@
 import React from 'react';
 import ModalContextProvider from './context/modalContext';
+import AvatarContextProvider from './context/AvatarContext';
 
 import RouterComponent from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <ModalContextProvider>
-        <RouterComponent />
-      </ModalContextProvider>
+      <AvatarContextProvider>
+        <ModalContextProvider>
+          <RouterComponent />
+        </ModalContextProvider>
+      </AvatarContextProvider>
     </div>
   );
 }

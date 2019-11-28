@@ -18,6 +18,8 @@ export const getUser = () => {
   return JSON.parse(user);
 };
 
+
+
 export const getToken = () => localStorage.getItem('token');
 
 // Clear local storage

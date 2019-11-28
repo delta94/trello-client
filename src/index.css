@@ -44795,3 +44795,9 @@ div.tagsinput {
   color: #ffffff !important; }
   .btn-transparent.danger:hover {
     background-color: #dc3545; }
+
+.profile-image {
+  width: 37px;
+  height: 37px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-size: cover !important; }

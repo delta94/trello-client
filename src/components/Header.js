@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../img/logo.svg";
+import { AvatarContext } from "../context/AvatarContext";
 
-function Header({ user, location, transparent }) {
+
+function Header({ location }) {
   const path = location.pathname;
+  const { avatar } = useContext(AvatarContext);
   const isAuthPage = () => {
     if (path === "/register" || path === "/login") {
       return false;
@@ -19,6 +22,10 @@ function Header({ user, location, transparent }) {
     }
     return "horizontal-menu";
   };
+
+  const style = {
+    background: `url(${avatar}) center center no-repeat`
+  }
 
   return (
     <>
@@ -43,7 +50,11 @@ function Header({ user, location, transparent }) {
                 <ul className="navbar-nav navbar-nav-right">
                   <li className="nav-item nav-user-icon">
                     <Link className="nav-link" to="/profile">
-                      <img src="https://via.placeholder.com/37x37" alt="" />
+                      <div
+                        className="profile-image"
+                        style={style}
+                      ></div>
+
                     </Link>
                   </li>
                   <li className="nav-item nav-settings d-none d-lg-flex">

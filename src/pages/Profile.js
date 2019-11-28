@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 import { uploadAvatar } from '../api/uploadController';
 
 import Layout from '../hoc/Layout';
+import { AvatarContext } from '../context/AvatarContext';
 
 function Profile() {
   const [uploadFile, setUploadFile] = useState({});
+  const { updateContextAvatar } = useContext(AvatarContext);
   const handleFile = async (e) => {
     setUploadFile(e.target.files[0]);
-
   };
 
   const handleUpload = async (e) => {
@@ -20,7 +21,9 @@ function Profile() {
     file.append('user', user);
 
     const [err, response] = await uploadAvatar(file);
-    console.log(err.response, response);
+    if (err) return;
+
+    updateContextAvatar(response.data.path);
   }
 
   return (
