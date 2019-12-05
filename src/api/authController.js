@@ -12,3 +12,6 @@ export const register = async data =>
 
 export const getMe = async id =>
   await to(http.get(`/user/${id}`));
+
+export const updateMe = async (id, data) =>
+  await to(http.put(`/user/${id}/update`, {data}));
