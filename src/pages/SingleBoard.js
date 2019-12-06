@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
+import { config } from '../config';
+
 import { getSingleBoard, updateBoardTitle, deleteBoard } from "../api/boardController";
 import { createList, deleteList } from "../api/listController";
 import { createCard, deleteCards } from '../api/cardController';
@@ -16,12 +18,16 @@ import CreateCard from '../components/card/CreateCard';
 
 function SingleBoard({ match, history }) {
   const [board, setBoard] = useState({});
+  const [organizer, setOrganizer] = useState('');
   const [list, setList] = useState({
     name: '',
     error: false,
     msg: ''
   });
 
+  const organizerAvatar = {
+    background: `url(${config.baseUrl}/${organizer})`
+  };
 
   const [cardName, setCardName] = useState('');
   const { closeModal } = useContext(ModalContext);
@@ -37,6 +43,7 @@ function SingleBoard({ match, history }) {
     if (err) return err.response;
 
     setBoard(response.data);
+    setOrganizer(response.data.idOrganization.avatar);
   };
 
 
@@ -166,6 +173,15 @@ function SingleBoard({ match, history }) {
               delete
             </i>
           </button>
+          <button type="button" className="btn btn-transparent btn-rounded btn-icon ml-4">
+            <i className="material-icons">
+              settings
+            </i>
+          </button>
+
+          <div className="organizer">
+            <div className="avatar" style={organizerAvatar}></div>
+          </div>
         </div>
 
         <div className="board-lists row flex-nowrap pt-3">

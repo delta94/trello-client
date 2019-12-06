@@ -44752,6 +44752,10 @@ div.tagsinput {
   padding-top: 85px;
   min-height: calc(100vh - 60px); }
 
+.btn-icon {
+  display: flex;
+  justify-content: center; }
+
 .single-board-wrapper {
   background-size: cover !important; }
   .single-board-wrapper .content-wrapper {
@@ -44763,7 +44767,7 @@ div.tagsinput {
 
 .horizontal-menu.transparent .top-navbar {
   border-bottom: 0;
-  background: transparent; }
+  background: rgba(255, 255, 255, 0.2); }
 
 .top-navbar .container {
   max-width: 100%;
@@ -44782,6 +44786,27 @@ div.tagsinput {
   transition: background .2s ease; }
   .transparent-white-btn:hover {
     background: rgba(255, 255, 255, 0.5); }
+
+.organizer {
+  position: relative; }
+  .organizer .avatar {
+    position: relative;
+    background-size: cover !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 50%; }
+    .organizer .avatar:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 1px;
+      width: 10px;
+      height: 10px;
+      background: #23af47;
+      border-radius: 50%; }
 
 .fc-white {
   color: #ffffff; }

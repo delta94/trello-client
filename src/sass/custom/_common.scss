@@ -15,6 +15,11 @@
   min-height: calc(100vh - 60px);
 }
 
+.btn-icon {
+  display: flex;
+  justify-content: center;
+}
+
 
 .single-board-wrapper {
   background-size: cover !important;
@@ -30,7 +35,7 @@
   }
 }
 
-.horizontal-menu.transparent .top-navbar {border-bottom: 0; background: transparent;}
+.horizontal-menu.transparent .top-navbar {border-bottom: 0; background: rgba($white, .2);}
 
 .top-navbar {
   .container {
@@ -52,5 +57,30 @@
 
   &:hover {
     background: rgba($white, .5);
+  }
+}
+
+.organizer {
+  position: relative;
+  .avatar {
+    position: relative;
+    background-size: cover !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;;
+    border-radius: 50%;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 1px;
+      width: 10px;
+      height: 10px;
+      background: map-get($theme-colors, success);
+      border-radius: 50%;
+    }
+
   }
 }
