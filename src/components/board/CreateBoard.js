@@ -1,24 +1,31 @@
-import React from 'react';
+import React from "react";
 
 import { useFocusInput } from "../../hooks/useFocusInput";
 
-import Card from './BoardCard';
-import Modal from '../modal/Modal';
-import Input from '../forms/Input';
+import Card from "./BoardCard";
+import Modal from "../modal/Modal";
+import Input from "../forms/Input";
 import Error from "../FormError";
 
-import { config } from '../../config';
+import { config } from "../../config";
 
-const CreateBoard = (props) => {
+const CreateBoard = props => {
   const imgPath = Object.values(config.background);
 
   const el = useFocusInput(props.show);
 
   return (
     <>
-      <Card name="Create new board" className="create-board" onClick={props.modalOpen} />
+      {!props.modalOnly ?
+        <Card
+          name="Create new board"
+          className="create-board"
+          onClick={props.modalOpen}
+        />
+        : null
+      }
 
-      <Modal show={props.show} onClose={props.modalClose} title="Create Board">
+      <Modal show={props.show} onClose={props.modalClose} title={ props.title || "Create Board"}>
         <form action="" onSubmit={props.onSubmit}>
           <Input
             label="Board Name"
@@ -32,25 +39,27 @@ const CreateBoard = (props) => {
           />
 
           <div className="card-bgs">
-            {
-              imgPath.map((img, i) => <div
+            {imgPath.map((img, i) => (
+              <div
                 key={i}
-                className={props.selectedBg.has(img) ? 'bg selected' : 'bg'}
+                className={props.selectedBg.has(img) ? "bg selected" : "bg"}
                 onClick={() => props.onClickBg(img)}
-                style={{ background: 'url(' + img + ') center center no-repeat' }}></div>)
-            }
+                style={{
+                  background: "url(" + img + ") center center no-repeat"
+                }}
+              ></div>
+            ))}
           </div>
 
           <Error error={props.error} msg={props.errorMsg} />
 
           <button type="submit" className="btn btn-success">
-            Create Board
-        </button>
+            {props.btnText || 'Create Board'}
+          </button>
         </form>
       </Modal>
     </>
-  )
-
+  );
 };
 
 export default CreateBoard;

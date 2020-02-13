@@ -2,7 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { config } from '../config';
 
-import { getSingleBoard, updateBoardTitle, deleteBoard } from "../api/boardController";
+import {
+  getSingleBoard,
+  updateBoard,
+  deleteBoard
+} from "../api/boardController";
+
 import { createList, deleteList } from "../api/listController";
 import { createCard, deleteCards } from '../api/cardController';
 //import { uploadAvatar } from '../api/uploadController';
@@ -15,6 +20,7 @@ import List from '../components/lists/List';
 import CreateList from '../components/lists/CreateList';
 import Card from '../components/card/Card';
 import CreateCard from '../components/card/CreateCard';
+import CreateBoard from '../components/board/CreateBoard';
 
 function SingleBoard({ match, history }) {
   const [board, setBoard] = useState({});
@@ -25,46 +31,46 @@ function SingleBoard({ match, history }) {
     msg: ''
   });
 
+  const [bg, setBg] = useState(new Set([]));
+  const [showBoardSettingModal, setShowBoardSettingModal] = useState(false);
+  const [cardName, setCardName] = useState("");
+  const { closeModal } = useContext(ModalContext);
+
+  const { id } = match.params;
+
   const organizerAvatar = {
     background: `url(${config.baseUrl}/${organizer})`
   };
 
-  const [cardName, setCardName] = useState('');
-  const { closeModal } = useContext(ModalContext);
-  const { id } = match.params;
-
   useEffect(() => {
-    getSingleBoardData();
+    fetchSingleBoard();
   }, []);
 
-  // Get single from api
-  const getSingleBoardData = async () => {
+  const fetchSingleBoard = async () => {
     const [err, response] = await getSingleBoard(id);
     if (err) return err.response;
 
     setBoard(response.data);
     setOrganizer(response.data.idOrganization.avatar);
+
+    const background = new Set([response.data.bgPath]);
+    setBg(background);
   };
 
-
-  // Change board title
   const changeBoardTitle = async e => {
     if (e.currentTarget.textContent === '')
       return e.currentTarget.textContent = board.name;
 
-    const newTitle = { name: e.currentTarget.textContent };
-    let [err, response] = await updateBoardTitle(id, newTitle);
+    const data = {
+      name: e.currentTarget.textContent,
+      bgPath: board.bgPath
+    };
+    let [err, response] = await updateBoard(id, data);
 
     if (err) return err.response;
     setBoard({ ...board, name: response.data.name })
   }
 
-  /**
-   * Create List handeler
-   * shows a modal with list name input filed
-   * member and board id passed via
-   * localstorage user id and single board data id
-   */
   const handleCreateList = async (e) => {
     e.preventDefault();
     // get user from localstorage
@@ -91,12 +97,6 @@ function SingleBoard({ match, history }) {
     closeModal();
   };
 
-  /**
-   * When click close beside add card close button
-   * remove list id from set and hide card add input filed
-   * and show add card button instead
-   */
-  // Create new card
   const handleCreateCard = async (e, listId) => {
     e.preventDefault();
     const cardData = {
@@ -156,6 +156,23 @@ function SingleBoard({ match, history }) {
     });
   };
 
+  const hanldeUpdateBoard = async (e) => {
+    e.preventDefault();
+    const data = {
+      name: board.name,
+      bgPath: board.bgPath
+    }
+
+    setShowBoardSettingModal(false)
+    await updateBoard(id, data);
+  };
+
+  const onSelectBackground = img => {
+    let newBackground = new Set([img]);
+    setBg(newBackground);
+    setBoard({ ...board, bgPath: img });
+  };
+
   return (
     <Layout bg={board.bgPath} className="single-board-wrapper">
       <div className="single-board">
@@ -173,7 +190,9 @@ function SingleBoard({ match, history }) {
               delete
             </i>
           </button>
-          <button type="button" className="btn btn-transparent btn-rounded btn-icon ml-4">
+          <button type="button" className="btn btn-transparent btn-rounded btn-icon ml-4"
+            onClick={() => setShowBoardSettingModal(true)}
+          >
             <i className="material-icons">
               settings
             </i>
@@ -223,6 +242,21 @@ function SingleBoard({ match, history }) {
             />
           </div>
         </div>
+
+        <CreateBoard
+          show={showBoardSettingModal}
+          modalClose={() => setShowBoardSettingModal(false)}
+          onSubmit={hanldeUpdateBoard}
+          onChange={(e) => setBoard({...board, name: e.target.value})}
+          value={board.name}
+          error={board.error}
+          errorMsg={board.msg}
+          selectedBg={bg}
+          onClickBg={onSelectBackground}
+          modalOnly={true}
+          title="Update Board"
+          btnText="Update"
+        />
       </div>
     </Layout>
   );

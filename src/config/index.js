@@ -7,7 +7,7 @@ const config = {
     four: "http://localhost:3900/api/static/img/4.jpg",
     five: "http://localhost:3900/api/static/img/5.jpg",
     seven: "http://localhost:3900/api/static/img/7.jpg",
-    eight: "http://localhost:3900/api/static/img/8.jpg",
+    eight: "http://localhost:3900/api/static/img/8.jpg"
   }
 };
 

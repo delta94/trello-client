@@ -31,6 +31,7 @@ function Profile() {
     const file = new FormData();
     await file.append("avatar", e.target.files[0]);
     file.append("user", user);
+    console.log(file)
 
     const [err, response] = await uploadAvatar(file);
     if (err) return;
@@ -50,8 +51,6 @@ function Profile() {
     const updateInfo = {...user};
     const [err, response] = await updateMe(updateInfo._id, updateInfo);
     console.log(err, response);
-
-
   }
 
   return (
