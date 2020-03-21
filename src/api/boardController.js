@@ -1,5 +1,4 @@
 import to from "await-to-js";
-
 import { http } from "../http/http";
 
 export const getBoards = async () => await to(http.get('/board'));

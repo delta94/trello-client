@@ -7,6 +7,7 @@ import { register } from '../api/authController';
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 import Error from "../components/FormError";
+import AjaxButton from "../components/ui/AjaxButton";
 
 function Register({ history }) {
   const [authData, setAuthData] = useState({
@@ -30,13 +31,15 @@ function Register({ history }) {
   const onSubmit = async e => {
     e.preventDefault();
 
-    let [err, response] = await register(authData);
+    const [err, response] = await register(authData);
 
-    if (err)
+    if (err) {
+      console.log(err.response);
       return setAuthError({
         error: true,
-        msg: err.response.data.msg
+        msg: err.response ? err.response.data.msg : ""
       });
+    };
 
     // Set token and user data to localstorage
     setTokenToLocal.token(response.data.token);
@@ -106,9 +109,13 @@ function Register({ history }) {
         <Error error={authError.error} msg={authError.msg} />
 
         <div className="mt-3">
-          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+          {/* <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
             Register
-          </button>
+          </button> */}
+          <AjaxButton
+            text="Register"
+            className="btn-block btn-lg font-weight-medium auth-form-btn"
+          />
         </div>
 
         <div className="text-center mt-4 font-weight-light">

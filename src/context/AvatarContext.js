@@ -11,9 +11,11 @@ const AvatarContextProvider = ({children}) => {
   useEffect(() => {
     const user = getUser();
     if (user) {
-      setAvatar(`${config.baseUrl}/${user.avatar}`);
+      setAvatarToState(`${config.baseUrl}/${user.avatar}`);
     }
-  })
+  });
+
+  const setAvatarToState = (url) => setAvatar(url);
 
   const updateContextAvatar = (value) => {
     const user = getUser();

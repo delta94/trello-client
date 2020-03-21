@@ -1,10 +1,10 @@
 import { getToken } from './localStorage';
 
-export const checkToken = (history, fn) => {
+export const checkToken = async (history, fn) => {
   const token = getToken();
   if (token === null) {
     return history.push("/login");
   } else {
-    return fn;
+    return await fn;
   }
 }

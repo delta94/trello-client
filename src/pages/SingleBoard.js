@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import { config } from '../config';
+import { config } from "../config";
 
 import {
   getSingleBoard,
@@ -9,26 +9,26 @@ import {
 } from "../api/boardController";
 
 import { createList, deleteList } from "../api/listController";
-import { createCard, deleteCards } from '../api/cardController';
+import { createCard, deleteCards } from "../api/cardController";
 //import { uploadAvatar } from '../api/uploadController';
 
-import { ModalContext } from '../context/modalContext';
-import { getUser } from '../utils/localStorage';
+import { ModalContext } from "../context/modalContext";
+import { getUser } from "../utils/localStorage";
 
-import Layout from '../hoc/Layout';
-import List from '../components/lists/List';
-import CreateList from '../components/lists/CreateList';
-import Card from '../components/card/Card';
-import CreateCard from '../components/card/CreateCard';
-import CreateBoard from '../components/board/CreateBoard';
+import Layout from "../hoc/Layout";
+import List from "../components/lists/List";
+import CreateList from "../components/lists/CreateList";
+import Card from "../components/card/Card";
+import CreateCard from "../components/card/CreateCard";
+import CreateBoard from "../components/board/CreateBoard";
 
 function SingleBoard({ match, history }) {
   const [board, setBoard] = useState({});
-  const [organizer, setOrganizer] = useState('');
+  const [organizer, setOrganizer] = useState("");
   const [list, setList] = useState({
-    name: '',
+    name: "",
     error: false,
-    msg: ''
+    msg: ""
   });
 
   const [bg, setBg] = useState(new Set([]));
@@ -58,8 +58,8 @@ function SingleBoard({ match, history }) {
   };
 
   const changeBoardTitle = async e => {
-    if (e.currentTarget.textContent === '')
-      return e.currentTarget.textContent = board.name;
+    if (e.currentTarget.textContent === "")
+      return (e.currentTarget.textContent = board.name);
 
     const data = {
       name: e.currentTarget.textContent,
@@ -68,10 +68,10 @@ function SingleBoard({ match, history }) {
     let [err, response] = await updateBoard(id, data);
 
     if (err) return err.response;
-    setBoard({ ...board, name: response.data.name })
-  }
+    setBoard({ ...board, name: response.data.name });
+  };
 
-  const handleCreateList = async (e) => {
+  const handleCreateList = async e => {
     e.preventDefault();
     // get user from localstorage
     const user = getUser();
@@ -80,19 +80,20 @@ function SingleBoard({ match, history }) {
       name: list.name,
       idMemberCreator: user._id,
       idBoard: board._id
-    }
+    };
 
     let [err, response] = await createList(listData);
 
-    if (err) return setList({
-      ...list,
-      error: true,
-      msg: err.response.data
-    });
+    if (err)
+      return setList({
+        ...list,
+        error: true,
+        msg: err.response.data
+      });
 
     // Update board with latest list
     setBoard({ ...board, lists: [...board.lists, response.data] });
-    setList({ ...list, name: '' });
+    setList({ ...list, name: "" });
 
     closeModal();
   };
@@ -110,21 +111,25 @@ function SingleBoard({ match, history }) {
     if (err) return;
 
     setBoard({
-      ...board, actions: [...board.actions, {
-        action: 'createcard',
-        _id: response.data._id,
-        data: {
-          card: {
-            name: cardName,
-          },
-          list: {
-            _id: listId
+      ...board,
+      actions: [
+        ...board.actions,
+        {
+          action: "createcard",
+          _id: response.data._id,
+          data: {
+            card: {
+              name: cardName
+            },
+            list: {
+              _id: listId
+            }
           }
         }
-      }]
+      ]
     });
 
-    setCardName('');
+    setCardName("");
   };
 
   const handleDeleteBoard = async () => {
@@ -132,10 +137,10 @@ function SingleBoard({ match, history }) {
     const [err] = await deleteBoard(id);
     if (err) return err.response;
 
-    history.push('/');
+    history.push("/");
   };
 
-  const handleDeleteCards = async (id) => {
+  const handleDeleteCards = async id => {
     const [err, response] = await deleteCards({
       id,
       boardId: match.params
@@ -146,24 +151,24 @@ function SingleBoard({ match, history }) {
   };
 
   // Archive Lists
-  const handleDeleteList = async (id) => {
+  const handleDeleteList = async id => {
     const [err] = await deleteList(id);
     if (err) return err.response;
 
     setBoard({
       ...board,
-      lists: board.lists.filter((list) => list._id !== id)
+      lists: board.lists.filter(list => list._id !== id)
     });
   };
 
-  const hanldeUpdateBoard = async (e) => {
+  const hanldeUpdateBoard = async e => {
     e.preventDefault();
     const data = {
       name: board.name,
       bgPath: board.bgPath
-    }
+    };
 
-    setShowBoardSettingModal(false)
+    setShowBoardSettingModal(false);
     await updateBoard(id, data);
   };
 
@@ -185,17 +190,19 @@ function SingleBoard({ match, history }) {
           >
             {board.name}
           </h3>
-          <button type="button" className="btn btn-transparent danger btn-rounded btn-icon ml-4" onClick={handleDeleteBoard}>
-            <i className="material-icons">
-              delete
-            </i>
+          <button
+            type="button"
+            className="btn btn-transparent danger btn-rounded btn-icon ml-4"
+            onClick={handleDeleteBoard}
+          >
+            <i className="material-icons">delete</i>
           </button>
-          <button type="button" className="btn btn-transparent btn-rounded btn-icon ml-4"
+          <button
+            type="button"
+            className="btn btn-transparent btn-rounded btn-icon ml-4"
             onClick={() => setShowBoardSettingModal(true)}
           >
-            <i className="material-icons">
-              settings
-            </i>
+            <i className="material-icons">settings</i>
           </button>
 
           <div className="organizer">
@@ -247,7 +254,7 @@ function SingleBoard({ match, history }) {
           show={showBoardSettingModal}
           modalClose={() => setShowBoardSettingModal(false)}
           onSubmit={hanldeUpdateBoard}
-          onChange={(e) => setBoard({...board, name: e.target.value})}
+          onChange={e => setBoard({ ...board, name: e.target.value })}
           value={board.name}
           error={board.error}
           errorMsg={board.msg}
